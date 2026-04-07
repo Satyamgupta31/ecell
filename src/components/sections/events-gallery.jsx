@@ -2,6 +2,9 @@ import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import { useRef, useState } from "react";
 import { eventsGallery } from "../../data/content";
 import logo from "../../assets/Logo/logo.png";
+import G20 from "../../assets/EventGallery/G20.jpeg";
+import Hacknovate from "../../assets/EventGallery/Hacknovate.jpeg";
+import Seminar from "../../assets/EventGallery/Seminar.jpeg";
 
 // ─── Add more images here as you import them ───────────────────────────────
 // e.g.  import event2 from "../../assets/Logo/event2";
@@ -9,7 +12,7 @@ import logo from "../../assets/Logo/logo.png";
 // Then add them to the array:  const localImages = [logo, event2, event3];
 
 
-const localImages = [logo];
+const localImages = [G20, Hacknovate, Seminar, logo, logo, logo];
 
 
 export function EventsGallery() {
