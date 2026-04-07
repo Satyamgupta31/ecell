@@ -2,9 +2,16 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Users, X } from "lucide-react";
 import { Button } from "../ui/button";
-import { eventsArchive, eventsGallery } from "../../data/content";
+import { eventsArchive, eventsGallery } from "../../data/event_archive";
 
-const orbitalAngles = [0, 60, 120, 180, 240, 300];
+const compassAngles = {
+  east: 0,
+  south: 90,
+  west: 180,
+  north: 270,
+};
+
+
 
 export function EventsArchive() {
   const [selectedEvent, setSelectedEvent] = useState(null);
@@ -25,7 +32,7 @@ export function EventsArchive() {
   return (
     <section
       id="events-archive"
-      className="relative py-24 bg-black overflow-hidden min-h-[700px]"
+      className="relative py-24 bg-black overflow-hidden min-h-175"
     >
       <div className="absolute inset-0 bg-radial-gradient opacity-50" />
 
@@ -58,25 +65,25 @@ export function EventsArchive() {
           className="text-center mb-12"
         >
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-6">
-            Explore our journey through time - a universe of events that shaped
-            our community
+            Explore our IPL journey through time - a gallery of matchday
+            moments and crowd energy
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button className="rounded-full bg-blue-600 hover:bg-blue-500 px-6 py-5 glow-blue">
-              View All Events Archive
+              View All IPL Moments
             </Button>
           </motion.div>
         </motion.div>
 
         {/* Orbital Layout */}
-        <div className="relative h-[500px] flex items-center justify-center">
+        <div className="relative h-125 flex items-center justify-center">
           <motion.div
-            className="absolute w-[400px] h-[400px] border border-slate-800/50 rounded-full"
+            className="absolute w-100 h-100 border border-slate-800/50 rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           />
           <motion.div
-            className="absolute w-[300px] h-[300px] border border-slate-800/30 rounded-full"
+            className="absolute w-75 h-75 border border-slate-800/30 rounded-full"
             animate={{ rotate: -360 }}
             transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
           />
@@ -87,7 +94,7 @@ export function EventsArchive() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative z-20 w-32 h-32 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex flex-col items-center justify-center glow-blue"
+            className="relative z-20 w-32 h-32 bg-linear-to-br from-blue-600 to-blue-800 rounded-full flex flex-col items-center justify-center glow-blue"
           >
             <span className="text-white font-bold text-xl">E-CELL</span>
             <span className="text-blue-200 text-xs">HMRITM</span>
@@ -100,8 +107,8 @@ export function EventsArchive() {
             transition={{ duration: ORBIT_DURATION, repeat: Infinity, ease: "linear" }}
           >
             {/* Event Cards */}
-            {eventsArchive.map((event, index) => {
-              const angle = orbitalAngles[index];
+            {eventsArchive.map((event, eventIndex) => {
+              const angle = compassAngles[event.position] ?? 0;
               const radius = 200; // Distance from center
 
               return (
@@ -122,19 +129,19 @@ export function EventsArchive() {
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.1, duration: 0.5 }}
+                      transition={{ delay: eventIndex * 0.1, duration: 0.5 }}
                     >
                       <motion.div
                         onClick={() => setSelectedEvent(event)}
                         whileHover={{ scale: 1.1, zIndex: 50 }}
-                        className="relative w-[140px] h-[100px] rounded-xl overflow-hidden cursor-pointer group shadow-lg"
+                        className="relative w-35 h-25 rounded-xl overflow-hidden cursor-pointer group shadow-lg"
                       >
                         <img
                           src={event.image}
                           alt={event.title}
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent" />
                         <div className="absolute top-2 right-2 w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center">
                           <Users className="w-3 h-3 text-white" />
                         </div>
@@ -159,7 +166,7 @@ export function EventsArchive() {
       {/* Gallery Modal Overlay */}
       <AnimatePresence>
         {selectedEvent && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pt-24 sm:p-6 sm:pt-28" style={{ pointerEvents: 'auto' }}>
+          <div className="fixed inset-0 z-100 flex items-center justify-center p-4 pt-24 sm:p-6 sm:pt-28" style={{ pointerEvents: 'auto' }}>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -205,7 +212,7 @@ export function EventsArchive() {
                         alt={imgItem.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                         <span className="text-white font-medium text-sm translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                           {imgItem.title}
                         </span>
@@ -229,7 +236,7 @@ export function EventsArchive() {
                         alt={imgItem.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 hue-rotate-15"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                         <span className="text-white font-medium text-sm translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                           More {imgItem.title}
                         </span>
@@ -248,3 +255,5 @@ export function EventsArchive() {
     </section>
   );
 }
+
+

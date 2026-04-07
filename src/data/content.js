@@ -1,5 +1,7 @@
 // Hero section features data
 import shashankImg from "../assets/TeamMember/shashank.jpeg";
+import arvindImg from "../assets/TeamMember/arvind.jpeg";
+import piyushImg from "../assets/TeamMember/piyush.jpg";
 // export const heroFeatures = [
 //   {
 //     icon: "Code2",
@@ -346,22 +348,7 @@ export const eventsArchive = [
     type: "Networking",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
   },
-  {
-    id: 5,
-    title: "Pitch Day",
-    date: "December 2022",
-    attendees: 80,
-    type: "Competition",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
-  },
-  {
-    id: 6,
-    title: "Tech Symposium",
-    date: "September 2022",
-    attendees: 300,
-    type: "Conference",
-    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400",
-  },
+ 
 ];
 
 // Contact info
@@ -386,10 +373,10 @@ export const contactInfo = [
 // Builders section
 export const builders = [
     {
-    name: "Shashank",
+    name: "Shashank Pandey",
     role: "Systems Engineer",
     image: shashankImg,
-    code: "025",
+   count: "Technical Member",
     holo: "0002",
     tech: ["Java Script", "Java ", "React", "Node.js"],
     mission: "Managing AI systems and containerization protocols for optimal performance.",
@@ -401,16 +388,21 @@ export const builders = [
     description: "Experienced systems engineer focused on scalable AI infra.",
   },
   {
-    icon: "Target",
-    title: "Visionaries",
+    name: "Arvind Singh",
+    title: "Arvind Singh",
     description: "Students with bold ideas ready to change the world",
-    count: "150+",
+    count: "Technical Member",
+      image: arvindImg
+
+   
   },
   {
-    icon: "Users",
-    title: "Mentors",
-    description: "Industry experts guiding the next generation",
-    count: "25+",
+    name: "Piyush Bhandari",
+    title: "Piyush Bhandari",
+    description: "Technical experts guiding the next generation",
+    count: "Technical Head",
+     image: piyushImg
+
   },
   {
     icon: "Lightbulb",
