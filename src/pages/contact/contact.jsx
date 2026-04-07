@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Send, Rocket, Mail, Globe, Users, Camera, MapPin, ExternalLink } from 'lucide-react';
 import Layout from '../../components/Layout/layout';
 
+const googleMapsAddressUrl =
+    'https://www.google.com/maps/search/?api=1&query=HMR%20Institute%20of%20Technology%20%26%20Management%2C%20Hamidpur%2C%20Delhi%20110036';
+
 export const Contact = () => {
     return (
         <Layout>
@@ -102,7 +105,14 @@ export const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="font-semibold text-sm text-white">Our Location</p>
-                                    <p className="text-sm text-neutral-muted">HMR Institute of Technology & Management,<br />Hamidpur, Delhi, 110036</p>
+                                    <a
+                                        className="text-sm text-neutral-muted hover:text-primary transition-colors"
+                                        href={googleMapsAddressUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        HMR Institute of Technology & Management,<br />Hamidpur, Delhi, 110036
+                                    </a>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
@@ -116,35 +126,26 @@ export const Contact = () => {
                             </div>
 
                             {/* Map Placeholder */}
-                            <div className="mt-8 rounded-xl overflow-hidden border border-white/10 h-48 bg-neutral-dark relative group">
-                                <img
-                                    className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-70"
-                                    src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80"
-                                    alt="Delhi Map"
+                            <a
+                                className="mt-8 rounded-xl overflow-hidden border border-white/10 h-48 bg-neutral-dark relative group block focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                href={googleMapsAddressUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Open HMR Institute of Technology and Management in Google Maps"
+                            >
+                                <iframe
+                                    className="absolute inset-0 w-full h-full"
+                                    title="HMR Institute of Technology and Management location on Google Maps"
+                                    src="https://www.google.com/maps?q=HMR%20Institute%20of%20Technology%20%26%20Management%2C%20Hamidpur%2C%20Delhi%20110036&output=embed"
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
                                 />
-
-                                {/* <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/5 transition-colors pointer-events-none">
                                     <span className="bg-background-dark/80 px-4 py-2 rounded-full text-xs font-bold shadow-lg text-white border border-white/10">
                                         View on Google Maps
                                     </span>
-                                </div> */}
-                                
-                                <div className="relative h-40">
-  <div className="absolute inset-0 flex items-center justify-center">
-    <a 
-      href="https://www.google.com/maps/place/HMR+Institute+of+Technology+and+Management/@28.8237984,77.1525269,726m/data=!3m3!1e3!4b1!5s0x390daaf4d09b4ea7:0x5003067a8e1094f1!4m6!3m5!1s0x390daaf4c884f85b:0x1c00e11a9ce7433c!8m2!3d28.8237984!4d77.1525269!16s%2Fm%2F0pdn8m7?entry=ttu&g_ep=EgoyMDI2MDQwNS4wIKXMDSoASAFQAw%3D%3D"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-background-dark/80 px-4 py-2 rounded-full text-xs font-bold shadow-lg text-white border border-white/10 flex items-center gap-2 hover:bg-background-dark/90 transition"
-    >
-      View on Google Maps
-      <ExternalLink size={16} />
-    </a>
-  </div>
-</div>
-                                
-                               
-                            </div>
+                                </div>
+                            </a>
 
                             {/* Social Media
                             <div className="pt-6 border-t border-white/10">
