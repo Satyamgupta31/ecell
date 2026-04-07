@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { Send, Rocket, Mail, Globe, Users, Camera, MapPin, ExternalLink } from 'lucide-react';
 import Layout from '../../components/Layout/layout';
 
+const googleMapsAddressUrl =
+    'https://www.google.com/maps/search/?api=1&query=HMR%20Institute%20of%20Technology%20%26%20Management%2C%20Hamidpur%2C%20Delhi%20110036';
+
 export const Contact = () => {
     return (
         <Layout>
@@ -14,7 +17,7 @@ export const Contact = () => {
                         animate={{ opacity: 1, x: 0 }}
                         className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight font-display"
                     >
-                        Get in Touch / <span className="hero-gradient">Join the Movement</span>
+                        Get in Touch
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, x: -20 }}
@@ -40,11 +43,11 @@ export const Contact = () => {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="flex flex-col gap-2">
                                         <label className="text-sm font-semibold text-neutral-muted">Full Name</label>
-                                        <input className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-white" placeholder="Arvind Rawat" type="text" />
+                                        <input className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-white" placeholder="Your Name" type="text" />
                                     </div>
                                     <div className="flex flex-col gap-2">
                                         <label className="text-sm font-semibold text-neutral-muted">Email Address</label>
-                                        <input className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-white" placeholder="arvind@example.com" type="email" />
+                                        <input className="w-full px-4 py-3 rounded-lg border border-white/10 bg-white/5 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-white" placeholder="Name@example.com" type="email" />
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
@@ -77,10 +80,20 @@ export const Contact = () => {
                             <p className="text-neutral-dark/80 mb-6 text-sm leading-relaxed font-medium">
                                 Ready to lead the startup revolution? Join the core team and get access to exclusive workshops, networking, and mentorship.
                             </p>
-                            <button className="w-full bg-neutral-dark text-white py-3 rounded-lg font-bold hover:bg-neutral-dark/90 transition-colors flex items-center justify-center gap-2">
+                            {/* <button className="w-full bg-neutral-dark text-white py-3 rounded-lg font-bold hover:bg-neutral-dark/90 transition-colors flex items-center justify-center gap-2">
                                 Apply for Membership
                                 <ExternalLink size={16} />
-                            </button>
+                            </button> */}
+                            <a 
+  href="#" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <button className="w-full bg-neutral-dark text-white py-3 rounded-lg font-bold hover:bg-neutral-dark/90 transition-colors flex items-center justify-center gap-2">
+    Apply for Membership
+    <ExternalLink size={16} />
+  </button>
+</a>
                         </motion.div>
 
                         {/* Contact Details */}
@@ -92,7 +105,14 @@ export const Contact = () => {
                                 </div>
                                 <div>
                                     <p className="font-semibold text-sm text-white">Our Location</p>
-                                    <p className="text-sm text-neutral-muted">HMR Institute of Technology & Management,<br />Hamidpur, Delhi, 110036</p>
+                                    <a
+                                        className="text-sm text-neutral-muted hover:text-primary transition-colors"
+                                        href={googleMapsAddressUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        HMR Institute of Technology & Management,<br />Hamidpur, Delhi, 110036
+                                    </a>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
@@ -106,20 +126,28 @@ export const Contact = () => {
                             </div>
 
                             {/* Map Placeholder */}
-                            <div className="mt-8 rounded-xl overflow-hidden border border-white/10 h-48 bg-neutral-dark relative group">
-                                <img
-                                    className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-70"
-                                    src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80"
-                                    alt="Delhi Map"
+                            <a
+                                className="mt-8 rounded-xl overflow-hidden border border-white/10 h-48 bg-neutral-dark relative group block focus:outline-none focus:ring-2 focus:ring-primary/40"
+                                href={googleMapsAddressUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Open HMR Institute of Technology and Management in Google Maps"
+                            >
+                                <iframe
+                                    className="absolute inset-0 w-full h-full"
+                                    title="HMR Institute of Technology and Management location on Google Maps"
+                                    src="https://www.google.com/maps?q=HMR%20Institute%20of%20Technology%20%26%20Management%2C%20Hamidpur%2C%20Delhi%20110036&output=embed"
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
                                 />
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/5 transition-colors pointer-events-none">
                                     <span className="bg-background-dark/80 px-4 py-2 rounded-full text-xs font-bold shadow-lg text-white border border-white/10">
                                         View on Google Maps
                                     </span>
                                 </div>
-                            </div>
+                            </a>
 
-                            {/* Social Media */}
+                            {/* Social Media
                             <div className="pt-6 border-t border-white/10">
                                 <p className="text-xs font-bold uppercase tracking-widest text-neutral-muted mb-4">Follow Us</p>
                                 <div className="flex gap-4">
@@ -129,7 +157,7 @@ export const Contact = () => {
                                         </a>
                                     ))}
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

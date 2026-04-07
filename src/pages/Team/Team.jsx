@@ -44,14 +44,14 @@ import male from '../../assets/TeamMember/male.png'
 import female from '../../assets/TeamMember/female.webp'
 
 const Team = () => {
-    const Faculty = [
-        {
-            name : "Dr. Padmaja Panda",
+    const Coordinator = [
+         {
+            name : "Mr. Ankush Rana",
             role : "Coordinator",
             img : female
         },
         {
-            name : "Mr. Ankush Rana",
+            name : "Dr. Padmaja Panda",
             role : "Coordinator",
             img : ankushrana
         },
@@ -228,8 +228,23 @@ const Team = () => {
 
                  {/* Faculty Section */}
                 <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Faculty Coordinator
-</h2>
+                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Faculty Coordinator</h2>
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-50px" }}
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                        >
+                            {Coordinator.map((member, i) => (
+
+                            <TeamCard key={i} member={member} isLarge={true} />
+                        ))}
+                    </motion.div>
+                </div>
+                 {/* Faculty Section */}
+                <div className="mb-20">
+                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Event Coordinator</h2>
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"

@@ -1,5 +1,4 @@
 import { Hero } from "../../components/sections/hero.jsx";
-import { About } from "../../components/sections/about.jsx";
 import { Impact } from "../../components/sections/impact.jsx";
 import { UpcomingEvents } from "../../components/sections/upcoming-events.jsx";
 import { Journey } from "../../components/sections/journey.jsx";

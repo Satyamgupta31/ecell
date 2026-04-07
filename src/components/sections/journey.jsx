@@ -19,7 +19,7 @@ export function Journey() {
   return (
     <section
       id="journey"
-      className="relative py-24 bg-black overflow-hidden min-h-[600px]"
+      className="relative bg-black overflow-hidden min-h-[600px] pt-28 pb-24 scroll-mt-28"
     >
       <div className="absolute inset-0 bg-radial-gradient opacity-30" />
 
@@ -137,7 +137,7 @@ export function Journey() {
       {/* Popup Modal */}
       <AnimatePresence>
         {selectedItem && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-x-0 top-20 bottom-0 z-900 flex items-center justify-center p-4">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -152,7 +152,7 @@ export function Journey() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-lg bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl glow-blue"
+              className="relative w-full max-w-lg max-h-[calc(100vh-7rem)] overflow-y-auto bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl glow-blue"
             >
               <button
                 onClick={() => setSelectedItem(null)}
