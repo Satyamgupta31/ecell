@@ -97,6 +97,7 @@ const Team = () => {
         { name: "Charvi", role: "Content Team Member", img: charvi },
         { name: "Sujal Bisht", role: "Content Team Member", img: sujal },
         { name: "Krishna Jain", role: "Content Team Member", img: krishna },
+
         
     ];
       const Social_Media = [
@@ -126,7 +127,6 @@ const Team = () => {
         { name: "Ishika", role: "Public Relations & Outreach Team Member", img: ishika },
         { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: male },
       
-        { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: Shashank },
       
     ];
       const Research_Development = [
