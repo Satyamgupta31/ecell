@@ -422,11 +422,12 @@ export function Hero() {
                 maxWidth: "min(520px, 100%)",
                 textAlign: "left",
               }}>
-                Where{" "}
-                <span style={{ color: "rgba(255,255,255,0.88)", fontWeight: 500 }}>raw ideas</span>{" "}
-                become ventures. We equip the next generation of founders with mentorship, capital
-                connections, and an ecosystem built to{" "}
-                <span style={{ color: "#6ab0ff", fontWeight: 500 }}>launch fast.</span>
+                Transforming{" "}
+                <span style={{ color: "rgba(255,255,255,0.88)", fontWeight: 500 }}>ideas</span>{" "}
+                 into meaningful impact.
+Driven by innovation, collaboration, and entrepreneurial spirit.
+Inspiring students to think bigger and {" "}
+                <span style={{ color: "#6ab0ff", fontWeight: 500 }}>build better</span>
               </p>
 
               {/* <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 flex-shrink-0 w-full sm:w-auto">
