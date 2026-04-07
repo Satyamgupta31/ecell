@@ -44,23 +44,19 @@ import male from '../../assets/TeamMember/male.png'
 import female from '../../assets/TeamMember/female.webp'
 
 const Team = () => {
-    const Coordinator = [
-         {
-            name : "Mr. Ankush Rana",
-            role : "Coordinator",
-            img : Shashank
+    const FacultyCoordinator = [
+        {
+            name: "Mr. Ankush Rana",
+            role: "Faculty Coordinator",
+            img: ankushrana
         }
-    ]
-    const Faculty = [
+    ];
+
+    const Coordinator = [
         {
             name : "Dr. Padmaja Panda",
             role : "Coordinator",
             img : female
-        },
-        {
-            name : "Mr. Ankush Rana",
-            role : "Coordinator",
-            img : Shashank
         },
         {
             name : "Ms. Sarita",
@@ -163,7 +159,7 @@ const Team = () => {
         }
     };
 
-    const TeamCard = ({ member, isLarge = false }) => {
+    const TeamCard = ({ member, isLarge = false, priority = false }) => {
         const [isClicked, setIsClicked] = useState(false);
 
         return (
@@ -173,10 +169,13 @@ const Team = () => {
                 onClick={() => setIsClicked(!isClicked)}
             >
                 <div className={`relative overflow-hidden ${isLarge ? 'h-96' : 'h-80'}`}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
+                    <div className="absolute inset-0 bg-linear-to-t from-neutral-dark via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
                     <img
                         src={member.img}
                         alt={member.name}
+                        loading={priority ? 'eager' : 'lazy'}
+                        decoding="async"
+                        fetchPriority={priority ? 'high' : 'low'}
                         className={`w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110 transition-all duration-700 ease-out ${isClicked ? 'grayscale-0' : ''}`}
                     />
 
@@ -204,6 +203,20 @@ const Team = () => {
             </motion.div>
         );
     };
+
+    const teamSections = [
+        { title: "Faculty Coordinator", members: FacultyCoordinator, isLarge: true },
+        { title: "Event Coordinator", members: Coordinator, isLarge: true },
+        { title: "E-Cell Society Heads", members: leadership, isLarge: true },
+        { title: "Team Leads", members: heads, isLarge: true },
+        { title: "Technical Team", members: Technical, isLarge: false },
+        { title: "Content Team", members: Content, isLarge: false },
+        { title: "Social Media Team", members: Social_Media, isLarge: false },
+        { title: "Operations Team", members: Operations, isLarge: false },
+        { title: "Design Team", members: Design, isLarge: false },
+        { title: "Public Relations & Outreach Team", members: PR, isLarge: false },
+        { title: "Research & Development Team", members: Research_Development, isLarge: false },
+    ];
 
     return (
         <Layout>
@@ -233,176 +246,27 @@ const Team = () => {
                     </motion.p>
                 </div>
 
-                 {/* Faculty Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Faculty Coordinator</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                {teamSections.map((section, sectionIndex) => (
+                    <div className="mb-20" key={section.title}>
+                        <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">{section.title}</h2>
+                        <motion.div
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-50px" }}
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                         >
-                            {Coordinator.map((member, i) => (
-
-                            <TeamCard key={i} member={member} isLarge={true} />
-                        ))}
-                    </motion.div>
-                </div>
-                 {/* Faculty Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Event Coordinator</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                        >
-                            {Faculty.map((member, i) => (
-
-                            <TeamCard key={i} member={member} isLarge={true} />
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* Leadership Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">E-Cell Society Heads</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {leadership.map((member, i) => (
-                            <TeamCard key={i} member={member} isLarge={true} />
-                        ))}
-                    </motion.div>
-                </div>
-                 {/* Heads  Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Team Leads
-</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {heads.map((member, i) => (
-                            <TeamCard key={i} member={member} isLarge={true} />
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* Techical Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Technical Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Technical.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Content Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Content Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Content.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Social Media Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Social Media Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Social_Media.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Operations Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Operations Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Operations.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Design Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Design Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Design.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* PR Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Public Relations & Outreach Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {PR.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Research and Development Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Research & Development Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Research_Development.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
+                            {section.members.map((member, memberIndex) => (
+                                <TeamCard
+                                    key={`${sectionIndex}-${member.name}-${memberIndex}`}
+                                    member={member}
+                                    isLarge={section.isLarge}
+                                    priority={sectionIndex === 0 && memberIndex === 0}
+                                />
+                            ))}
+                        </motion.div>
+                    </div>
+                ))}
 
                 {/* Join CTA */}
                 {/* <motion.div
