@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { heroFeatures } from "../../data/content";
+import EventPopup from "./Hero_Event_PopUP";
 import {
   staggerContainer,
   fadeUpVariants,
@@ -148,7 +149,7 @@ export function Hero() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative min-h-screen flex flex-col justify-end overflow-hidden bg-[#04050a]"
+      className="relative min-h-screen overflow-hidden bg-[#04050a]"
       style={{ fontFamily: "'Syne', sans-serif" }}
     >
       <style>{`
@@ -363,189 +364,130 @@ export function Hero() {
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="relative z-10 w-full px-5 sm:px-10 lg:px-20 pb-16 sm:pb-20 pt-28 sm:pt-36 flex flex-col items-center text-center"
+        className="relative z-10 w-full px-5 sm:px-10 lg:px-20 pb-16 sm:pb-20 pt-28 sm:pt-36"
       >
-        {/* Status badge */}
-        <motion.div variants={fadeUpVariants} className="mb-6 sm:mb-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <Badge
-            className="ticker-badge px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-[11px] tracking-[0.14em] sm:tracking-[0.18em] uppercase font-semibold"
-            style={{ fontFamily: "'Space Mono', monospace", color: "#6ab0ff", borderRadius: "4px" }}
-          >
-            <span className="inline-block w-[5px] h-[5px] sm:w-[6px] sm:h-[6px] rounded-full bg-[#6ab0ff] mr-2 animate-pulse" />
-            <span className="badge-full">HMRITM — Entrepreneurship Cell</span>
-            <span className="badge-short">E-Cell HMRITM</span>
-          </Badge>
-          <span style={{
-            fontFamily: "'Space Mono', monospace", fontSize: "9px",
-            letterSpacing: "0.12em", color: "rgba(255,255,255,0.22)", textTransform: "uppercase"
-          }}>
-            Est. 2018
-          </span>
-        </motion.div>
-
-        {/* Hero Title */}
-        <motion.div variants={heroTextVariants} className="mb-7 sm:mb-8">
-          <h1
-            className="hero-h1"
-            style={{
-              fontFamily: "'Syne', sans-serif", fontWeight: 800,
-              lineHeight: 0.92, letterSpacing: "-3px", margin: 0,
-            }}
-          >
-            <span className="block text-gray-600"
-              style={{ fontSize: "clamp(44px, 10vw, 116px)" }}>
-              Ignite
-            </span>
-            <span className="block text-white"
-              style={{ fontSize: "clamp(44px, 10vw, 116px)" }}>
-              Build.
-            </span>
-            <span className="block hero-gradient-text"
-              style={{ fontSize: "clamp(44px, 10vw, 116px)" }}>
-              Scale_
-            </span>
-          </h1>
-        </motion.div>
-
-        {/* Description + CTA */}
-        <motion.div
-          variants={fadeUpVariants}
-          className="flex flex-col items-center gap-8 sm:gap-10 mb-14 sm:mb-20"
-        >
-          <p style={{
-            fontFamily: "'DM Sans', sans-serif", fontWeight: 300,
-            fontSize: "clamp(13px, 2vw, 15px)",
-            lineHeight: 1.85, color: "rgba(255,255,255,0.42)",
-            maxWidth: "min(520px, 100%)",
-            textAlign: "center",
-          }}>
-            Where{" "}
-            <span style={{ color: "rgba(255,255,255,0.88)", fontWeight: 500 }}>raw ideas</span>{" "}
-            become ventures. We equip the next generation of founders with mentorship, capital
-            connections, and an ecosystem built to{" "}
-            <span style={{ color: "#6ab0ff", fontWeight: 500 }}>launch fast.</span>
-          </p>
-
-          {/* <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 flex-shrink-0 w-full sm:w-auto">
-            <motion.div className="cta-wrap" whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
-              <Button
-                size="lg"
-                className="glow-blue group"
-                style={{
-                  background: "#3060ff", color: "#ffffff",
-                  fontFamily: "'Space Mono', monospace", fontWeight: 700,
-                  fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase",
-                  borderRadius: "4px", padding: "14px 28px", border: "none", height: "auto",
-                }}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:items-center">
+          <div className="text-left">
+            {/* Status badge */}
+            <motion.div variants={fadeUpVariants} className="mb-6 sm:mb-8 flex flex-wrap items-center justify-start gap-2 sm:gap-3">
+              <Badge
+                className="ticker-badge px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-[11px] tracking-[0.14em] sm:tracking-[0.18em] uppercase font-semibold"
+                style={{ fontFamily: "'Space Mono', monospace", color: "#6ab0ff", borderRadius: "4px" }}
               >
-                Get Started
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+                <span className="inline-block w-1.25 h-1.25 sm:w-1.5 sm:h-1.5 rounded-full bg-[#6ab0ff] mr-2 animate-pulse" />
+                <span className="badge-full">HMRITM — Entrepreneurship Cell</span>
+                <span className="badge-short">E-Cell HMRITM</span>
+              </Badge>
+              <span style={{
+                fontFamily: "'Space Mono', monospace", fontSize: "9px",
+                letterSpacing: "0.12em", color: "rgba(255,255,255,0.22)", textTransform: "uppercase"
+              }}>
+                Est. 2018
+              </span>
             </motion.div>
 
-            <motion.div className="cta-wrap" whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
-              <Button
-                size="lg"
-                variant="outline"
+            {/* Hero Title */}
+            <motion.div variants={heroTextVariants} className="mb-7 sm:mb-8 max-w-3xl">
+              <h1
+                className="hero-h1"
                 style={{
-                  background: "transparent", color: "rgba(255,255,255,0.55)",
-                  fontFamily: "'Space Mono', monospace", fontWeight: 400,
-                  fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase",
-                  borderRadius: "4px", padding: "14px 28px",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  height: "auto", transition: "border-color 0.25s, color 0.25s",
+                  fontFamily: "'Syne', sans-serif", fontWeight: 800,
+                  lineHeight: 0.92, letterSpacing: "-3px", margin: 0,
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(106,176,255,0.5)"; e.currentTarget.style.color = "#6ab0ff"; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";  e.currentTarget.style.color = "rgba(255,255,255,0.55)"; }}
               >
-                Explore Dashboard
-              </Button>
-            </motion.div>
-          </div> */}
-        </motion.div>
-
-        {/* Feature Cards */}
-        <motion.div
-          variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-3 w-full"
-          style={{
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(255,255,255,0.06)",
-            borderRadius: "8px",
-            overflow: "hidden",
-          }}
-        >
-          {heroFeatures.map((feature, idx) => {
-            const Icon = iconMap[feature.icon];
-            const isLast = idx === heroFeatures.length - 1;
-            return (
-              <motion.div
-                key={feature.title}
-                variants={fadeUpVariants}
-                whileHover={{ y: -3 }}
-                className="group relative cursor-pointer feature-card"
-                style={{
-                  background: "#04050a",
-                  padding: "clamp(22px, 4vw, 40px) clamp(18px, 3.5vw, 36px)",
-                  transition: "background 0.35s",
-                }}
-                onMouseEnter={e => { e.currentTarget.style.background = "rgba(40,90,255,0.05)"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "#04050a"; }}
-              >
-                {/* Right border on desktop */}
-                {!isLast && (
-                  <div className="hidden sm:block absolute top-0 right-0 w-px h-full"
-                    style={{ background: "rgba(255,255,255,0.05)" }} />
-                )}
-
-                {/* Top accent line on hover */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: "linear-gradient(90deg, #3060ff, #6ab0ff)" }}
-                />
-
-                <span style={{
-                  fontFamily: "'Space Mono', monospace", fontSize: "9px",
-                  letterSpacing: "0.2em", color: "rgba(255,255,255,0.18)",
-                  textTransform: "uppercase", display: "block", marginBottom: "14px"
-                }}>
-                  0{idx + 1}
+                <span className="block text-gray-600"
+                  style={{ fontSize: "clamp(44px, 10vw, 116px)" }}>
+                  Ignite
                 </span>
+                <span className="block text-white"
+                  style={{ fontSize: "clamp(44px, 10vw, 116px)" }}>
+                  Build.
+                </span>
+                <span className="block hero-gradient-text"
+                  style={{ fontSize: "clamp(44px, 10vw, 116px)" }}>
+                  Scale_
+                </span>
+              </h1>
+            </motion.div>
 
-                <div className="mb-4" style={{
-                  width: "42px", height: "42px",
-                  background: "rgba(48,96,255,0.08)",
-                  border: "1px solid rgba(48,96,255,0.2)",
-                  borderRadius: "8px",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  transition: "background 0.3s",
-                }}>
-                  <Icon style={{ width: "17px", height: "17px", color: "#6ab0ff" }} />
-                </div>
+            {/* Description + CTA */}
+            <motion.div
+              variants={fadeUpVariants}
+              className="flex flex-col items-start gap-8 sm:gap-10 mb-14 sm:mb-16 max-w-2xl"
+            >
+              <p style={{
+                fontFamily: "'DM Sans', sans-serif", fontWeight: 300,
+                fontSize: "clamp(13px, 2vw, 15px)",
+                lineHeight: 1.85, color: "rgba(255,255,255,0.42)",
+                maxWidth: "min(520px, 100%)",
+                textAlign: "left",
+              }}>
+                Where{" "}
+                <span style={{ color: "rgba(255,255,255,0.88)", fontWeight: 500 }}>raw ideas</span>{" "}
+                become ventures. We equip the next generation of founders with mentorship, capital
+                connections, and an ecosystem built to{" "}
+                <span style={{ color: "#6ab0ff", fontWeight: 500 }}>launch fast.</span>
+              </p>
 
-                <h3 style={{
-                  fontFamily: "'Syne', sans-serif", fontWeight: 700,
-                  fontSize: "clamp(14px, 2vw, 16px)",
-                  letterSpacing: "-0.3px", color: "#fff", marginBottom: "8px"
-                }}>
-                  {feature.title}
-                </h3>
+              {/* <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 flex-shrink-0 w-full sm:w-auto">
+                <motion.div className="cta-wrap" whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
+                  <Button
+                    size="lg"
+                    className="glow-blue group"
+                    style={{
+                      background: "#3060ff", color: "#ffffff",
+                      fontFamily: "'Space Mono', monospace", fontWeight: 700,
+                      fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase",
+                      borderRadius: "4px", padding: "14px 28px", border: "none", height: "auto",
+                    }}
+                  >
+                    Get Started
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </motion.div>
 
-                <p style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "clamp(12px, 1.8vw, 13px)",
-                  lineHeight: 1.7, color: "rgba(255,255,255,0.35)", fontWeight: 300,
-                }}>
-                  {feature.description}
-                </p>
+                <motion.div className="cta-wrap" whileHover={{ scale: 1.04, y: -2 }} whileTap={{ scale: 0.97 }}>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    style={{
+                      background: "transparent", color: "rgba(255,255,255,0.55)",
+                      fontFamily: "'Space Mono', monospace", fontWeight: 400,
+                      fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase",
+                      borderRadius: "4px", padding: "14px 28px",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      height: "auto", transition: "border-color 0.25s, color 0.25s",
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(106,176,255,0.5)"; e.currentTarget.style.color = "#6ab0ff"; }}
+                    onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";  e.currentTarget.style.color = "rgba(255,255,255,0.55)"; }}
+                  >
+                    Explore Dashboard
+                  </Button>
+                </motion.div>
+              </div> */}
+            </motion.div>
 
-                <div className="mt-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <ArrowRight style={{ width: "14px", height: "14px", color: "#6ab0ff" }} />
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+          </div>
+
+          <motion.div variants={fadeUpVariants} className="flex justify-center lg:justify-end">
+            <div className="w-full max-w-105 lg:max-w-95">
+              <EventPopup
+                event={{
+                  title: "StartupSprint 2.0",
+                  subtitle: "48-hour hackathon. Build your MVP, pitch to real investors & win big.",
+                  type: "Flagship",
+                  date: "April 25-26, 2026",
+                  venue: "HMRITM Campus, Hamidpur",
+                  prize: "₹50,000 in prizes",
+                  targetDate: "2026-04-25T09:00:00",
+                  spotsTotal: 200,
+                  spotsFilled: 80,
+                  registerLink: "#",
+                }}
+              />
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
 
       {/* Scroll Indicator */}
