@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import { useState, useEffect } from 'react';
 import Preloader from './components/Preloader/Preloader';
@@ -14,6 +14,16 @@ import Contact from './pages/contact/contact.jsx';
 
 import './App.css';
 import Footer from './components/Footer/Footer';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [hasVisitedInitial] = useState(() => localStorage.getItem('ecell_hmritm_visited') === 'true');
@@ -61,6 +71,7 @@ function App() {
       {/* Only render when loaders are done */}
       {!loading && !showLoadingAnimation && !showCircularPreloader && (
         <>
+          <ScrollToTop />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
