@@ -1,37 +1,5 @@
-/**
- * EventPopup.jsx
- * Upcoming Event Card — E-Cell Hero Section
- *
- * Usage:
- *   import EventPopup from "./EventPopup";
- *
- *   <EventPopup
- *     event={{
- *       title: "StartupSprint 2.0",
- *       subtitle: "48-hour hackathon. Build your MVP, pitch to real investors & win big.",
- *       type: "Flagship",
- *       date: "April 25–26, 2025",
- *       venue: "HMRITM Campus, Hamidpur",
- *       prize: "₹50,000 in prizes",
- *       targetDate: "2025-04-25T09:00:00",
- *       spotsTotal: 200,
- *       spotsFilled: 80,
- *       registerLink: "#",
- *     }}
- *   />
- *
- * Dependencies:
- *   - React (hooks: useState, useEffect)
- *   - Google Fonts: Bebas Neue + Space Grotesk (add to index.html or CSS)
- *       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
- */
-
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-
-/* ─────────────────────────────────────────
-   Sub-components
-───────────────────────────────────────── */
 
 function LiveDot() {
   return (
@@ -137,17 +105,17 @@ function injectKeyframes() {
 ───────────────────────────────────────── */
 
 const DEFAULT_EVENT = {
-  title: "StartupSprint 2.0",
+  title: "CAMPUS SHARK TANK",
   subtitle:
-    "48-hour hackathon. Build your MVP, pitch to real investors & win big.",
-  type: "Flagship",
-  date: "April 25–26, 2025",
+    "CAMPUS SHARK TANK is ECell's premier intra college stage for bold thinkers and future founders.",
+  type: "Pitch Competition",
+  date: "April 17, 2025",
   venue: "HMRITM Campus, Hamidpur",
   prize: "₹50,000 in prizes",
-  targetDate: "2025-04-25T09:00:00",
+  targetDate: "2025-04-17T09:00:00",
   spotsTotal: 200,
   spotsFilled: 80,
-  registerLink: "#",
+  registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc2f2M2D3eHWGR3mSULx0gZLQdmuLHs36Sthi5JrebbCHRntA/viewform",
 };
 
 /* ─────────────────────────────────────────

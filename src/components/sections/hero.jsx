@@ -369,7 +369,7 @@ export function Hero() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:items-center">
           <div className="text-left">
             {/* Status badge */}
-            <motion.div variants={fadeUpVariants} className="mb-6 sm:mb-8 flex flex-wrap items-center justify-start gap-2 sm:gap-3">
+            {/* <motion.div variants={fadeUpVariants} className="mb-6 sm:mb-8 flex flex-wrap items-center justify-start gap-2 sm:gap-3">
               <Badge
                 className="ticker-badge px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-[11px] tracking-[0.14em] sm:tracking-[0.18em] uppercase font-semibold"
                 style={{ fontFamily: "'Space Mono', monospace", color: "#6ab0ff", borderRadius: "4px" }}
@@ -384,7 +384,7 @@ export function Hero() {
               }}>
                 Est. 2018
               </span>
-            </motion.div>
+            </motion.div> */}
 
             {/* Hero Title */}
             <motion.div variants={heroTextVariants} className="mb-7 sm:mb-8 max-w-3xl">
@@ -473,16 +473,17 @@ export function Hero() {
             <div className="w-full max-w-105 lg:max-w-95">
               <EventPopup
                 event={{
-                  title: "StartupSprint 2.0",
-                  subtitle: "48-hour hackathon. Build your MVP, pitch to real investors & win big.",
-                  type: "Flagship",
-                  date: "April 25-26, 2026",
+                  title: "CAMPUS SHARK TANK",
+                  subtitle: "CAMPUS SHARK TANK is ECell's premier intra college stage for bold thinkers and future founders.",
+                  type: "Pitching Competition",
+                  date: "April 17th, 2026",
                   venue: "HMRITM Campus, Hamidpur",
                   prize: "₹50,000 in prizes",
-                  targetDate: "2026-04-25T09:00:00",
+                  targetDate: "2026-04-17T09:00:00",
                   spotsTotal: 200,
                   spotsFilled: 80,
-                  registerLink: "#",
+                  registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc2f2M2D3eHWGR3mSULx0gZLQdmuLHs36Sthi5JrebbCHRntA/viewform",
+
                 }}
               />
             </div>
