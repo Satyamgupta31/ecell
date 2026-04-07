@@ -6,6 +6,8 @@ import {
     Code2, Handshake, Flame, Star, ArrowRight, ChevronDown
 } from 'lucide-react';
 import { BackgroundBeams } from './bg-animation';
+import DirectorImage from '../../assets/About/Director.jpeg'
+import Logo from '../../assets/About/ecellHMR.png'
 
 
 /* ════════════════════ MAGNETIC BUTTON ══════════════════════════════════ */
@@ -155,10 +157,10 @@ const About = () => {
                         {/* mosaic */}
                         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .7 }} className="grid grid-cols-2 gap-3">
                             {[
-                                { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80", cls: "h-44 mt-10" },
-                                { src: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80", cls: "h-64" },
-                                { src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80", cls: "h-64" },
-                                { src: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=600&q=80", cls: "h-44 mb-10" },
+                                { src: DirectorImage, cls: "h-44 mt-10" },
+                                { src: DirectorImage, cls: "h-64" },
+                                { src: DirectorImage, cls: "h-64" },
+                                { src: DirectorImage, cls: "h-44 mb-10" },
                             ].map((img, i) => (
                                 <motion.div key={i} whileHover={{ scale: 1.04, rotate: i % 2 === 0 ? .5 : -.5 }} transition={{ type: 'spring', stiffness: 300 }}
                                     className={`${img.cls} rounded-2xl overflow-hidden border border-white/7 group`} style={{ boxShadow: '0 20px 60px rgba(0,0,0,.5)' }}>
@@ -170,6 +172,7 @@ const About = () => {
                         <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}>
                             <div className="space-y-4 font-body text-white/48 leading-[1.82] text-base mb-10">
                                 <p>Born from a spark of pure ambition in 2018, <span className="text-white font-medium">E-Cell HMRITM</span> wasn't just founded—it was forged. We are the architects of the future, the dreamers who do, and the catalysts for a new era of engineering.</p>
+                                
                                 <p>Every line of code, every pitch, and every late-night brainstorm is a testament to our belief that innovation isn't a goal; it's our heartbeat. We obliterate the gap between imagination and execution, creating a playground where <span className="text-blue-400">bold ideas</span> meet <span className="text-blue-400">brutal execution</span>.</p>
                             </div>
 
