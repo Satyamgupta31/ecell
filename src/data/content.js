@@ -80,24 +80,33 @@ export const upcomingEvents = [
   {
     id: 1,
     title: "Campus Shark Tank 2026",
-    date: "April 17th, 2025",
+    date: "April 17, 2026",
     description: "Organized by the E-Cell Society of HMRITM, this event is centered around the theme “Fuel the Future”, encouraging students to present innovative ideas and solutions.",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
+    location: "HMRITM Auditorium",
+    time: "10:00 AM - 04:00 PM",
+    // seats: 120,
   },
-  {
-    id: 2,
-    title: "Pitch Perfect",
-    date: "March 22, 2025",
-    description: "Demo day for incubated startups",
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
-  },
-  {
-    id: 3,
-    title: "Mentor Meetup",
-    date: "April 5, 2025",
-    description: "Connect with industry experts",
-    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400",
-  },
+  // {
+  //   id: 2,
+  //   title: "Pitch Perfect",
+  //   date: "April 12, 2026",
+  //   description: "Demo day for incubated startups",
+  //   image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
+  //   location: "Main Hall",
+  //   time: "09:00 AM - 05:00 PM",
+  //   seats: 80,
+  // },
+  // {
+  //   id: 3,
+  //   title: "Mentor Meetup",
+  //   date: "April 30, 2026",
+  //   description: "Connect with industry experts",
+  //   image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400",
+  //   location: "Conference Room",
+  //   time: "02:00 PM - 05:00 PM",
+  //   seats: 60,
+  // },
 ];
 
 // Journey timeline
