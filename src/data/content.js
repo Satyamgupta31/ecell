@@ -79,9 +79,9 @@ export const stats = [
 export const upcomingEvents = [
   {
     id: 1,
-    title: "Startup Weekend",
-    date: "March 15-17, 2025",
-    description: "54-hour startup building marathon",
+    title: "Campus Shark Tank 2026",
+    date: "April 17th, 2025",
+    description: "Organized by the E-Cell Society of HMRITM, this event is centered around the theme “Fuel the Future”, encouraging students to present innovative ideas and solutions.",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
   },
   {
