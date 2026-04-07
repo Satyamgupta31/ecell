@@ -1,7 +1,8 @@
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Star, Quote } from "lucide-react";
 import { testimonials } from "../../data/content";
-import { staggerContainer, fadeUpVariants } from "../../lib/animations";
+import { staggerContainer, slideInLeft, slideInRight } from "../../lib/animations";
 
 // ─── Star Rating ─────────────────────────────────────────────────────────────
 function StarRating({ rating }) {
@@ -29,14 +30,14 @@ function StarRating({ rating }) {
 function TestimonialCard({ testimonial, index }) {
   return (
     <motion.div
-      className="relative group mb-5"
+      className="relative group"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: index * 0.05 }}
       whileHover={{ scale: 1.025, zIndex: 10 }}
     >
       {/* Glow border on hover */}
-      <div className="absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+      <div className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
           background: "linear-gradient(135deg, rgba(48,96,255,0.5), rgba(106,176,255,0.2), rgba(48,96,255,0.4))",
           filter: "blur(0.5px)",
@@ -44,7 +45,7 @@ function TestimonialCard({ testimonial, index }) {
       />
 
       <div
-        className="relative rounded-2xl p-5 overflow-hidden transition-all duration-500"
+        className="relative w-80 sm:w-96 shrink-0 rounded-2xl p-5 overflow-hidden transition-all duration-500"
         style={{
           background: "rgba(10,12,24,0.92)",
           border: "1px solid rgba(255,255,255,0.06)",
@@ -68,7 +69,7 @@ function TestimonialCard({ testimonial, index }) {
 
         {/* Avatar + Name */}
         <div className="flex items-center gap-3 mb-4">
-          <div className="relative flex-shrink-0">
+          <div className="relative shrink-0">
             {/* Ring pulse */}
             <motion.div
               className="absolute inset-0 rounded-full"
@@ -101,14 +102,14 @@ function TestimonialCard({ testimonial, index }) {
           <StarRating rating={testimonial.rating} />
           {/* Shimmer bar */}
           <motion.div
-            className="h-[1px] w-0 group-hover:w-12 transition-all duration-500 rounded-full"
+            className="h-px w-0 group-hover:w-12 transition-all duration-500 rounded-full"
             style={{ background: "linear-gradient(90deg, transparent, #6ab0ff)" }}
           />
         </div>
 
         {/* Bottom edge glow line */}
         <motion.div
-          className="absolute bottom-0 left-4 right-4 h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute bottom-0 left-4 right-4 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           style={{ background: "linear-gradient(90deg, transparent, rgba(48,96,255,0.6), transparent)" }}
         />
       </div>
@@ -116,37 +117,53 @@ function TestimonialCard({ testimonial, index }) {
   );
 }
 
-// ─── Infinite Scroll Column ───────────────────────────────────────────────────
-function ScrollColumn({ items, direction = "down", speed = 30 }) {
-  const y = useMotionValue(0);
-  const doubled = [...items, ...items];
-  const ITEM_HEIGHT = 190; // approx card height + gap
-  const TOTAL = items.length * ITEM_HEIGHT;
+// ─── Infinite Scroll Row ─────────────────────────────────────────────────────
+function MarqueeRow({ items, direction = "left", speed = 30 }) {
+  const x = useMotionValue(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const doubled = [...items, ...items, ...items];
+  const CARD_AND_GAP_WIDTH = 408;
+  const TOTAL = items.length * CARD_AND_GAP_WIDTH;
+
+  useEffect(() => {
+    x.set(direction === "right" ? -TOTAL : 0);
+  }, [x, direction, TOTAL]);
 
   useAnimationFrame((_, delta) => {
-    const move = (delta / 1000) * speed;
-    let current = y.get();
+    if (isPaused || TOTAL <= 0) return;
 
-    if (direction === "down") {
-      current += move;
-      if (current >= TOTAL) current = 0;
-    } else {
+    const move = (delta / 1000) * speed;
+    let current = x.get();
+
+    if (direction === "left") {
       current -= move;
       if (current <= -TOTAL) current = 0;
+    } else {
+      current += move;
+      if (current >= 0) current = -TOTAL;
     }
-    y.set(current);
+
+    x.set(current);
   });
 
   return (
-    <div className="relative overflow-hidden h-[280px] sm:h-[350px] md:h-[450px] lg:h-[550px] xl:h-[620px]">
-      {/* Top fade */}
-      <div className="absolute top-0 left-0 right-0 h-16 sm:h-20 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, #000000, transparent)" }} />
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-20 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to top, #000000, transparent)" }} />
+    <div
+      className="relative overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
+    >
+      <div
+        className="absolute top-0 bottom-0 left-0 w-16 sm:w-24 z-10 pointer-events-none"
+        style={{ background: "linear-gradient(to right, #000000, transparent)" }}
+      />
+      <div
+        className="absolute top-0 bottom-0 right-0 w-16 sm:w-24 z-10 pointer-events-none"
+        style={{ background: "linear-gradient(to left, #000000, transparent)" }}
+      />
 
-      <motion.div style={{ y }}>
+      <motion.div className="flex gap-6 px-2 will-change-transform" style={{ x, width: "max-content" }}>
         {doubled.map((testimonial, index) => (
           <TestimonialCard
             key={`${testimonial.name}-${index}`}
@@ -161,9 +178,9 @@ function ScrollColumn({ items, direction = "down", speed = 30 }) {
 
 // ─── Main Section ────────────────────────────────────────────────────────────
 export function Testimonials() {
-  const leftColumn   = testimonials.filter((_, i) => i % 3 === 0);
-  const middleColumn = testimonials.filter((_, i) => i % 3 === 1);
-  const rightColumn  = testimonials.filter((_, i) => i % 3 === 2);
+  const firstRow = testimonials;
+  const secondRow = [...testimonials.slice(1), testimonials[0]];
+  const thirdRow = [...testimonials.slice(2), ...testimonials.slice(0, 2)];
 
   return (
     <section
@@ -271,32 +288,32 @@ export function Testimonials() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mx-auto mt-6 h-[1px] w-32"
+            className="mx-auto mt-6 h-px w-32"
             style={{ background: "linear-gradient(90deg, transparent, #3060ff, transparent)" }}
           />
         </motion.div>
 
-        {/* Three auto-scroll columns - Responsive */}
+        {/* Three auto-scroll rows */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+          className="space-y-6"
         >
-          {/* Col 1 — top to bottom */}
-          <motion.div variants={fadeUpVariants} className="sm:col-span-2 lg:col-span-1">
-            <ScrollColumn items={leftColumn.length >= 2 ? leftColumn : testimonials.slice(0, 3)} direction="down" speed={28} />
+          {/* Row 1 */}
+          <motion.div variants={slideInLeft}>
+            <MarqueeRow items={firstRow} direction="left" speed={28} />
           </motion.div>
 
-          {/* Col 2 — bottom to top (offset start) */}
-          <motion.div variants={fadeUpVariants} className="sm:mt-0 lg:mt-10">
-            <ScrollColumn items={middleColumn.length >= 2 ? middleColumn : testimonials.slice(1, 4)} direction="up" speed={22} />
+          {/* Row 2 */}
+          <motion.div variants={slideInRight} className="sm:pl-8 lg:pl-16">
+            <MarqueeRow items={secondRow} direction="right" speed={24} />
           </motion.div>
 
-          {/* Col 3 — top to bottom (different speed) - Show on all sizes */}
-          <motion.div variants={fadeUpVariants} className="lg:mt-10">
-            <ScrollColumn items={rightColumn.length >= 2 ? rightColumn : testimonials.slice(2, 5)} direction="down" speed={32} />
+          {/* Row 3 */}
+          <motion.div variants={slideInLeft} className="sm:pr-8 lg:pr-16">
+            <MarqueeRow items={thirdRow} direction="left" speed={22} />
           </motion.div>
         </motion.div>
       </div>
