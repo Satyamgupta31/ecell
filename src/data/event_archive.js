@@ -13,9 +13,9 @@ import g20_4 from '../assets/EventArchive/G20/g20-4.jpg';
 import g20_5 from '../assets/EventArchive/G20/g20-5.jpg';
 import jagruktaPoster from '../assets/EventArchive/Jagrukta Diwas/poster.jpg';
 import jagrukta1 from '../assets/EventArchive/Jagrukta Diwas/jagrukta-1.jpg';
-import ipl_1 from '../assets/EventArchive/IPL/ipl-1.jpg';
-import ipl_2 from '../assets/EventArchive/IPL/ipl-2.jpg';
-import ipl_3 from '../assets/EventArchive/IPL/ipl-3.jpg';
+import ipl_1 from '../assets/EventArchive/Ipl/ipl-1.jpg';
+import ipl_2 from '../assets/EventArchive/Ipl/ipl-2.jpg';
+import ipl_3 from '../assets/EventArchive/Ipl/ipl-3.jpg';
 
 export const eventsArchive = [
   {
