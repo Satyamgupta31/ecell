@@ -4,97 +4,136 @@ import Layout from '../../components/Layout/layout';
 import { Linkedin, Twitter, Mail, ArrowUpRight } from 'react-feather';
 
 import Shashank from '../../assets/TeamMember/shashank.jpeg'
+import ankushrana from '../../assets/TeamMember/ankushrana.jpg'
+import Aakriti from '../../assets/TeamMember/aakriti.jpeg'
+import AdityaKrChoubey from '../../assets/TeamMember/adityachoubey.jpeg'
+import Anish from '../../assets/TeamMember/anish.jpeg'
+import anushka from '../../assets/TeamMember/anushka.jpg'
+import Arnav from '../../assets/TeamMember/Arnav.png'
+import arvind from '../../assets/TeamMember/arvind.jpeg'
+import charvi from '../../assets/TeamMember/charvi.png'
+import chitrakshi from '../../assets/TeamMember/chitrakshi.jpeg'
+import daksh from '../../assets/TeamMember/daksh.jpg'
+import pfp from '../../assets/TeamMember/default.jpg'
+import divyansh from '../../assets/TeamMember/divyansh.jpg'
+import diya from '../../assets/TeamMember/diya.jpeg'
+import himanshu from '../../assets/TeamMember/himanshu.jpg'
+import ish from '../../assets/TeamMember/ish.JPG'
+import ishika from '../../assets/TeamMember/ishika.jpeg'
+import kirti from '../../assets/TeamMember/kirti.jpg'
+import krishna from '../../assets/TeamMember/krishna.jpg'
+import kritagya from '../../assets/TeamMember/kritigya.jpg'
+import latika from '../../assets/TeamMember/latika.jpeg'
+import madhu from '../../assets/TeamMember/madhu.jpeg'
+import manav from '../../assets/TeamMember/manav.jpeg'
+import manya from '../../assets/TeamMember/manya.jpeg'
+import nidhi from '../../assets/TeamMember/nidhi.jpg'
+import parth from '../../assets/TeamMember/parth.jpeg'
+import piyush from '../../assets/TeamMember/piyush.jpg'
+import prince from '../../assets/TeamMember/prince.png'
+import purav from '../../assets/TeamMember/purav.jpeg'
+import samvat from '../../assets/TeamMember/samvat.jpeg'
+import sarita from '../../assets/TeamMember/sarita.jpg'
+import satyam from '../../assets/TeamMember/satyam.jpeg'
+import shruti from '../../assets/TeamMember/shruti.jpg'
+import sujal from '../../assets/TeamMember/sujal.jpg'
+import tanya from '../../assets/TeamMember/tanya.jpg'
+import tushar from '../../assets/TeamMember/tushar.webp'
+import udhav from '../../assets/TeamMember/udhav.jpg'
+import male from '../../assets/TeamMember/male.png'
+import female from '../../assets/TeamMember/female.webp'
 
 const Team = () => {
-    const Coordinator = [
-         {
-            name : "Mr. Ankush Rana",
-            role : "Coordinator",
-            img : Shashank
+    const FacultyCoordinator = [
+        {
+            name: "Mr. Ankush Rana",
+            role: "Faculty Coordinator",
+            img: ankushrana
         }
-    ]
-    const Faculty = [
+    ];
+
+    const Coordinator = [
         {
             name : "Dr. Padmaja Panda",
             role : "Coordinator",
-            img : Shashank
+            img : female
         },
         {
             name : "Ms. Sarita",
             role : "Coordinator",
-            img : Shashank
+            img : sarita
         },
         {
             name : "Ms. Nidhi",
             role : "Coordinator",
-            img : Shashank
+            img : nidhi
         },
     ];
 
     const leadership = [
-        { name: "Satyam Gupta", role: "President", img:Shashank },
-        { name: "Manav Garg", role: "Vice President", img: Shashank },
+        { name: "Satyam Gupta", role: "President", img: satyam },
+        { name: "Manav Garg", role: "Vice President", img: manav },
     ];
 
     const heads = [
-        { name: "Piyush Bhandari", role: "Technical Head", img: Shashank },
-        { name: "Anish", role: "Content Head", img: Shashank },
-        { name: "Purav", role: "Social Media Head", img: Shashank },
-        { name: "Aditya Kr Choubey", role: "Operations Head", img: Shashank },
-        { name: "Divyansh Sharma", role: "Design Head", img: Shashank },
-        { name: "Shruti", role: "Public Relations & Outreach Team", img: Shashank },
-        { name: "Aakriti", role: "Research & Development Team", img: Shashank },
+        { name: "Piyush Bhandari", role: "Technical Head", img: piyush },
+        { name: "Anish", role: "Content Head", img: Anish },
+        { name: "Purav", role: "Social Media Head", img: purav },
+        { name: "Aditya Kr Choubey", role: "Operations Head", img: AdityaKrChoubey },
+        { name: "Divyansh Sharma", role: "Design Head", img: divyansh },
+        { name: "Shruti", role: "Public Relations & Outreach Team", img: shruti },
+        { name: "Aakriti", role: "Research & Development Team", img: Aakriti },
     ];
 
     const Technical = [
-        { name: "Arvind Singh", role: "Technical Team Member", img: Shashank },
+        { name: "Arvind Singh", role: "Technical Team Member", img: arvind },
         { name: "Shashank Pandey", role: "Technical Team Member", img: Shashank },
-        { name: "Aditya Kumar", role: "Technical Team Member", img: Shashank },
-        { name: "Tushar Sharma", role: "Technical Team Member", img: Shashank },
-        { name: "Himanshu", role: "Technical Team Member", img: Shashank }
+        { name: "Aditya Kumar", role: "Technical Team Member", img: AdityaKrChoubey },
+        { name: "Tushar Sharma", role: "Technical Team Member", img: tushar },
+        { name: "Himanshu", role: "Technical Team Member", img: himanshu },
     ];
     const Content = [
-        { name: "Kirti Khatri", role: "Content Team Member", img: Shashank },
-        { name: "Charvi", role: "Content Team Member", img: Shashank },
-        { name: "Sujal Bisht", role: "Content Team Member", img: Shashank },
-        { name: "Krishna Jain", role: "Content Team Member", img: Shashank },
+        { name: "Kirti Khatri", role: "Content Team Member", img: kirti },
+        { name: "Charvi", role: "Content Team Member", img: charvi },
+        { name: "Sujal Bisht", role: "Content Team Member", img: sujal },
+        { name: "Krishna Jain", role: "Content Team Member", img: krishna },
         
     ];
       const Social_Media = [
-        { name: "Manisha", role: "Social Media Team Member", img: Shashank },
-        { name: "Udhav Bhardwaj", role: "Social Media Team Member", img: Shashank },
-        { name: "Anushka Bharti", role: "Social Media Team Member", img: Shashank },
-        { name: "Dev", role: "Social Media Team Member", img: Shashank },
+        { name: "Manisha", role: "Social Media Team Member", img: female },
+        { name: "Udhav Bhardwaj", role: "Social Media Team Member", img: udhav },
+        { name: "Anushka Bharti", role: "Social Media Team Member", img: anushka },
+        { name: "Dev", role: "Social Media Team Member", img: male },
        
     ];
       const Operations = [
-        { name: "Latika", role: "Operations Team Member", img: Shashank },
-        { name: "Manya Jain", role: "Operations Team Member", img: Shashank },
-        { name: "Parth Dabas", role: "Operations Team Member", img: Shashank },
-        { name: "Samvat Dixit", role: "Operations Team Member", img: Shashank },
-        { name: "Chitrakshi", role: "Operations Team Member", img: Shashank },
-        { name: "Madhu", role: "Operations Team Member", img: Shashank },
+        { name: "Latika", role: "Operations Team Member", img: latika },
+        { name: "Manya Jain", role: "Operations Team Member", img: manya },
+        { name: "Parth Dabas", role: "Operations Team Member", img: parth },
+        { name: "Samvat Dixit", role: "Operations Team Member", img: samvat },
+        { name: "Chitrakshi", role: "Operations Team Member", img: chitrakshi },
+        { name: "Madhu", role: "Operations Team Member", img: madhu },
     ];
       const Design = [
-        { name: "Arnav", role: "Design Team Member", img: Shashank },
-        { name: "Utkarsh Singh", role: "Design Team Member", img: Shashank },
-        { name: "Diya", role: "Design Team Member", img: Shashank },
-        { name: "Tanya Sharma", role: "Design Team Member", img: Shashank },        
+        { name: "Arnav", role: "Design Team Member", img: Arnav },
+        { name: "Utkarsh Singh", role: "Design Team Member", img: male },
+        { name: "Diya", role: "Design Team Member", img: diya },
+        { name: "Tanya Sharma", role: "Design Team Member", img: tanya },        
     ];
       const PR = [
-        { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: Shashank },
-        { name: "Prince", role: "Public Relations & Outreach Team Member", img: Shashank },
-        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: Shashank },
-        { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: Shashank },
+        { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: female },
+        { name: "Prince", role: "Public Relations & Outreach Team Member", img: prince },
+        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: ishika },
+        { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: male },
       
         { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: Shashank },
       
     ];
       const Research_Development = [
-        { name: "Ish Pandey", role: "Research & Development Team", img: Shashank },
-        { name: "Daksh Gahlot", role: "Research & Development Team", img: Shashank },
-        { name: "Aradhya Gupta", role: "Research & Development Team", img: Shashank },
-        { name: "Kritagya Verma", role: "Research & Development Team", img: Shashank },
+        { name: "Ish Pandey", role: "Research & Development Team", img: ish },
+        { name: "Daksh Gahlot", role: "Research & Development Team", img: daksh },
+        { name: "Aradhya Gupta", role: "Research & Development Team", img: female },
+        { name: "Kritagya Verma", role: "Research & Development Team", img: kritagya },
         
     ];
 
@@ -120,7 +159,7 @@ const Team = () => {
         }
     };
 
-    const TeamCard = ({ member, isLarge = false }) => {
+    const TeamCard = ({ member, isLarge = false, priority = false }) => {
         const [isClicked, setIsClicked] = useState(false);
 
         return (
@@ -130,10 +169,13 @@ const Team = () => {
                 onClick={() => setIsClicked(!isClicked)}
             >
                 <div className={`relative overflow-hidden ${isLarge ? 'h-96' : 'h-80'}`}>
-                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
+                    <div className="absolute inset-0 bg-linear-to-t from-neutral-dark via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
                     <img
                         src={member.img}
                         alt={member.name}
+                        loading={priority ? 'eager' : 'lazy'}
+                        decoding="async"
+                        fetchPriority={priority ? 'high' : 'low'}
                         className={`w-full h-full object-cover grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110 transition-all duration-700 ease-out ${isClicked ? 'grayscale-0' : ''}`}
                     />
 
@@ -161,6 +203,20 @@ const Team = () => {
             </motion.div>
         );
     };
+
+    const teamSections = [
+        { title: "Faculty Coordinator", members: FacultyCoordinator, isLarge: true },
+        { title: "Event Coordinator", members: Coordinator, isLarge: true },
+        { title: "E-Cell Society Heads", members: leadership, isLarge: true },
+        { title: "Team Leads", members: heads, isLarge: true },
+        { title: "Technical Team", members: Technical, isLarge: false },
+        { title: "Content Team", members: Content, isLarge: false },
+        { title: "Social Media Team", members: Social_Media, isLarge: false },
+        { title: "Operations Team", members: Operations, isLarge: false },
+        { title: "Design Team", members: Design, isLarge: false },
+        { title: "Public Relations & Outreach Team", members: PR, isLarge: false },
+        { title: "Research & Development Team", members: Research_Development, isLarge: false },
+    ];
 
     return (
         <Layout>
@@ -190,176 +246,27 @@ const Team = () => {
                     </motion.p>
                 </div>
 
-                 {/* Faculty Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Faculty Coordinator</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                {teamSections.map((section, sectionIndex) => (
+                    <div className="mb-20" key={section.title}>
+                        <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">{section.title}</h2>
+                        <motion.div
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-50px" }}
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                         >
-                            {Coordinator.map((member, i) => (
-
-                            <TeamCard key={i} member={member} isLarge={true} />
-                        ))}
-                    </motion.div>
-                </div>
-                 {/* Faculty Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Event Coordinator</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                        >
-                            {Faculty.map((member, i) => (
-
-                            <TeamCard key={i} member={member} isLarge={true} />
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* Leadership Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">E-Cell Society Heads</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {leadership.map((member, i) => (
-                            <TeamCard key={i} member={member} isLarge={true} />
-                        ))}
-                    </motion.div>
-                </div>
-                 {/* Heads  Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Team Leads
-</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {heads.map((member, i) => (
-                            <TeamCard key={i} member={member} isLarge={true} />
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* Techical Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Technical Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Technical.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Content Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Content Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Content.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Social Media Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Social Media Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Social_Media.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Operations Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Operations Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Operations.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Design Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Design Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Design.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* PR Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Public Relations & Outreach Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {PR.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
-                {/* Research and Development Team Section */}
-                <div className="mb-20">
-                    <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-primary pl-4">Research & Development Team</h2>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-                    >
-                        {Research_Development.map((member, i) => (
-                            <TeamCard key={i} member={member} />
-                        ))}
-                    </motion.div>
-                </div>
+                            {section.members.map((member, memberIndex) => (
+                                <TeamCard
+                                    key={`${sectionIndex}-${member.name}-${memberIndex}`}
+                                    member={member}
+                                    isLarge={section.isLarge}
+                                    priority={sectionIndex === 0 && memberIndex === 0}
+                                />
+                            ))}
+                        </motion.div>
+                    </div>
+                ))}
 
                 {/* Join CTA */}
                 {/* <motion.div
