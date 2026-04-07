@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import './Event.css';
 import DarkVeil from './DarkVeil';
+import SharkTank from '../../assets/UpcomingEvent/sharktank.png';
 
 
 
@@ -14,19 +15,17 @@ const Events = () => {
 
   const filters = ['All Events', 'Workshops', 'Guest Lectures', 'Competitions', 'Hackathons'];
 
-  const unsplashImages = [
-    "1556761175-5973dc0f32e7",
-    "1517245386807-bb43f82c33c4",
-    "1507679799987-c73779587ccf",
-    "1581091870622-2a4e017feef1",
-    "1559136555-9303baea8ebd",
-    "1521737604893-d14cc237f11d",
-  ];
-
   const upcomingEvents = [
-    { title: "Mastering Business Model Canvas", category: "Workshop", date: "Oct 24", time: "10:00 AM - 02:00 PM", location: "Seminar Hall 1, HMRITM" },
-    { title: "Ideathon 2024: Pitch Perfect", category: "Competition", date: "Nov 05", time: "09:00 AM - 06:00 PM", location: "Main Auditorium, HMRITM" },
-    { title: "Annual Entrepreneurship Summit", category: "Summit", date: "Dec 12", time: "Full Day Event", location: "Innovation Lab, HMRITM" }
+    {
+      title: "Campus Shark Tank 2026",
+      category: "Competition",
+      date: "April 17",
+      time: "10:00 AM - 04:00 PM",
+      location: "HMRITM Auditorium",
+      image: SharkTank,
+    },
+    // { title: "Ideathon 2024: Pitch Perfect", category: "Competition", date: "Nov 05", time: "09:00 AM - 06:00 PM", location: "Main Auditorium, HMRITM", image: IdeathonImg },
+    // { title: "Annual Entrepreneurship Summit", category: "Summit", date: "Dec 12", time: "Full Day Event", location: "Innovation Lab, HMRITM", image: SummitImg }
   ];
 
   return (
@@ -45,7 +44,7 @@ const Events = () => {
       <div className="relative z-10">
       {/* Hero Section */}
       <section className="relative px-6 py-12 lg:px-20 lg:py-20 max-w-7xl mx-auto">
-        <div className="relative overflow-hidden rounded-3xl bg-transparent p-8 lg:p-16 border border-white/10">
+        {/* <div className="relative overflow-hidden rounded-3xl bg-transparent p-8 lg:p-16 border border-white/10">
           <div className="relative z-10 max-w-2xl">
             <span className="inline-block px-4 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-4">
               The Entrepreneur's Hub
@@ -66,7 +65,7 @@ const Events = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Filters */}
@@ -108,15 +107,17 @@ const Events = () => {
               className="glass-card group overflow-hidden border-white/5 hover:border-primary/50 transition-all"
             >
               <div className="relative h-56 overflow-hidden">
-                <img
-                  src={`https://images.unsplash.com/photo-${unsplashImages[i % unsplashImages.length]}?auto=format&fit=crop&w=800&q=80`}
-                  alt={event.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute top-4 left-4 flex flex-col items-center bg-white rounded-lg px-3 py-1 shadow-lg text-neutral-dark">
-                  <span className="text-xs font-bold uppercase">{event.date.split(' ')[0]}</span>
-                  <span className="text-xl font-black">{event.date.split(' ')[1]}</span>
-                </div>
+                {event.image ? (
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-slate-900/80 border border-dashed border-white/20 flex items-center justify-center text-xs text-slate-400 uppercase tracking-wider">
+                    Add imported event image
+                  </div>
+                )}
                 <div className="absolute bottom-4 left-4">
                   <span className="px-3 py-1 bg-background-dark/80 backdrop-blur-md text-white text-xs rounded-full border border-white/10">
                     {event.category}
@@ -135,9 +136,15 @@ const Events = () => {
                     <span>{event.location}</span>
                   </div>
                 </div>
-                <button className="w-full bg-white/5 hover:bg-primary hover:text-neutral-dark font-bold py-3 rounded-xl transition-all border border-white/10 hover:border-primary">
-                  Register Now
-                </button>
+                <a 
+               href="https://docs.google.com/forms/d/e/1FAIpQLSc2f2M2D3eHWGR3mSULx0gZLQdmuLHs36Sthi5JrebbCHRntA/viewform" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               >
+              <button className="w-full bg-white/5 hover:bg-primary hover:text-neutral-dark font-bold py-3 rounded-xl transition-all border border-white/10 hover:border-primary">
+               Register Now
+              </button>
+            </a>
               </div>
             </motion.div>
           ))}
@@ -154,7 +161,7 @@ const Events = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="relative group h-64 rounded-2xl overflow-hidden col-span-1 lg:col-span-2">
-              <img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform" src="https://images.unsplash.com/photo-1531058020387-3be344556be6" alt="Legacy" />
+              <img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform" src={SharkTank} alt="Legacy" />
               <div className="absolute inset-0 bg-linear-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
                 <span className="text-primary font-bold text-sm mb-1 uppercase tracking-wider">Impact Event</span>
                 <h4 className="text-xl font-bold mb-1 font-display">E-Summit '23 Highlights</h4>
@@ -162,14 +169,18 @@ const Events = () => {
               </div>
             </div>
             <div className="relative group h-64 rounded-2xl overflow-hidden">
-              <img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Legacy" />
+              <div className="w-full h-full bg-slate-900/80 border border-dashed border-white/20 flex items-center justify-center text-xs text-slate-400 uppercase tracking-wider">
+                Import legacy image
+              </div>
               <div className="absolute inset-0 bg-linear-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
                 <h4 className="text-lg font-bold mb-1 font-display">Code-to-Cash Hack</h4>
                 <p className="text-xs text-neutral-muted">48 Hours of Innovation</p>
               </div>
             </div>
             <div className="relative group h-64 rounded-2xl overflow-hidden">
-              <img className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=80" alt="Legacy" />
+              <div className="w-full h-full bg-slate-900/80 border border-dashed border-white/20 flex items-center justify-center text-xs text-slate-400 uppercase tracking-wider">
+                Import legacy image
+              </div>
               <div className="absolute inset-0 bg-linear-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
                 <h4 className="text-lg font-bold mb-1 font-display">Founder's Circle</h4>
                 <p className="text-xs text-neutral-muted">1:1 Mentorship Sessions</p>
