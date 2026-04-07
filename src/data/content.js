@@ -279,9 +279,27 @@ export const eventsGallery = [
   },
   {
     id: 4,
-    title: "E-Summit",
+    title: "IPL Auction",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
-    category: "Networking",
+    category: "Event",
+  },
+  {
+    id: 5,
+    title: "Appreciation",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
+    category: "Event",
+  },
+  {
+    id: 6,
+    title: "Interaction",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
+    category: "Event",
+  },
+  {
+    id: 7,
+    title: "Event",
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
+    category: "Event",
   },
 ];
 
