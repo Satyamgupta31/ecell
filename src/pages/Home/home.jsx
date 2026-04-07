@@ -6,7 +6,7 @@ import { Team } from "../../components/sections/team.jsx";
 import { EventsArchive } from "../../components/sections/events-archive.jsx";
 import { EventsGallery } from "../../components/sections/events-gallery.jsx";
 import { Registration } from "../../components/sections/registration.jsx";
-import { Winners } from "../../components/sections/winners.jsx";
+//import { Winners } from "../../components/sections/winners.jsx";
 import { Testimonials } from "../../components/sections/testimonials.jsx";
 import { Partners } from "../../components/sections/partners.jsx";
 import { Builders } from "../../components/sections/builders.jsx";
@@ -25,7 +25,7 @@ function Home() {
         <EventsArchive />
         <EventsGallery />
         <Registration />
-        <Winners />
+        {/*<Winners />*/}
         <Testimonials />
         <Partners />
         <Builders />
