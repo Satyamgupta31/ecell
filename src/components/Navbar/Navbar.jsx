@@ -45,7 +45,7 @@ const Navbar = () => {
 
             <li><NavLink to="/result" className={({ isActive }) => isActive ? "active" : ""} onClick={closeMobileMenu}>Result</NavLink></li>
 
-            <li><NavLink to="/Team" className={({ isActive }) => isActive ? "active" : ""} onClick={closeMobileMenu}>Team</NavLink></li>
+            <li><NavLink to="/team" className={({ isActive }) => isActive ? "active" : ""} onClick={closeMobileMenu}>Team</NavLink></li>
             <li><NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""} onClick={closeMobileMenu}>Contact Us</NavLink></li>
             <li className="mobile-nav-item"><NavLink to="/register" className="register-btn" onClick={closeMobileMenu}>Register</NavLink></li>
           </ul>
