@@ -1,10 +1,66 @@
 import { motion } from "framer-motion";
 import { MapPin, Calendar, Clock, Plane } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Badge } from "../ui/badge";
 import { upcomingEvents } from "../../data/content";
 import { staggerContainer, fadeUpVariants } from "../../lib/animations";
 
+// Calculate date-based animation progress from 1st of month to event date
+function getDateProgress(dateString, now) {
+  try {
+    const normalizedDate = dateString.replace(/(\d+)(st|nd|rd|th)/gi, "$1");
+    const eventDate = new Date(normalizedDate);
+    const today = now;
+    
+    const eventDay = eventDate.getDate();
+    const eventMonth = eventDate.getMonth();
+    const eventYear = eventDate.getFullYear();
+    
+    const todayDay = today.getDate();
+    const todayMonth = today.getMonth();
+    const todayYear = today.getFullYear();
+    
+    // Days from 1st to event date
+    const totalDays = eventDay - 1;
+    
+    // If today is in the same month and year as event
+    if (todayMonth === eventMonth && todayYear === eventYear) {
+      const daysSinceFirst = todayDay - 1;
+      const progress = Math.max(0, Math.min(100, (daysSinceFirst / totalDays) * 100));
+      return { progress };
+    } else if (today < eventDate) {
+      // Event is in the future, not yet started
+      return { progress: 0 };
+    } else {
+      // Event has passed
+      return { progress: 100 };
+    }
+  } catch (e) {
+    console.warn("Could not parse date:", dateString);
+    return { progress: 50 };
+  }
+}
+
+function getMonthStartLabel(dateString) {
+  const normalizedDate = dateString.replace(/(\d+)(st|nd|rd|th)/gi, "$1");
+  const eventDate = new Date(normalizedDate);
+  if (Number.isNaN(eventDate.getTime())) return "1st";
+
+  const monthLabel = eventDate.toLocaleString("en-US", { month: "long" });
+  return `1 ${monthLabel}`;
+}
+
 export function UpcomingEvents() {
+  const [now, setNow] = useState(new Date());
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(new Date());
+    }, 60000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="events" className="relative py-24 bg-black overflow-hidden">
       <div className="absolute inset-0 bg-radial-gradient opacity-30" />
@@ -33,13 +89,16 @@ export function UpcomingEvents() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {upcomingEvents.map((event) => (
-            <motion.div
-              key={event.id}
-              variants={fadeUpVariants}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="group relative bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/30 hover:glow-blue transition-all duration-300"
-            >
+          {upcomingEvents.map((event) => {
+            const progress = getDateProgress(event.date, now).progress;
+
+            return (
+              <motion.div
+                key={event.id}
+                variants={fadeUpVariants}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group relative bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/30 hover:glow-blue transition-all duration-300"
+              >
               {/* Boarding Pass Header */}
               <div className="p-6 pb-4">
                 <div className="flex justify-between items-start mb-4">
@@ -54,20 +113,24 @@ export function UpcomingEvents() {
                   {event.title}
                 </h3>
 
-                {/* Flight Line */}
+                {/* Flight Line - Date-based Progress */}
                 <div className="relative flex items-center gap-2 mb-4">
                   <div className="w-3 h-3 bg-blue-500 rounded-full" />
-                  <div className="flex-1 h-0.5 bg-gradient-to-r from-blue-500 to-blue-300 relative">
+                  <div className="flex-1 h-0.5 bg-linear-to-r from-blue-500 to-blue-300 relative">
                     <motion.div
                       className="absolute top-1/2 -translate-y-1/2"
-                      style={{ left: "0%" }}
-                      animate={{ left: ["0%", "100%"] }}
-                      transition={{ duration: 2.5, repeat: Infinity, ease: "linear", repeatDelay: 0.4 }}
+                      initial={{ left: "0%" }}
+                      animate={{ left: `${progress}%` }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                       <Plane className="w-4 h-4 text-blue-400 -translate-x-1/2" />
                     </motion.div>
                   </div>
                   <div className="w-3 h-3 bg-blue-300 rounded-full" />
+                </div>
+                {/* Date Progress Label */}
+                <div className="text-xs text-slate-500 mt-2">
+                  Departing: {getMonthStartLabel(event.date)} → Arriving: {event.date}
                 </div>
 
                 {/* Event Details */}
@@ -135,7 +198,8 @@ export function UpcomingEvents() {
                 </div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
       </div>
     </section>

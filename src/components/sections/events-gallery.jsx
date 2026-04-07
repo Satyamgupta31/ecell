@@ -1,10 +1,13 @@
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import { useRef, useState } from "react";
 import { eventsGallery } from "../../data/content";
-import logo from "../../assets/Logo/logo.png";
 import G20 from "../../assets/EventGallery/G20.jpeg";
 import Hacknovate from "../../assets/EventGallery/Hacknovate.jpeg";
 import Seminar from "../../assets/EventGallery/Seminar.jpeg";
+import ECellIPL from "../../assets/EventGallery/ecellipl.png";
+import Image1 from "../../assets/EventGallery/eventgallery1.png";
+import Image2 from "../../assets/EventGallery/eventGallery2.png";
+import Image3 from "../../assets/EventGallery/eventGallery3.png";
 
 // ─── Add more images here as you import them ───────────────────────────────
 // e.g.  import event2 from "../../assets/Logo/event2";
@@ -12,7 +15,7 @@ import Seminar from "../../assets/EventGallery/Seminar.jpeg";
 // Then add them to the array:  const localImages = [logo, event2, event3];
 
 
-const localImages = [G20, Hacknovate, Seminar, logo, logo, logo];
+const localImages = [G20, Hacknovate, Seminar, ECellIPL, Image1, Image2, Image3];
 
 
 export function EventsGallery() {

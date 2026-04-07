@@ -6,8 +6,8 @@ import { Globe, Share2, X, Linkedin, Instagram } from 'lucide-react';
 const Footer = () => {
     return (
         <footer className="bg-neutral-dark text-white pt-20 pb-10 px-6 lg:px-20 border-t border-white/5">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <div className="md:col-span-1">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div>
                     <div className="flex items-center gap-3 mb-6">
                         <div className="bg-primary p-1.5 rounded-lg">
                             <img src={Logo} alt="E-Cell Logo" className="h-8 w-auto" />

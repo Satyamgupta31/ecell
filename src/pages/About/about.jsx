@@ -7,8 +7,9 @@ import {
 } from 'lucide-react';
 import { BackgroundBeams } from './bg-animation';
 import DirectorImage from '../../assets/About/Director.jpeg'
-import Logo from '../../assets/About/ecellHMR.png'
-
+import Image2 from '../../assets/About/abouttop2.png';
+import Image3 from '../../assets/About/aboutTop3.png';
+import Image4 from '../../assets/About/aboutTop4.jpeg';
 
 /* ════════════════════ MAGNETIC BUTTON ══════════════════════════════════ */
 function MagneticBtn({ children, className, variant = 'primary', onClick }) {
@@ -81,9 +82,9 @@ function SectionLabel({ label, title, center = false }) {
 
 /* ════════════════════ DATA ════════════════════════════════════════════ */
 const STATS = [
-    { value: "50+", label: "Events Hosted", Icon: Trophy, grad: "from-yellow-500/20 to-yellow-600/5" },
-    { value: "20+", label: "Startups Mentored", Icon: Rocket, grad: "from-blue-500/20 to-blue-600/5" },
-    { value: "2000+", label: "Students Impacted", Icon: Users, grad: "from-green-500/20 to-green-600/5" },
+    { value: "4+", label: "Events Hosted", Icon: Trophy, grad: "from-yellow-500/20 to-yellow-600/5" },
+    { value: "7+", label: "Startups Mentored", Icon: Rocket, grad: "from-blue-500/20 to-blue-600/5" },
+    { value: "1500+", label: "Students Impacted", Icon: Users, grad: "from-green-500/20 to-green-600/5" },
     { value: "5+", label: "Years of Impact", Icon: Star, grad: "from-purple-500/20 to-purple-600/5" },
 ];
 const DIFF = [
@@ -157,10 +158,10 @@ const About = () => {
                         {/* mosaic */}
                         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .7 }} className="grid grid-cols-2 gap-3">
                             {[
-                                { src: DirectorImage, cls: "h-44 mt-10" },
+                                { src: Image2, cls: "h-44 mt-10" },
                                 { src: DirectorImage, cls: "h-64" },
-                                { src: DirectorImage, cls: "h-64" },
-                                { src: DirectorImage, cls: "h-44 mb-10" },
+                                { src: Image4, cls: "h-64" },
+                                { src: Image3, cls: "h-44 mb-10" },
                             ].map((img, i) => (
                                 <motion.div key={i} whileHover={{ scale: 1.04, rotate: i % 2 === 0 ? .5 : -.5 }} transition={{ type: 'spring', stiffness: 300 }}
                                     className={`${img.cls} rounded-2xl overflow-hidden border border-white/7 group`} style={{ boxShadow: '0 20px 60px rgba(0,0,0,.5)' }}>
@@ -171,9 +172,9 @@ const About = () => {
 
                         <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: .7 }}>
                             <div className="space-y-4 font-body text-white/48 leading-[1.82] text-base mb-10">
-                                <p>Born from a spark of pure ambition in 2018, <span className="text-white font-medium">E-Cell HMRITM</span> wasn't just founded—it was forged. We are the architects of the future, the dreamers who do, and the catalysts for a new era of engineering.</p>
+                                <p><span className="text-white font-medium">E-Cell HMRITM</span> started in 2018 as small workshops and awareness campaigns. Now, it is a lively center of innovation. It has changed over time by hosting competitions like Hacknovate 4.0 and the G20 Case Study, adapting to virtual events, and promoting initiatives like Cyber Jagrookta Diwas. With flagship events like E-Summit, it gives students the tools they need to make a difference in the real world by working together, being creative, following through, and being a strong entrepreneurial leader.</p>
                                 
-                                <p>Every line of code, every pitch, and every late-night brainstorm is a testament to our belief that innovation isn't a goal; it's our heartbeat. We obliterate the gap between imagination and execution, creating a playground where <span className="text-blue-400">bold ideas</span> meet <span className="text-blue-400">brutal execution</span>.</p>
+                                <p>Every line of code, every pitch, and every late-night brainstorm is a testament to our belief that innovation isn't a goal; it's our heartbeat. We obliterate the gap between imagination and execution, creating a playground where <span className="text-blue-400">bold ideas</span> meet <span className="text-blue-400">execution</span>.</p>
                             </div>
 
                             <div className="flex items-center gap-0">
@@ -344,7 +345,7 @@ const About = () => {
                 </div>
             </section>
             {/* ─── CTA ──────────────────────────────────────────────── */}
-            <section className="relative py-40 overflow-hidden">
+            {/* <section className="relative py-40 overflow-hidden">
                 <div className="absolute inset-0 bg-white/[0.01]" />
                 <div className="absolute inset-0 bg-grid opacity-38" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full opacity-[.07]"
@@ -393,7 +394,7 @@ const About = () => {
                         </div>
                     </motion.div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 };
