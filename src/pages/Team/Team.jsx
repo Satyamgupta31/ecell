@@ -3,53 +3,53 @@ import { motion } from 'framer-motion';
 import Layout from '../../components/Layout/layout';
 import { Linkedin, Twitter, Mail, ArrowUpRight } from 'react-feather';
 
-import Shashank from '../../assets/TeamMember/shashank.jpeg'
-import ankushrana from '../../assets/TeamMember/ankushrana.jpg'
-import Aakriti from '../../assets/TeamMember/aakriti.jpeg'
-import AdityaKrChoubey from '../../assets/TeamMember/adityachoubey.jpeg'
-import Anish from '../../assets/TeamMember/anish.jpeg'
-import anushka from '../../assets/TeamMember/anushka.jpg'
-import Arnav from '../../assets/TeamMember/Arnav.png'
-import arvind from '../../assets/TeamMember/arvind.jpeg'
-import charvi from '../../assets/TeamMember/charvi.png'
-import chitrakshi from '../../assets/TeamMember/chitrakshi.jpeg'
-import daksh from '../../assets/TeamMember/daksh.jpg'
-// import pfp from '../../assets/TeamMember/default.jpg'
-import divyansh from '../../assets/TeamMember/divyansh.jpg'
-import diya from '../../assets/TeamMember/diya.jpeg'
-import himanshu from '../../assets/TeamMember/himanshu.jpg'
-import ish from '../../assets/TeamMember/ish.JPG'
-import ishika from '../../assets/TeamMember/ishika.jpeg'
-import kirti from '../../assets/TeamMember/kirti.jpg'
-import krishna from '../../assets/TeamMember/krishna.jpg'
-import kritagya from '../../assets/TeamMember/kritigya.jpg'
-import latika from '../../assets/TeamMember/latika.jpeg'
-import madhu from '../../assets/TeamMember/madhu.jpeg'
-import manav from '../../assets/TeamMember/manav.jpeg'
-import manya from '../../assets/TeamMember/manya.jpeg'
-import nidhi from '../../assets/TeamMember/nidhi.jpg'
-import parth from '../../assets/TeamMember/parth.jpeg'
-import piyush from '../../assets/TeamMember/piyush.jpg'
-import prince from '../../assets/TeamMember/prince.png'
-import purav from '../../assets/TeamMember/purav.jpeg'
-import samvat from '../../assets/TeamMember/samvat.jpeg'
-import satyam from '../../assets/TeamMember/satyam.jpeg'
-import shruti from '../../assets/TeamMember/shruti.jpg'
-import sujal from '../../assets/TeamMember/sujal.jpg'
-import tanya from '../../assets/TeamMember/tanya.jpg'
-import tushar from '../../assets/TeamMember/tushar.webp'
-import udhav from '../../assets/TeamMember/udhav.jpg'
+// import Shashank from '../../assets/TeamMember/shashank.jpeg'
+// import ankushrana from '../../assets/TeamMember/ankushrana.jpg'
+// import Aakriti from '../../assets/TeamMember/aakriti.jpeg'
+// import AdityaKrChoubey from '../../assets/TeamMember/adityachoubey.jpeg'
+// import Anish from '../../assets/TeamMember/anish.jpeg'
+// import anushka from '../../assets/TeamMember/anushka.jpg'
+// import Arnav from '../../assets/TeamMember/Arnav.png'
+// import arvind from '../../assets/TeamMember/arvind.jpeg'
+// import charvi from '../../assets/TeamMember/charvi.png'
+// import chitrakshi from '../../assets/TeamMember/chitrakshi.jpeg'
+// import daksh from '../../assets/TeamMember/daksh.jpg'
+// // import pfp from '../../assets/TeamMember/default.jpg'
+// import divyansh from '../../assets/TeamMember/divyansh.jpg'
+// import diya from '../../assets/TeamMember/diya.jpeg'
+// import himanshu from '../../assets/TeamMember/himanshu.jpg'
+// import ish from '../../assets/TeamMember/ish.JPG'
+// import ishika from '../../assets/TeamMember/ishika.jpeg'
+// import kirti from '../../assets/TeamMember/kirti.jpg'
+// import krishna from '../../assets/TeamMember/krishna.jpg'
+// import kritagya from '../../assets/TeamMember/kritigya.jpg'
+// import latika from '../../assets/TeamMember/latika.jpeg'
+// import madhu from '../../assets/TeamMember/madhu.jpeg'
+// import manav from '../../assets/TeamMember/manav.jpeg'
+// import manya from '../../assets/TeamMember/manya.jpeg'
+// import nidhi from '../../assets/TeamMember/nidhi.jpg'
+// import parth from '../../assets/TeamMember/parth.jpeg'
+// import piyush from '../../assets/TeamMember/piyush.jpg'
+// import prince from '../../assets/TeamMember/prince.png'
+// import purav from '../../assets/TeamMember/purav.jpeg'
+// import samvat from '../../assets/TeamMember/samvat.jpeg'
+// import satyam from '../../assets/TeamMember/satyam.jpeg'
+// import shruti from '../../assets/TeamMember/shruti.jpg'
+// import sujal from '../../assets/TeamMember/sujal.jpg'
+// import tanya from '../../assets/TeamMember/tanya.jpg'
+// import tushar from '../../assets/TeamMember/tushar.webp'
+// import udhav from '../../assets/TeamMember/udhav.jpg'
 import male from '../../assets/TeamMember/male.png'
 import female from '../../assets/TeamMember/female.webp'
-import PandaMam from '../../assets/TeamMember/panda.jpeg'
-import Sarita from '../../assets/TeamMember/sarita2.jpg'
+// import PandaMam from '../../assets/TeamMember/panda.jpeg'
+// import Sarita from '../../assets/TeamMember/sarita2.jpg'
 
 const Team = () => {
     const FacultyCoordinator = [
         {
             name: "Mr. Ankush Rana",
             role: "Faculty Coordinator",
-            img: ankushrana
+            img: male
         }
     ];
 
@@ -57,84 +57,84 @@ const Team = () => {
         {
             name : "Dr. Padmaja Panda",
             role : "Coordinator",
-            img : PandaMam
+            img : female
         },
         {
             name : "Ms. Sarita",
             role : "Coordinator",
-            img : Sarita
+            img : female
         },
         {
             name : "Ms. Nidhi",
             role : "Coordinator",
-            img : nidhi
+            img : female
         },
     ];
 
     const leadership = [
-        { name: "Satyam Gupta", role: "President", img: satyam },
-        { name: "Manav Garg", role: "Vice President", img: manav },
+        { name: "Satyam Gupta", role: "President", img: male },
+        { name: "Manav Garg", role: "Vice President", img: male },
     ];
 
     const heads = [
-        { name: "Piyush Bhandari", role: "Technical Head", img: piyush },
-        { name: "Anish", role: "Content Head", img: Anish },
-        { name: "Purav", role: "Social Media Head", img: purav },
-        { name: "Aditya Kr Choubey", role: "Operations Head", img: AdityaKrChoubey },
-        { name: "Divyansh Sharma", role: "Design Head", img: divyansh },
-        { name: "Shruti", role: "Public Relations & Outreach Team", img: shruti },
-        { name: "Aakriti", role: "Research & Development Team", img: Aakriti },
+        { name: "Piyush Bhandari", role: "Technical Head", img: male },
+        { name: "Anish", role: "Content Head", img: male },
+        { name: "Purav", role: "Social Media Head", img: male },
+        { name: "Aditya Kr Choubey", role: "Operations Head", img: male },
+        { name: "Divyansh Sharma", role: "Design Head", img: male },
+        { name: "Shruti", role: "Public Relations & Outreach Team", img: female },
+        { name: "Aakriti", role: "Research & Development Team", img: female },
     ];
 
     const Technical = [
-        { name: "Arvind Singh", role: "Technical Team Member", img: arvind },
-        { name: "Shashank Pandey", role: "Technical Team Member", img: Shashank },
+        { name: "Arvind Singh", role: "Technical Team Member", img: male },
+        { name: "Shashank Pandey", role: "Technical Team Member", img: male },
         { name: "Aditya Kumar", role: "Technical Team Member", img: male },
-        { name: "Tushar Sharma", role: "Technical Team Member", img: tushar },
-        { name: "Himanshu", role: "Technical Team Member", img: himanshu },
+        { name: "Tushar Sharma", role: "Technical Team Member", img: male },
+        { name: "Himanshu", role: "Technical Team Member", img: male },
     ];
     const Content = [
-        { name: "Kirti Khatri", role: "Content Team Member", img: kirti },
-        { name: "Charvi", role: "Content Team Member", img: charvi },
-        { name: "Sujal Bisht", role: "Content Team Member", img: sujal },
-        { name: "Krishna Jain", role: "Content Team Member", img: krishna },
+        { name: "Kirti Khatri", role: "Content Team Member", img: female },
+        { name: "Charvi", role: "Content Team Member", img: female },
+        { name: "Sujal Bisht", role: "Content Team Member", img: male },
+        { name: "Krishna Jain", role: "Content Team Member", img: male },
 
         
     ];
       const Social_Media = [
         { name: "Manisha", role: "Social Media Team Member", img: female },
-        { name: "Udhav Bhardwaj", role: "Social Media Team Member", img: udhav },
-        { name: "Anushka Bharti", role: "Social Media Team Member", img: anushka },
+        { name: "Udhav Bhardwaj", role: "Social Media Team Member", img: male },
+        { name: "Anushka Bharti", role: "Social Media Team Member", img: female },
         { name: "Dev", role: "Social Media Team Member", img: male },
        
     ];
       const Operations = [
-        { name: "Latika", role: "Operations Team Member", img: latika },
-        { name: "Manya Jain", role: "Operations Team Member", img: manya },
-        { name: "Parth Dabas", role: "Operations Team Member", img: parth },
-        { name: "Samvat Dixit", role: "Operations Team Member", img: samvat },
-        { name: "Chitrakshi", role: "Operations Team Member", img: chitrakshi },
-        { name: "Madhu", role: "Operations Team Member", img: madhu },
+        { name: "Latika", role: "Operations Team Member", img: female },
+        { name: "Manya Jain", role: "Operations Team Member", img: female },
+        { name: "Parth Dabas", role: "Operations Team Member", img: male },
+        { name: "Samvat Dixit", role: "Operations Team Member", img: male },
+        { name: "Chitrakshi", role: "Operations Team Member", img: female },
+        { name: "Madhu", role: "Operations Team Member", img: female },
     ];
       const Design = [
-        { name: "Arnav", role: "Design Team Member", img: Arnav },
+        { name: "Arnav", role: "Design Team Member", img: male },
         { name: "Utkarsh Singh", role: "Design Team Member", img: male },
-        { name: "Diya", role: "Design Team Member", img: diya },
-        { name: "Tanya Sharma", role: "Design Team Member", img: tanya },        
+        { name: "Diya", role: "Design Team Member", img: female },
+        { name: "Tanya Sharma", role: "Design Team Member", img: female },        
     ];
       const PR = [
         { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: female },
-        { name: "Prince", role: "Public Relations & Outreach Team Member", img: prince },
-        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: ishika },
+        { name: "Prince", role: "Public Relations & Outreach Team Member", img: male },
+        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: male },
         { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: male },
       
       
     ];
       const Research_Development = [
-        { name: "Ish Pandey", role: "Research & Development Team", img: ish },
-        { name: "Daksh Gahlot", role: "Research & Development Team", img: daksh },
+        { name: "Ish Pandey", role: "Research & Development Team", img: male },
+        { name: "Daksh Gahlot", role: "Research & Development Team", img: male },
         { name: "Aradhya Gupta", role: "Research & Development Team", img: female },
-        { name: "Kritagya Verma", role: "Research & Development Team", img: kritagya },
+        { name: "Kritagya Verma", role: "Research & Development Team", img: male },
         
     ];
 
