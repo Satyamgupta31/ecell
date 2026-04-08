@@ -111,7 +111,7 @@ const DEFAULT_EVENT = {
   type: "Pitch Competition",
   date: "April 17, 2025",
   venue: "HMRITM Campus, Hamidpur",
-  prize: "₹50,000 in prizes",
+  prize: "Exciting prizes and rewards!",
   targetDate: "2025-04-17T09:00:00",
   spotsTotal: 200,
   spotsFilled: 80,

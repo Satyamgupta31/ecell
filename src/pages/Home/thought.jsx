@@ -28,7 +28,7 @@ const cardVariants = {
 const testimonials = [
   {
     id: 1,
-    name: "Vivek Pandey",
+    name: "Dr. Vivek Pandey",
     role: "Director of HMRITM",
     image: DirectorImage,
     quote:
@@ -36,7 +36,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Shalini Gupta",
+    name: "Dr. Shalini Gupta",
     role: "Deputy Director of HMRITM",
     image: FemaleImage,
     quote:
