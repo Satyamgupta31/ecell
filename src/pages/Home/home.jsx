@@ -10,6 +10,7 @@ import { EventsGallery } from "../../components/sections/events-gallery.jsx";
 import { Testimonials } from "../../components/sections/testimonials.jsx";
 import { Partners } from "../../components/sections/partners.jsx";
 import { Builders } from "../../components/sections/builders.jsx";
+import {Thought} from "./thought.jsx"
 
 // import Contact from '../../pages/contact/contact.jsx';
 
@@ -26,6 +27,7 @@ function Home() {
         <EventsGallery />
         {/* <Registration /> */}
         {/* <Winners /> */}
+        <Thought/>
         <Testimonials />
         <Partners />
         <Builders />
