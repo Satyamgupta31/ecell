@@ -14,7 +14,7 @@ import arvind from '../../assets/TeamMember/arvind.jpeg'
 import charvi from '../../assets/TeamMember/charvi.png'
 import chitrakshi from '../../assets/TeamMember/chitrakshi.jpeg'
 import daksh from '../../assets/TeamMember/daksh.jpg'
-import pfp from '../../assets/TeamMember/default.jpg'
+// import pfp from '../../assets/TeamMember/default.jpg'
 import divyansh from '../../assets/TeamMember/divyansh.jpg'
 import diya from '../../assets/TeamMember/diya.jpeg'
 import himanshu from '../../assets/TeamMember/himanshu.jpg'
@@ -42,6 +42,7 @@ import tushar from '../../assets/TeamMember/tushar.webp'
 import udhav from '../../assets/TeamMember/udhav.jpg'
 import male from '../../assets/TeamMember/male.png'
 import female from '../../assets/TeamMember/female.webp'
+import PandaMam from '../../assets/TeamMember/panda.jpeg'
 
 const Team = () => {
     const FacultyCoordinator = [
@@ -56,7 +57,7 @@ const Team = () => {
         {
             name : "Dr. Padmaja Panda",
             role : "Coordinator",
-            img : female
+            img : PandaMam
         },
         {
             name : "Ms. Sarita",
@@ -88,7 +89,7 @@ const Team = () => {
     const Technical = [
         { name: "Arvind Singh", role: "Technical Team Member", img: arvind },
         { name: "Shashank Pandey", role: "Technical Team Member", img: Shashank },
-        { name: "Aditya Kumar", role: "Technical Team Member", img: AdityaKrChoubey },
+        { name: "Aditya Kumar", role: "Technical Team Member", img: male },
         { name: "Tushar Sharma", role: "Technical Team Member", img: tushar },
         { name: "Himanshu", role: "Technical Team Member", img: himanshu },
     ];
