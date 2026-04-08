@@ -65,12 +65,11 @@ export function EventsArchive() {
           className="text-center mb-12"
         >
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-6">
-            Explore our IPL journey through time - a gallery of matchday
-            moments and crowd energy
+           A glimpse into our E-Cell activities workshops, events, and the vibrant community we have built.
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button className="rounded-full bg-blue-600 hover:bg-blue-500 px-6 py-5 glow-blue">
-              View All IPL Moments
+              View All Events
             </Button>
           </motion.div>
         </motion.div>
@@ -87,6 +86,7 @@ export function EventsArchive() {
             animate={{ rotate: -360 }}
             transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
           />
+          
 
           {/* Center Logo */}
           <motion.div
