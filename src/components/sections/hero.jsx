@@ -479,7 +479,7 @@ Inspiring students to think bigger and {" "}
                   type: "Pitching Competition",
                   date: "April 17th, 2026",
                   venue: "HMRITM Campus, Hamidpur",
-                  prize: "₹50,000 in prizes",
+                  prize: "Exciting prizes and rewards",
                   targetDate: "2026-04-17T09:00:00",
                   spotsTotal: 200,
                   spotsFilled: 80,
