@@ -375,7 +375,7 @@ export const builders = [
     {
     name: "Shashank Pandey",
     role: "Systems Engineer",
-    image: shashankImg,
+    //image: shashankImg,
    count: "Technical Member",
     holo: "0002",
     tech: ["Java Script", "Java ", "React", "Node.js"],
@@ -392,7 +392,7 @@ export const builders = [
     title: "Arvind Singh",
     description: "Students with bold ideas ready to change the world",
     count: "Technical Member",
-      image: arvindImg
+      //image: arvindImg
 
    
   },
@@ -401,7 +401,7 @@ export const builders = [
     title: "Piyush Bhandari",
     description: "Technical experts guiding the next generation",
     count: "Technical Head",
-     image: piyushImg
+    // image: piyushImg
 
   },
   {
