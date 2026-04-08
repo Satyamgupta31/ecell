@@ -119,13 +119,13 @@ export function Thought() {
           className="mb-16 md:mb-24 flex flex-col items-center justify-center text-center"
         >
           <p
-            className="text-[2.85rem] leading-none font-semibold uppercase tracking-[0.18em] sm:text-6xl lg:text-[5rem]"
+            className="text-[clamp(1.9rem,10vw,5rem)] leading-none font-semibold uppercase tracking-[0.12em] sm:tracking-[0.16em]"
             style={{
               color: "#caa45c",
               fontFamily: "'Oswald', 'Arial Narrow', sans-serif",
             }}
           >
-            Testimonial
+            TESTIMONIALS
           </p>
         </motion.div>
 
