@@ -33,7 +33,6 @@ import piyush from '../../assets/TeamMember/piyush.jpg'
 import prince from '../../assets/TeamMember/prince.png'
 import purav from '../../assets/TeamMember/purav.jpeg'
 import samvat from '../../assets/TeamMember/samvat.jpeg'
-import sarita from '../../assets/TeamMember/sarita.jpg'
 import satyam from '../../assets/TeamMember/satyam.jpeg'
 import shruti from '../../assets/TeamMember/shruti.jpg'
 import sujal from '../../assets/TeamMember/sujal.jpg'
@@ -43,6 +42,7 @@ import udhav from '../../assets/TeamMember/udhav.jpg'
 import male from '../../assets/TeamMember/male.png'
 import female from '../../assets/TeamMember/female.webp'
 import PandaMam from '../../assets/TeamMember/panda.jpeg'
+import Sarita from '../../assets/TeamMember/sarita2.jpg'
 
 const Team = () => {
     const FacultyCoordinator = [
@@ -62,7 +62,7 @@ const Team = () => {
         {
             name : "Ms. Sarita",
             role : "Coordinator",
-            img : sarita
+            img : Sarita
         },
         {
             name : "Ms. Nidhi",
@@ -206,8 +206,8 @@ const Team = () => {
     };
 
     const teamSections = [
-        { title: "Faculty Coordinator", members: FacultyCoordinator, isLarge: true },
-        { title: "Event Coordinator", members: Coordinator, isLarge: true },
+        { title: "E-Cell Coordinator", members: FacultyCoordinator, isLarge: true },
+        { title: "Faculty Coordinator", members: Coordinator, isLarge: true },
         { title: "E-Cell Society Heads", members: leadership, isLarge: true },
         { title: "Team Leads", members: heads, isLarge: true },
         { title: "Technical Team", members: Technical, isLarge: false },
@@ -235,7 +235,7 @@ const Team = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-6 font-display"
                     >
-                        Meet the Squad
+                        Meet the Members
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0 }}
