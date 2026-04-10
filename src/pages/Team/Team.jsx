@@ -74,7 +74,7 @@ const Team = () => {
 
     const leadership = [
         { name: "Satyam Gupta", role: "President", img: male },
-        { name: "Manav Garg", role: "Vice President", img: male },
+        { name: "Manav Garg", role: "President", img: male },
     ];
 
     const heads = [
