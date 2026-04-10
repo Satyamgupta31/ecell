@@ -56,19 +56,19 @@ const Team = () => {
 
     const Coordinator = [
         {
-            name: "Dr. Padmaja Panda",
-            role: "Coordinator",
-            img: female
+            name : "female",
+            role : "Coordinator",
+            img : female
         },
         {
-            name: "Ms. Sarita",
-            role: "Coordinator",
-            img: female
+            name : "female",
+            role : "Coordinator",
+            img : female
         },
         {
-            name: "Ms. Nidhi",
-            role: "Coordinator",
-            img: female
+            name : "female",
+            role : "Coordinator",
+            img : female
         },
     ];
 
@@ -125,8 +125,8 @@ const Team = () => {
     ];
     const PR = [
         { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: female },
-        { name: "Prince", role: "Public Relations & Outreach Team Member", img: male },
-        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: male },
+        { name: "Prince", role: "Public Relations & Outreach Team Member", img: prince },
+        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: ishika },
         { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: male },
 
 
@@ -135,8 +135,8 @@ const Team = () => {
         { name: "Ish Pandey", role: "Research & Development Team", img: male },
         { name: "Daksh Gahlot", role: "Research & Development Team", img: male },
         { name: "Aradhya Gupta", role: "Research & Development Team", img: female },
-        { name: "Kritagya Verma", role: "Research & Development Team", img: male },
-
+        { name: "Kritagya Verma", role: "Research & Development Team", img: kritagya },
+        
     ];
 
     const containerVariants = {

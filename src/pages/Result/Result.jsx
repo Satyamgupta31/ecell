@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { SparklesText } from './sparkle.jsx';
 
 const eventResults = [
   {
@@ -109,9 +110,13 @@ export default function Result() {
     <section className="min-h-screen bg-linear-to-br from-black via-[#041527] to-[#0a1e35] px-4 pb-16 pt-28 text-white sm:pt-32 md:px-8 md:pt-36 lg:px-10">
       <div className="mx-auto w-full max-w-6xl">
         <div className="mb-10 text-center">
-          <h1 className="mb-3 text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
+          <SparklesText 
+            className="text-3xl sm:text-4xl md:text-5xl"
+            colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
+            sparklesCount={15}
+          >
             Event Results
-          </h1>
+          </SparklesText>
           <p className="mx-auto max-w-2xl text-sm text-blue-100 sm:text-base">
             Official result declarations for E-Cell events. Update the winner data in this file whenever a new event result is announced.
           </p>
@@ -162,7 +167,13 @@ export default function Result() {
           <div className="max-h-[calc(100vh-7rem)] w-full max-w-5xl overflow-y-auto rounded-2xl border border-slate-600/50 bg-[#0b1727] p-4 sm:max-h-[calc(100vh-8rem)] sm:p-6 md:p-8">
             <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
-                <h2 className="text-xl font-black text-white sm:text-2xl md:text-3xl">{selectedEvent.eventName}</h2>
+                <SparklesText 
+                  className="text-xl sm:text-2xl md:text-3xl"
+                  colors={{ first: "#9E7AFF", second: "#FE8BBB" }}
+                  sparklesCount={12}
+                >
+                  {selectedEvent.eventName}
+                </SparklesText>
                 <p className="mt-1 text-sm text-blue-200">Tap each card to flip and reveal the result.</p>
               </div>
               <button
