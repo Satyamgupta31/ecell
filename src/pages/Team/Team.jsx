@@ -125,8 +125,8 @@ const Team = () => {
     ];
     const PR = [
         { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: female },
-        { name: "Prince", role: "Public Relations & Outreach Team Member", img: prince },
-        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: ishika },
+        { name: "Prince", role: "Public Relations & Outreach Team Member", img: male },
+        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: female },
         { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: male },
 
 
@@ -135,7 +135,7 @@ const Team = () => {
         { name: "Ish Pandey", role: "Research & Development Team", img: male },
         { name: "Daksh Gahlot", role: "Research & Development Team", img: male },
         { name: "Aradhya Gupta", role: "Research & Development Team", img: female },
-        { name: "Kritagya Verma", role: "Research & Development Team", img: kritagya },
+        { name: "Kritagya Verma", role: "Research & Development Team", img: female },
         
     ];
 
