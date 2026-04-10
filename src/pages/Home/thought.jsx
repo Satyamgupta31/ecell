@@ -1,29 +1,8 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion, useMotionValue, useMotionTemplate } from "framer-motion";
+import { ChevronLeft, ChevronRight, Quote, Sparkles } from "lucide-react";
 import DirectorImage from "../../assets/About/Director.jpeg";
 import FemaleImage from "../../assets/TeamMember/female.webp";
-
-const cardVariants = {
-  initial: (direction) => ({
-    opacity: 0,
-    x: direction > 0 ? 48 : -48,
-    scale: 0.985,
-    filter: "blur(2px)",
-  }),
-  animate: {
-    opacity: 1,
-    x: 0,
-    scale: 1,
-    filter: "blur(0px)",
-  },
-  exit: (direction) => ({
-    opacity: 0,
-    x: direction > 0 ? -48 : 48,
-    scale: 0.985,
-    filter: "blur(2px)",
-  }),
-};
 
 const testimonials = [
   {
@@ -44,10 +23,50 @@ const testimonials = [
   },
 ];
 
+const slideVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 100 : -100,
+    opacity: 0,
+    scale: 0.95,
+    filter: "blur(8px)",
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.8,
+      type: "spring",
+      bounce: 0.3,
+    },
+  },
+  exit: (direction) => ({
+    x: direction < 0 ? 100 : -100,
+    opacity: 0,
+    scale: 0.95,
+    filter: "blur(8px)",
+    transition: {
+      duration: 0.4,
+      ease: "easeInOut",
+    },
+  }),
+};
+
 export function Thought() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
   const activeTestimonial = testimonials[activeIndex];
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
 
   const showPrevious = () => {
     setDirection(-1);
@@ -59,10 +78,19 @@ export function Thought() {
     setActiveIndex((current) => (current + 1) % testimonials.length);
   };
 
+  useEffect(() => {
+    if (isHovered) return;
+    const timer = setInterval(() => {
+      setDirection(1);
+      setActiveIndex((current) => (current + 1) % testimonials.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [activeIndex, isHovered]);
+
   return (
     <section id="thought" className="relative overflow-hidden bg-black py-16 sm:py-20 lg:py-24">
       <div
-        className="absolute inset-0 pointer-events-none opacity-80"
+        className="absolute inset-0 pointer-events-none opacity-80 z-0"
         style={{
           background:
             "radial-gradient(circle at top, rgba(36, 96, 255, 0.14) 0%, transparent 34%), radial-gradient(circle at 50% 0%, rgba(202, 164, 92, 0.08) 0%, transparent 26%), radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.04) 0%, transparent 24%), radial-gradient(circle at 15% 80%, rgba(36, 96, 255, 0.06) 0%, transparent 22%)",
@@ -70,211 +98,193 @@ export function Thought() {
       />
 
       <motion.div
-        className="absolute left-[8%] top-[12%] h-32 w-32 rounded-full pointer-events-none"
+        className="absolute left-[8%] top-[12%] h-32 w-32 rounded-full pointer-events-none z-0"
         style={{ background: "radial-gradient(circle, rgba(202,164,92,0.12) 0%, transparent 70%)" }}
         animate={{ y: [0, -16, 0], x: [0, 10, 0], opacity: [0.45, 0.75, 0.45] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute right-[10%] bottom-[8%] h-40 w-40 rounded-full pointer-events-none"
+        className="absolute right-[10%] bottom-[8%] h-40 w-40 rounded-full pointer-events-none z-0"
         style={{ background: "radial-gradient(circle, rgba(36,96,255,0.10) 0%, transparent 70%)" }}
         animate={{ y: [0, 18, 0], x: [0, -12, 0], opacity: [0.35, 0.65, 0.35] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-120px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="text-center"
+          className="mb-16 md:mb-24 flex flex-col items-center justify-center text-center"
         >
           <p
-            className="text-[2.85rem] leading-none font-semibold uppercase tracking-[0.18em] sm:text-6xl lg:text-[5rem]"
+            className="text-[clamp(1.9rem,10vw,5rem)] leading-none font-semibold uppercase tracking-[0.12em] sm:tracking-[0.16em]"
             style={{
               color: "#caa45c",
               fontFamily: "'Oswald', 'Arial Narrow', sans-serif",
             }}
           >
-            Testimonial
+            TESTIMONIALS
           </p>
-
-          <div className="relative mx-auto mt-10 max-w-6xl">
-            <div className="grid grid-cols-1 items-center gap-4 lg:grid-cols-[72px_minmax(0,1fr)_72px] lg:gap-6">
-              <div className="hidden justify-center lg:flex">
-                <button
-                  type="button"
-                  aria-label="Previous testimonial"
-                  onClick={showPrevious}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-950/90 text-[#caa45c] shadow-[0_10px_28px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-105 hover:border-blue-400/30"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-              </div>
-
-              <motion.article
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                whileHover={{ y: -4, scale: 1.005 }}
-                viewport={{ once: true, margin: "-120px" }}
-                transition={{ duration: 0.65, ease: "easeOut" }}
-                className="relative overflow-hidden rounded-[1.9rem] bg-[#132742] px-5 py-10 shadow-[0_30px_90px_rgba(0,0,0,0.38)] ring-1 ring-white/5 sm:px-10 sm:py-12 lg:px-16 lg:py-16"
-              >
-                <div
-                  className="absolute inset-0 opacity-30"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.05), transparent 38%), radial-gradient(circle at 50% 0%, rgba(36,96,255,0.18) 0%, transparent 34%)",
-                  }}
-                />
-                <motion.div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background: "linear-gradient(110deg, transparent 10%, rgba(255,255,255,0.05) 45%, transparent 60%)",
-                  }}
-                  animate={{ x: ["-30%", "30%"] }}
-                  transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                />
-
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeTestimonial.id}
-                    custom={direction}
-                    variants={cardVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                    transition={{ type: "spring", stiffness: 170, damping: 22, mass: 0.9 }}
-                    className="relative z-10 mx-auto max-w-3xl text-center text-white"
-                  >
-                    <div className="relative mx-auto mb-6 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-[rgba(202,164,92,0.35)] bg-[#0f1f33] shadow-[0_12px_28px_rgba(0,0,0,0.22)] sm:h-28 sm:w-28">
-                      <motion.div
-                        className="absolute inset-0 rounded-full"
-                        style={{ border: "1px solid rgba(202,164,92,0.38)" }}
-                        animate={{ scale: [1, 1.18, 1], opacity: [0.45, 0.1, 0.45] }}
-                        transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
-                      />
-                      <img
-                        src={activeTestimonial.image}
-                        alt={activeTestimonial.name}
-                        className="h-full w-full object-cover"
-                        style={{ transform: "translateZ(0)" }}
-                      />
-                    </div>
-
-                    <h3
-                      className="text-2xl font-semibold leading-tight sm:text-3xl lg:text-[2.15rem]"
-                      style={{ color: "#caa45c" }}
-                    >
-                      {activeTestimonial.name}
-                    </h3>
-                    <p className="mt-1 text-sm font-medium text-[#e0bb79] sm:text-base">
-                      {activeTestimonial.role}
-                    </p>
-
-                    <div className="relative mt-8 px-4 sm:px-8 lg:px-10">
-                      <motion.div
-                        className="absolute left-0 top-0"
-                        animate={{ rotate: [0, 8, 0], y: [0, -2, 0] }}
-                        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <Quote
-                          className="h-8 w-8 text-[#caa45c] opacity-90 sm:h-10 sm:w-10"
-                          strokeWidth={2.2}
-                        />
-                      </motion.div>
-                      <p className="mx-auto max-w-4xl text-base leading-8 text-white/95 sm:text-lg sm:leading-9">
-                        {activeTestimonial.quote}
-                      </p>
-                      <motion.div
-                        className="absolute bottom-0 right-0"
-                        animate={{ rotate: [180, 172, 180], y: [0, 2, 0] }}
-                        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <Quote
-                          className="h-8 w-8 text-[#caa45c] opacity-90 sm:h-10 sm:w-10"
-                          strokeWidth={2.2}
-                        />
-                      </motion.div>
-                    </div>
-
-                    <motion.div
-                      className="mt-6 hidden items-center justify-center gap-2 lg:flex"
-                      initial={false}
-                      animate={{ opacity: 1 }}
-                    >
-                      {testimonials.map((slide, index) => (
-                        <motion.button
-                          key={slide.id}
-                          type="button"
-                          aria-label={`Show testimonial ${index + 1}`}
-                          onClick={() => {
-                            setDirection(index > activeIndex ? 1 : -1);
-                            setActiveIndex(index);
-                          }}
-                          whileHover={{ scale: 1.2 }}
-                          whileTap={{ scale: 0.92 }}
-                          className={`h-2 rounded-full transition-all duration-300 ${
-                            index === activeIndex ? "w-7 bg-[#caa45c]" : "w-2 bg-white/25"
-                          }`}
-                        />
-                      ))}
-                    </motion.div>
-                  </motion.div>
-                </AnimatePresence>
-              </motion.article>
-
-              <div className="hidden justify-center lg:flex">
-                <button
-                  type="button"
-                  aria-label="Next testimonial"
-                  onClick={showNext}
-                  className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-950/90 text-[#caa45c] shadow-[0_10px_28px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-105 hover:border-blue-400/30"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              </div>
-            </div>
-
-            <div className="relative mt-6 flex items-center justify-between lg:hidden">
-              <button
-                type="button"
-                aria-label="Previous testimonial"
-                onClick={showPrevious}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-950/90 text-[#caa45c] shadow-[0_10px_28px_rgba(0,0,0,0.35)]"
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </button>
-
-              <div className="flex items-center gap-2">
-                {testimonials.map((slide, index) => (
-                  <button
-                    key={slide.id}
-                    type="button"
-                    aria-label={`Show testimonial ${index + 1}`}
-                    onClick={() => {
-                      setDirection(index > activeIndex ? 1 : -1);
-                      setActiveIndex(index);
-                    }}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      index === activeIndex ? "w-7 bg-[#caa45c]" : "w-2 bg-white/25"
-                    }`}
-                  />
-                ))}
-              </div>
-
-              <button
-                type="button"
-                aria-label="Next testimonial"
-                onClick={showNext}
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-slate-950/90 text-[#caa45c] shadow-[0_10px_28px_rgba(0,0,0,0.35)]"
-              >
-                <ChevronRight className="h-6 w-6" />
-              </button>
-            </div>
-          </div>
         </motion.div>
+
+        <div className="relative mx-auto max-w-5xl">
+          <div className="flex flex-col items-center lg:flex-row lg:justify-between lg:gap-8">
+            
+            {/* Prev Button (Desktop) */}
+            <div className="hidden lg:block shrink-0">
+              <button
+                onClick={showPrevious}
+                className="group relative flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-[#11141a]/80 text-[#caa45c] backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[#caa45c]/50 hover:bg-[#caa45c]/10 hover:shadow-[0_0_20px_rgba(202,164,92,0.3)]"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="h-6 w-6 transition-transform duration-300 group-hover:-translate-x-1" />
+              </button>
+            </div>
+
+            {/* Testimonial Card */}
+            <div 
+              className="group relative w-full lg:flex-1 perspective-[2000px]"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <motion.div
+                onMouseMove={handleMouseMove}
+                className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0a0c10]/80 px-6 py-12 shadow-[0_8px_32px_rgba(0,0,0,0.6)] backdrop-blur-2xl sm:px-12 sm:py-20 lg:p-16"
+              >
+                {/* Spotlight effect */}
+                <motion.div
+                  className="pointer-events-none absolute -inset-px rounded-[2.5rem] opacity-0 transition duration-500 group-hover:opacity-100"
+                  style={{
+                    background: useMotionTemplate`
+                      radial-gradient(
+                        650px circle at ${mouseX}px ${mouseY}px,
+                        rgba(202, 164, 92, 0.12),
+                        transparent 80%
+                      )
+                    `,
+                  }}
+                />
+
+                <div className="absolute right-6 top-6 text-white/5 sm:right-10 sm:top-10">
+                   <Quote size={140} className="rotate-12" />
+                </div>
+
+                <div className="relative z-10 w-full min-h-[300px] flex items-center justify-center">
+                  <AnimatePresence mode="wait" custom={direction}>
+                    <motion.div
+                      key={activeIndex}
+                      custom={direction}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      className="flex flex-col items-center text-center w-full"
+                    >
+                      {/* Image */}
+                      <div className="relative mb-10 h-28 w-28 sm:h-32 sm:w-32">
+                        <motion.div 
+                           className="absolute inset-0 rounded-full bg-gradient-to-br from-[#caa45c]/80 to-blue-600/80 blur-lg opacity-40"
+                           animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
+                           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                        />
+                        <div className="relative h-full w-full overflow-hidden rounded-full border border-white/20 bg-black p-1 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                          <img
+                            src={activeTestimonial.image}
+                            alt={activeTestimonial.name}
+                            className="h-full w-full rounded-full object-cover transition-transform duration-700 hover:scale-110"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Quote */}
+                      <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2, duration: 0.8 }}
+                        className="relative mb-10 max-w-3xl"
+                      >
+                         <Quote className="absolute -left-4 -top-4 sm:-left-8 sm:-top-6 h-6 w-6 sm:h-8 sm:w-8 text-[#caa45c]/40 rotate-180" />
+                         <p className="text-base font-light leading-relaxed text-gray-300 sm:text-lg md:text-xl lg:text-2xl lg:leading-loose">
+                           {activeTestimonial.quote}
+                         </p>
+                         <Quote className="absolute -right-4 -bottom-4 sm:-right-8 sm:-bottom-6 h-6 w-6 sm:h-8 sm:w-8 text-[#caa45c]/40" />
+                      </motion.div>
+
+                      {/* Author */}
+                      <motion.div
+                         initial={{ opacity: 0, y: 20 }}
+                         animate={{ opacity: 1, y: 0 }}
+                         transition={{ delay: 0.4, duration: 0.8 }}
+                      >
+                        <h3 className="text-2xl font-bold tracking-wide text-white sm:text-3xl" style={{ fontFamily: "'Oswald', 'Arial Narrow', sans-serif" }}>
+                          {activeTestimonial.name}
+                        </h3>
+                        <p className="mt-2 text-sm font-semibold tracking-[0.2em] text-[#caa45c] uppercase">
+                          {activeTestimonial.role}
+                        </p>
+                      </motion.div>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+
+                {/* Progress Indicators */}
+                <div className="mt-12 flex items-center justify-center gap-3">
+                  {testimonials.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setDirection(index > activeIndex ? 1 : -1);
+                        setActiveIndex(index);
+                      }}
+                      className="group relative h-2 py-2"
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    >
+                      <span 
+                        className={`absolute left-0 top-1/2 -translate-y-1/2 h-[3px] rounded-full transition-all duration-500 ease-out ${
+                          index === activeIndex ? "w-10 bg-[#caa45c] shadow-[0_0_10px_rgba(202,164,92,0.8)]" : "w-4 bg-white/20 group-hover:bg-white/40 group-hover:w-6"
+                        }`} 
+                      />
+                    </button>
+                  ))}
+                </div>
+
+              </motion.div>
+            </div>
+
+            {/* Next Button (Desktop) */}
+            <div className="hidden lg:block shrink-0">
+              <button
+                onClick={showNext}
+                className="group relative flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-[#11141a]/80 text-[#caa45c] backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[#caa45c]/50 hover:bg-[#caa45c]/10 hover:shadow-[0_0_20px_rgba(202,164,92,0.3)]"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+            </div>
+
+            {/* Mobile Navigation controls */}
+            <div className="mt-8 flex w-full items-center justify-between lg:hidden px-4">
+              <button
+                onClick={showPrevious}
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#11141a]/80 text-[#caa45c] backdrop-blur-sm active:scale-95"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              
+              <button
+                onClick={showNext}
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#11141a]/80 text-[#caa45c] backdrop-blur-sm active:scale-95"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout/layout';
 import { Linkedin, Twitter, Mail, ArrowUpRight } from 'react-feather';
+import LightRays from './animation/LightRays';
 
 // import Shashank from '../../assets/TeamMember/shashank.jpeg'
 // import ankushrana from '../../assets/TeamMember/ankushrana.jpg'
@@ -99,16 +100,16 @@ const Team = () => {
         { name: "Sujal Bisht", role: "Content Team Member", img: male },
         { name: "Krishna Jain", role: "Content Team Member", img: male },
 
-        
+
     ];
-      const Social_Media = [
+    const Social_Media = [
         { name: "Manisha", role: "Social Media Team Member", img: female },
         { name: "Udhav Bhardwaj", role: "Social Media Team Member", img: male },
         { name: "Anushka Bharti", role: "Social Media Team Member", img: female },
         { name: "Dev", role: "Social Media Team Member", img: male },
-       
+
     ];
-      const Operations = [
+    const Operations = [
         { name: "Latika", role: "Operations Team Member", img: female },
         { name: "Manya Jain", role: "Operations Team Member", img: female },
         { name: "Parth Dabas", role: "Operations Team Member", img: male },
@@ -116,21 +117,21 @@ const Team = () => {
         { name: "Chitrakshi", role: "Operations Team Member", img: female },
         { name: "Madhu", role: "Operations Team Member", img: female },
     ];
-      const Design = [
+    const Design = [
         { name: "Arnav", role: "Design Team Member", img: male },
         { name: "Utkarsh Singh", role: "Design Team Member", img: male },
         { name: "Diya", role: "Design Team Member", img: female },
-        { name: "Tanya Sharma", role: "Design Team Member", img: female },        
+        { name: "Tanya Sharma", role: "Design Team Member", img: female },
     ];
-      const PR = [
+    const PR = [
         { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: female },
         { name: "Prince", role: "Public Relations & Outreach Team Member", img: prince },
         { name: "Ishika", role: "Public Relations & Outreach Team Member", img: ishika },
         { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: male },
-      
-      
+
+
     ];
-      const Research_Development = [
+    const Research_Development = [
         { name: "Ish Pandey", role: "Research & Development Team", img: male },
         { name: "Daksh Gahlot", role: "Research & Development Team", img: male },
         { name: "Aradhya Gupta", role: "Research & Development Team", img: female },
@@ -221,7 +222,24 @@ const Team = () => {
 
     return (
         <Layout>
-            <section className="pt-24 pb-32 px-6 lg:px-20 max-w-7xl mx-auto">
+            {/* LightRays full-page background */}
+            <div style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
+                <LightRays
+                    raysOrigin="top-center"
+                    raysColor="#ffffff"
+                    raysSpeed={1}
+                    lightSpread={0.5}
+                    rayLength={3}
+                    followMouse={true}
+                    mouseInfluence={0.1}
+                    noiseAmount={0}
+                    distortion={0}
+                    pulsating={false}
+                    fadeDistance={1}
+                    saturation={1}
+                />
+            </div>
+            <section className="pt-24 pb-32 px-6 lg:px-20 max-w-7xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
                 <div className="text-center mb-24">
                     {/* <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -284,7 +302,7 @@ const Team = () => {
                     </div>
                 </motion.div> */}
 
-                
+
             </section>
         </Layout>
     );
