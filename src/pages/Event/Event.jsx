@@ -171,13 +171,6 @@ const Events = () => {
         </section>
 
         <section className="px-6 py-12 lg:px-20 max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-10">
-            <h2 className="text-3xl font-bold tracking-tight font-display">Upcoming Events</h2>
-            <a href="#" className="text-primary font-bold flex items-center gap-1 group">
-              View All <ArrowRight className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {visibleEvents.map((event, index) => (
               <motion.div
