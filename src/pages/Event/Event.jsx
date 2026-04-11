@@ -142,11 +142,11 @@ const Events = () => {
 
       <div className="relative z-10">
         <section className="relative px-6 py-12 lg:px-20 lg:py-20 max-w-7xl mx-auto">
-          <div className="flex justify-center">
+          {/* <div className="flex justify-center">
             <Button className="rounded-full bg-blue-950 hover:bg-blue-900 text-white border border-blue-700/60 px-6 py-5 shadow-lg shadow-blue-950/30">
               View All Events
             </Button>
-          </div>
+          </div> */}
         </section>
 
         <section className="px-6 py-4 lg:px-20 sticky top-18.25 z-40 bg-background-dark/95 backdrop-blur-sm border-b border-white/5">
