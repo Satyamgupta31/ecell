@@ -16,7 +16,24 @@ import jagrukta1 from '../assets/EventArchive/Jagrukta Diwas/jagrukta-1.jpg';
 import ipl_1 from '../assets/EventArchive/Ipl/ipl-1.jpg';
 import ipl_2 from '../assets/EventArchive/Ipl/ipl-2.jpg';
 import ipl_3 from '../assets/EventArchive/Ipl/ipl-3.jpg';
-
+import fsmiitd01 from '../assets/EventArchive/FSMIITD/01.jpeg';
+import fsmiitd02 from '../assets/EventArchive/FSMIITD/02.jpeg';
+import fsmiitd03 from '../assets/EventArchive/FSMIITD/03.jpeg';
+import fsmiitd04 from '../assets/EventArchive/FSMIITD/04.jpeg';
+import fsmiitd05 from '../assets/EventArchive/FSMIITD/05.jpeg';
+import fsmiitd06 from '../assets/EventArchive/FSMIITD/06.jpeg';
+import fsmiitd07 from '../assets/EventArchive/FSMIITD/07.jpeg';
+import fsmiitd08 from '../assets/EventArchive/FSMIITD/08.jpeg';
+import fsmiitd09 from '../assets/EventArchive/FSMIITD/09.jpeg';
+import fsmiitd10 from '../assets/EventArchive/FSMIITD/10.jpeg';
+import fsmiitd11 from '../assets/EventArchive/FSMIITD/11.jpeg';
+import fsmiitd12 from '../assets/EventArchive/FSMIITD/12.jpeg';
+import fsmiitd13 from '../assets/EventArchive/FSMIITD/13.jpeg';
+import fsmiitd14 from '../assets/EventArchive/FSMIITD/14.jpeg';
+import fsmiitd15 from '../assets/EventArchive/FSMIITD/15.jpeg';
+import fsmiitd16 from '../assets/EventArchive/FSMIITD/16.jpeg';
+import fsmiitd17 from '../assets/EventArchive/FSMIITD/17.jpeg';
+import IITD from '../assets/EventArchive/FSMIITD/iitd.jpeg';
 export const eventsArchive = [
   {
     id: 1,
@@ -53,6 +70,15 @@ export const eventsArchive = [
     type: 'Gallery',
     image: ipl_1,
     position: 'north',
+  },
+  {
+    id: 5,
+    title: 'FSM Lab Industrial Visit',
+    date: 'Industrial Visit',
+    attendees: 30,
+    type: 'Gallery',
+    image: IITD,
+    position: 'northEast',
   },
 ];
 
@@ -146,5 +172,107 @@ export const eventsGallery = [
     title: 'Jagrookta Moment',
     image: jagrukta1,
     category: 'Cyber Jagrookta Diwas',
+  },
+  {
+    id: 16,
+    title: 'FSM Lab Moment 1',
+    image: fsmiitd01,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 17,
+    title: 'FSM Lab Moment 2',
+    image: fsmiitd02,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 18,
+    title: 'FSM Lab Moment 3',
+    image: fsmiitd03,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 19,
+    title: 'FSM Lab Moment 4',
+    image: fsmiitd04,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 20,
+    title: 'FSM Lab Moment 5',
+    image: fsmiitd05,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 21,
+    title: 'FSM Lab Moment 6',
+    image: fsmiitd06,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 22,
+    title: 'FSM Lab Moment 7',
+    image: fsmiitd07,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 23,
+    title: 'FSM Lab Moment 8',
+    image: fsmiitd08,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 24,
+    title: 'FSM Lab Moment 9',
+    image: fsmiitd09,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 25,
+    title: 'FSM Lab Moment 10',
+    image: fsmiitd10,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 26,
+    title: 'FSM Lab Moment 11',
+    image: fsmiitd11,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 27,
+    title: 'FSM Lab Moment 12',
+    image: fsmiitd12,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 28,
+    title: 'FSM Lab Moment 13',
+    image: fsmiitd13,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 29,
+    title: 'FSM Lab Moment 14',
+    image: fsmiitd14,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 30,
+    title: 'FSM Lab Moment 15',
+    image: fsmiitd15,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 31,
+    title: 'FSM Lab Moment 16',
+    image: fsmiitd16,
+    category: 'FSM Lab Industrial Visit',
+  },
+  {
+    id: 32,
+    title: 'FSM Lab Moment 17',
+    image: fsmiitd17,
+    category: 'FSM Lab Industrial Visit',
   },
 ];
