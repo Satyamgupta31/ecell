@@ -2,6 +2,12 @@
 import shashankImg from "../assets/TeamMember/shashank.jpeg";
 import arvindImg from "../assets/TeamMember/arvind.jpeg";
 import piyushImg from "../assets/TeamMember/piyush.jpg";
+
+import Beginning from "../assets/Journey/Beginning.png";
+import Growth from "../assets/Journey/Growth.png";
+import Innovation from "../assets/Journey/Innovation.png";
+import Scaling from "../assets/Journey/Scaling.png";
+
 // export const heroFeatures = [
 //   {
 //     icon: "Code2",
@@ -119,7 +125,7 @@ export const journeyTimeline = [
     label: "The Beginning",
     description: "The initial phase of the society was centered around building awareness and establishing a strong foundation. Through a series of workshops, introductory sessions, and small-scale competitions, the society encouraged students to explore entrepreneurial thinking and develop problem-solving skills. As it progressed, the focus expanded towards creating a more structured environment for learning. Interactive sessions, speaker engagements, and skill-based activities helped students gain exposure to real-world business concepts. During this period, the society also emphasized socially relevant initiatives such as Cyber Jagrookta Diwas, promoting digital awareness and responsible online practices. Despite challenges like the shift to virtual platforms, the society adapted effectively by organizing webinars and online events, ensuring continuity in engagement and even expanding its reach to a wider audience.",
     icon: "Rocket",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=600",
+    image: Beginning,
   },
   {
     year: "2022–2023",
@@ -128,7 +134,7 @@ export const journeyTimeline = [
     description: "Focus on innovation, competition, and global problem-solving.",
     fullDescription: "This phase marked a significant step forward, with the society introducing more competitive and intellectually engaging events. The G20-themed Case Study Competition provided a platform for students to analyze global economic scenarios and propose strategic solutions, enhancing their analytical and decision-making abilities.At the same time, Hacknovate 4.0 emerged as a flagship innovation-driven event, encouraging participants to collaborate, build, and present creative technological solutions. These initiatives not only increased participation but also strengthened the society’s identity as a hub for innovation and experiential learning.",
     icon: "Users",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600",
+    image: Innovation,
   },
   {
     year: "2023–2025",
@@ -137,7 +143,7 @@ export const journeyTimeline = [
     description: "Expansion with larger events, stronger collaborations, and a focus on mentorship, innovation, and real-world impact.",
     fullDescription: "With growing recognition and participation, the society entered a phase of expansion and consolidation. Events became larger in scale, more structured, and more impactful. E-Summit established itself as a flagship event, bringing together students, aspiring entrepreneurs, and industry experts, fostering networking, learning, and inspiration.During this period, the society focused on enhancing the quality of its initiatives, building collaborations, and creating opportunities for real-world exposure. With a clear vision for the future, it continues to emphasize mentorship, innovation, and the transformation of ideas into actionable ventures, aiming to build a sustainable and inclusive entrepreneurial ecosystem.",
     icon: "TrendingUp",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600",
+    image: Growth,
   },
   {
     year: "2026",
@@ -146,7 +152,7 @@ export const journeyTimeline = [
     description: "Scaling up with a focus on global impact, sustainability, and fostering a culture of continuous innovation.",
     fullDescription: "As the society looks towards the future, the focus will be on scaling up its initiatives and impact. This includes expanding its reach to a global audience, fostering international collaborations, and creating opportunities for students to engage with global challenges. Sustainability will be a key focus, with initiatives aimed at promoting responsible entrepreneurship and social impact. The society will continue to foster a culture of continuous innovation, encouraging students to think creatively and develop solutions that can make a meaningful difference in the world.",
     icon: "Globe",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600",
+    image: Scaling,
   },
 ];
 
