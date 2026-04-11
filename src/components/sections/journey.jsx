@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Users, TrendingUp, Award, Globe, Rocket, X } from "lucide-react";
 import { journeyTimeline } from "../../data/content";
@@ -15,6 +15,25 @@ const orbPositions = [
 
 export function Journey() {
   const [selectedItem, setSelectedItem] = useState(null);
+
+  useEffect(() => {
+    if (!selectedItem) return;
+
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
+    };
+  }, [selectedItem]);
 
   return (
     <section
@@ -137,7 +156,7 @@ export function Journey() {
       {/* Popup Modal */}
       <AnimatePresence>
         {selectedItem && (
-          <div className="fixed inset-x-0 top-20 bottom-0 z-900 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-900 flex items-center justify-center p-4 pt-24 overscroll-none">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -152,27 +171,29 @@ export function Journey() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-lg max-h-[calc(100vh-7rem)] overflow-y-auto bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl glow-blue"
+              className="relative w-full max-w-xl max-h-[calc(100vh-8rem)] overflow-y-auto overscroll-contain rounded-3xl bg-neutral-950 border border-white/10 shadow-2xl"
             >
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-slate-300 hover:text-white hover:bg-black/80 transition-colors"
+                className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/55 text-slate-300 border border-white/10 hover:text-white hover:bg-black/80 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="relative h-48 sm:h-64">
+              <div className="relative h-52 sm:h-64 overflow-hidden rounded-t-3xl">
                 <img
                   src={selectedItem.image}
                   alt={selectedItem.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/30 to-transparent" />
               </div>
 
-              <div className="p-6 sm:p-8 -mt-12 relative z-10">
-                <div className="inline-block px-3 py-1 mb-4 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-400 text-sm font-semibold">
-                  {selectedItem.year} - {selectedItem.title}
+              <div className="relative z-10 p-6 sm:p-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-white/6 border border-white/15 text-slate-200 text-xs sm:text-sm font-semibold tracking-wide">
+                  <span className="text-blue-300">{selectedItem.year}</span>
+                  <span className="text-slate-500">|</span>
+                  <span>{selectedItem.title}</span>
                 </div>
                 <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
                   {selectedItem.fullDescription || selectedItem.description}
