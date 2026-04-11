@@ -348,7 +348,7 @@ export const eventsArchive = [
     type: "Networking",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
   },
- 
+
 ];
 
 // Contact info
@@ -372,49 +372,72 @@ export const contactInfo = [
 
 // Builders section
 export const builders = [
-    {
+  {
+    name: "Arvind Singh",
+    role: "Systems Engineer",
+    count: "Technical Member",
+    description: "Building scalable full stack applications.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
+    mission: "Managing AI systems and containerization protocols for optimal performance.",
+    socials: {
+      github: "https://github.com/04arvind",
+      linkedin: "https://www.linkedin.com/in/arvind2005/",
+    },
+    status: "ACTIVE",
+    image: arvindImg,
+  },
+  {
     name: "Shashank Pandey",
     role: "Systems Engineer",
-    //image: shashankImg,
-   count: "Technical Member",
-    holo: "0002",
-    tech: ["Java Script", "Java ", "React", "Node.js"],
+    count: "Technical Member",
+    description: "Experienced systems engineer focused on scalable AI infra.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
     mission: "Managing AI systems and containerization protocols for optimal performance.",
     socials: {
       github: "#",
       linkedin: "https://www.linkedin.com/in/shashank-pandey-2a3724291/",
     },
     status: "ACTIVE",
-    description: "Experienced systems engineer focused on scalable AI infra.",
-  },
-  {
-    name: "Arvind Singh",
-    title: "Arvind Singh",
-    description: "Students with bold ideas ready to change the world",
-    count: "Technical Member",
-      //image: arvindImg
-
-   
+    image: shashankImg,
   },
   {
     name: "Piyush Bhandari",
-    title: "Piyush Bhandari",
-    description: "Technical experts guiding the next generation",
-    count: "Technical Head",
-    // image: piyushImg
-
+    role: "Systems Engineer",
+    count: "Technical Member",
+    description: "Technical expert guiding the next generation.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
+    mission: "Managing AI systems and containerization protocols for optimal performance.",
+    socials: {
+      github: "#",
+      linkedin: "#",
+    },
+    status: "ACTIVE",
+    image: piyushImg,
   },
   {
-    icon: "Lightbulb",
-    title: "Innovators",
-    description: "Problem solvers creating cutting-edge solutions",
-    count: "50+",
+    name: "Himanshu",
+    role: "Systems Engineer",
+    count: "Technical Member",
+    description: "Passionate developer crafting robust architectures.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
+    mission: "Managing AI systems and containerization protocols for optimal performance.",
+    socials: {
+      github: "#",
+      linkedin: "#",
+    },
+    status: "ACTIVE",
   },
   {
-    icon: "Rocket",
-    title: "Startups",
-    description: "Successful ventures launched through E-Cell",
-    count: "30+",
+    name: "Aditya",
+    role: "Systems Engineer",
+    count: "Technical Member",
+    description: "Creative problem solver with a knack for optimization.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
+    mission: "Managing AI systems and containerization protocols for optimal performance.",
+    socials: {
+      github: "#",
+      linkedin: "#",
+    },
+    status: "ACTIVE",
   },
-
 ];
