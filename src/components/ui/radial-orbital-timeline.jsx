@@ -137,11 +137,12 @@ export default function RadialOrbitalTimeline({ timelineData }) {
 
   return (
     <div
-      className="w-full min-h-[600px] flex flex-col items-center justify-center bg-transparent overflow-hidden my-8 touch-none pointer-events-auto"
+      className="w-full min-h-150 flex flex-col items-center justify-center bg-transparent overflow-hidden my-8 touch-auto pointer-events-auto"
       ref={containerRef}
       onClick={handleContainerClick}
+      style={{ touchAction: "pan-y pinch-zoom" }}
     >
-      <div className="relative w-full max-w-4xl h-[500px] flex items-center justify-center pointer-events-auto">
+      <div className="relative w-full max-w-4xl h-125 flex items-center justify-center pointer-events-auto">
         <div
           className="absolute w-full h-full flex items-center justify-center"
           ref={orbitRef}
@@ -150,7 +151,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
             transform: `translate(${centerOffset.x}px, ${centerOffset.y}px)`,
           }}
         >
-          <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-teal-500 animate-pulse flex items-center justify-center z-10">
+          <div className="absolute w-16 h-16 rounded-full bg-linear-to-br from-purple-500 via-blue-500 to-teal-500 animate-pulse flex items-center justify-center z-10">
             <div className="absolute w-20 h-20 rounded-full border border-slate-700/50 animate-ping opacity-70"></div>
             <div
               className="absolute w-24 h-24 rounded-full border border-slate-800/50 animate-ping opacity-50"
@@ -249,7 +250,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
               
               return (
                 <Card 
-                  className="fixed sm:absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90vw] max-w-sm sm:max-w-md bg-slate-900/95 backdrop-blur-xl border border-slate-700 shadow-2xl shadow-blue-500/20 max-h-[80vh] overflow-y-auto text-white p-0 pointer-events-auto custom-scrollbar z-[300]"
+                  className="fixed sm:absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[90vw] max-w-sm sm:max-w-md bg-slate-900/95 backdrop-blur-xl border border-slate-700 shadow-2xl shadow-blue-500/20 max-h-[80vh] overflow-y-auto text-white p-0 pointer-events-auto custom-scrollbar z-300"
                   style={{ touchAction: "auto" }}
                 >
                   <div className="sticky top-0 z-10 bg-slate-900/95 backdrop-blur-md pb-3 pt-5 px-5 border-b border-slate-800">
