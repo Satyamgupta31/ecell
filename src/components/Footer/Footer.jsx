@@ -61,7 +61,7 @@ const Footer = () => {
                     <p className="text-sm text-neutral-muted mb-4">
                         HMR Institute of Technology & Management, Hamidpur, Delhi - 110036
                     </p>
-                    <p className="text-sm text-primary font-medium underline">ecell@hmritm.ac.in</p>
+                    <p className="text-sm text-primary font-medium underline">e-cell@hmritm.ac.in</p>
                 </div>
             </div>
 
