@@ -8,6 +8,7 @@ import ECellIPL from "../../assets/EventGallery/ecellipl.png";
 import Image1 from "../../assets/EventGallery/eventgallery1.png";
 import Image2 from "../../assets/EventGallery/eventGallery2.png";
 import Image3 from "../../assets/EventGallery/eventGallery3.png";
+import IITDFSM from "../../assets/EventGallery/iitdFSM.jpeg";
 
 // ─── Add more images here as you import them ───────────────────────────────
 // e.g.  import event2 from "../../assets/Logo/event2";
@@ -15,7 +16,7 @@ import Image3 from "../../assets/EventGallery/eventGallery3.png";
 // Then add them to the array:  const localImages = [logo, event2, event3];
 
 
-const localImages = [G20, Hacknovate, Seminar, ECellIPL, Image1, Image2, Image3];
+const localImages = [G20, IITDFSM, Hacknovate, Seminar, ECellIPL, Image1, Image2, Image3];
 
 
 export function EventsGallery() {
