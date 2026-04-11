@@ -201,20 +201,20 @@ export const teamMembers = [
 // Partners
 export const partners = [
   {
-    name: "Google for Startups",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    //name: "Google for Startups",
+    //logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
   },
   {
-    name: "Microsoft",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
+  //  name: "Microsoft",
+  //  logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
   },
   {
-    name: "AWS",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    //name: "AWS",
+    //logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
   },
   {
-    name: "Startup India",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Startup_India_Logo.svg",
+    //name: "Startup India",
+    //logo: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Startup_India_Logo.svg",
   },
 ];
 

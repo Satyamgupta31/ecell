@@ -28,6 +28,8 @@ function StarRating({ rating }) {
 
 // ─── Single Card ─────────────────────────────────────────────────────────────
 function TestimonialCard({ testimonial, index }) {
+  const initial = testimonial.name?.trim()?.charAt(0)?.toUpperCase() || "A";
+
   return (
     <motion.div
       className="relative group"
@@ -77,12 +79,17 @@ function TestimonialCard({ testimonial, index }) {
               animate={{ scale: [1, 1.35, 1], opacity: [0.6, 0, 0.6] }}
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             />
-            <img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="w-11 h-11 rounded-full object-cover"
-              style={{ border: "1.5px solid rgba(48,96,255,0.3)" }}
-            />
+            <div
+              className="w-11 h-11 rounded-full flex items-center justify-center text-base font-bold text-blue-200"
+              style={{
+                border: "1.5px solid rgba(48,96,255,0.3)",
+                background:
+                  "linear-gradient(135deg, rgba(22,34,72,0.95), rgba(38,68,146,0.85))",
+              }}
+              aria-label={testimonial.name}
+            >
+              {initial}
+            </div>
           </div>
           <div>
             <h4 className="text-white font-semibold text-sm leading-tight">

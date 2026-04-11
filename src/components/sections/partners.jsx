@@ -5,12 +5,12 @@ import { partners } from "../../data/content";
 function PartnerLogo({ partner }) {
   const { name, logo } = partner;
   const logoStyles = {
-    Google: "text-2xl font-medium tracking-tight",
-    Microsoft: "text-xl font-semibold",
-    Amazon: "text-2xl font-bold italic",
-    Meta: "text-2xl font-bold",
-    IBM: "text-2xl font-bold tracking-widest",
-    Netflix: "text-2xl font-bold tracking-tight",
+    //Google: "text-2xl font-medium tracking-tight",
+    //Microsoft: "text-xl font-semibold",
+    //Amazon: "text-2xl font-bold italic",
+    //Meta: "text-2xl font-bold",
+    //IBM: "text-2xl font-bold tracking-widest",
+    //Netflix: "text-2xl font-bold tracking-tight",
   };
 
   return (
