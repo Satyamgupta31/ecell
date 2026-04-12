@@ -238,7 +238,7 @@ function MentorCard({
           })}
           </div>
         </div>
-        {showHint ? <p className="text-xs text-slate-500 mt-2">Swipe to move cards.</p> : null}
+          
       </div>
     </section>
   );
