@@ -121,7 +121,7 @@ const Team = () => {
         { name: "Latika", role: "Operations Team Member", img: latika },
         { name: "Manya Jain", role: "Operations Team Member", img: manya },
         { name: "Parth Dabas", role: "Operations Team Member", img: parth },
-        { name: "Samvat Dixit", role: "Operations Team Member", img: samvat },
+        { name: "Samvat Dixit", role: "Operations Team Member", img: male },
         { name: "Chitrakshi", role: "Operations Team Member", img: chitrakshi },
         { name: "Madhu", role: "Operations Team Member", img: madhu },
     ];
@@ -141,9 +141,9 @@ const Team = () => {
     ];
     const Research_Development = [
         { name: "Ish Pandey", role: "Research & Development Team", img: ish },
-        { name: "Daksh Gahlot", role: "Research & Development Team", img: daksh },
+        { name: "Daksh Gahlot", role: "Research & Development Team", img: male },
         { name: "Aradhya Gupta", role: "Research & Development Team", img: Aradhay },
-        { name: "Kritagya Verma", role: "Research & Development Team", img: kritagya },
+        { name: "Kritagya Verma", role: "Research & Development Team", img: male },
         
     ];
 
