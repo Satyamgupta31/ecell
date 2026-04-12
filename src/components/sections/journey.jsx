@@ -70,7 +70,7 @@ export function Journey() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient mb-4">
+          <h2 className="section-premium-heading text-3xl sm:text-4xl md:text-5xl mb-4">
             Our Journey
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">

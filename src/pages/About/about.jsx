@@ -100,7 +100,7 @@ const MILESTONES = [
     { year: "2020", title: "First E-Summit", desc: "Flagship event with 500+ participants and industry leaders.", Icon: Trophy },
     { year: "2022", title: "Incubation Launch", desc: "Pre-incubation centre for campus startups established.", Icon: Rocket },
     { year: "2023", title: "Collaboration", desc: "National accelerators & investor networks onboarded.", Icon: Handshake },
-    { year: "Now", title: "Expansion Phase", desc: "Empowering 2000+ students annually across programs.", Icon: Globe },
+    { year: "Now", title: "Expansion Phase", desc: "Empowering 1000+ students annually across programs.", Icon: Globe },
 ];
 
 const VALUES = [
@@ -227,7 +227,7 @@ const About = () => {
             <section className="py-32 relative bg-grid overflow-hidden">
                 <Orb size={400} color="rgba(59,130,246,.05)" top="10%" left="50%" blur={100} />
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-                    <SectionLabel label="What Drives Us" title="Our Purpose" center />
+                    <SectionLabel title="Our Purpose" center />
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* Vision */}
                         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: .6 }}
@@ -305,7 +305,7 @@ const About = () => {
             <section className="py-28 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid opacity-55" />
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-                    <SectionLabel label="Our Journey" title="Key Milestones" center />
+                    <SectionLabel title="Key Milestones" center />
                     <div className="relative grid md:grid-cols-5 gap-6">
                         <div className="hidden md:block absolute top-[44px] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-blue-600/28 to-transparent" />
                         {MILESTONES.map((m, i) => (
@@ -328,7 +328,7 @@ const About = () => {
             <section className="py-28 relative overflow-hidden">
                 <Orb size={500} color="rgba(16,185,129,.04)" top="30%" left="30%" blur={120} delay={2} />
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-                    <SectionLabel label="What We Stand For" title="Core Values" center />
+                    <SectionLabel title="Core Values" center />
                     <div className="grid sm:grid-cols-3 gap-6">
                         {VALUES.map((v, i) => (
                             <motion.div key={i} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * .15, duration: .6 }}

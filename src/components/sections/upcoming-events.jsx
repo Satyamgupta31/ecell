@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Badge } from "../ui/badge";
 import { upcomingEvents } from "../../data/content";
 import { staggerContainer, fadeUpVariants } from "../../lib/animations";
+import { UpcomingEventsVideoBackground } from "../../pages/Home/animation/animation.jsx";
 
 // Calculate date-based animation progress from 1st of month to event date
 function getDateProgress(dateString, now) {
@@ -63,6 +64,7 @@ export function UpcomingEvents() {
 
   return (
     <section id="events" className="relative py-24 bg-black overflow-hidden">
+      <UpcomingEventsVideoBackground />
       <div className="absolute inset-0 bg-radial-gradient opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,7 +75,7 @@ export function UpcomingEvents() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient mb-4">
+          <h2 className="section-premium-heading text-3xl sm:text-4xl md:text-5xl mb-4">
             Upcoming Events
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">

@@ -1,4 +1,24 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Manrope:wght@500;600&display=swap");
+
+.section-premium-heading {
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  background: linear-gradient(180deg, #4b85d8 0%, #245ba8 52%, #153f77 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 22px rgba(26, 74, 142, 0.3);
+}
+
+.section-premium-kicker {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #2f6ec6;
+}
 
 /* Animation for the pulsing effect */
 @keyframes pulse {
