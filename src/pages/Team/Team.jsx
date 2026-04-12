@@ -45,13 +45,14 @@ import satyam from '../../assets/TeamMember/satyam.png'
 import shruti from '../../assets/TeamMember/Shruti_Chauhan.png'
 import sujal from '../../assets/TeamMember/sujal.jpg'
 import tanya from '../../assets/TeamMember/tanyasharma.jpg'
-// import tushar from '../../assets/TeamMember/tushar.webp'
+import tushar from '../../assets/TeamMember/tushar.png'
 import udhav from '../../assets/TeamMember/udhav.jpg'
 import male from '../../assets/TeamMember/male.png'
 import female from '../../assets/TeamMember/female.webp'
 import utkarsh from '../../assets/TeamMember/utkarsh.png'
 import sarita from '../../assets/TeamMember/sarita.jpg';
 import PandaMam from '../../assets/TeamMember/pandamam.PNG'
+import Aanya from '../../assets/TeamMember/aanya.png'
 
 const Team = () => {
     const FacultyCoordinator = [
@@ -87,26 +88,26 @@ const Team = () => {
 
     const heads = [
         { name: "Piyush Bhandari", role: "Technical Head", img: piyush },
-        { name: "Anish", role: "Content Head", img: male },
+        { name: "Anish", role: "Content Head", img: Anish },
         { name: "Purav", role: "Social Media Head", img: purav },
         { name: "Aditya Kr Choubey", role: "Operations Head", img: AdityaKrChoubey },
         { name: "Divyansh Sharma", role: "Design Head", img: divyansh },
         { name: "Shruti", role: "Public Relations & Outreach Team", img: shruti },
-        { name: "Aakriti", role: "Research & Development Team", img: female },
+        { name: "Aakriti", role: "Research & Development Team", img: Aakriti },
     ];
 
     const Technical = [
         { name: "Arvind Singh", role: "Technical Team Member", img: arvind, linkedin: "https://www.linkedin.com/in/arvind2005/", email: "arvind42005@gmail.com", X:""},
         { name: "Shashank Pandey", role: "Technical Team Member", img: Shashank , linkedin: "https://www.linkedin.com/in/shashank-pandey-2a3724291/", email: "shashankp846@gmail.com", X:""},
         { name: "Aditya Kumar", role: "Technical Team Member", img: Adityakumar },
-        { name: "Tushar Sharma", role: "Technical Team Member", img: male },
+        { name: "Tushar Sharma", role: "Technical Team Member", img: tushar },
         { name: "Himanshu", role: "Technical Team Member", img: himanshu },
     ];
     const Content = [
-        { name: "Kirti Khatri", role: "Content Team Member", img: female },
+        { name: "Kirti Khatri", role: "Content Team Member", img: kirti },
         { name: "Charvi", role: "Content Team Member", img: charvi },
-        { name: "Sujal Bisht", role: "Content Team Member", img: male },
-        { name: "Krishna Jain", role: "Content Team Member", img: male },
+        { name: "Sujal Bisht", role: "Content Team Member", img: sujal },
+        { name: "Krishna Jain", role: "Content Team Member", img: krishna },
 
 
     ];
@@ -121,7 +122,7 @@ const Team = () => {
         { name: "Latika", role: "Operations Team Member", img: latika },
         { name: "Manya Jain", role: "Operations Team Member", img: manya },
         { name: "Parth Dabas", role: "Operations Team Member", img: parth },
-        { name: "Samvat Dixit", role: "Operations Team Member", img: male },
+        { name: "Samvat Dixit", role: "Operations Team Member", img: samvat },
         { name: "Chitrakshi", role: "Operations Team Member", img: chitrakshi },
         { name: "Madhu", role: "Operations Team Member", img: madhu },
     ];
@@ -132,18 +133,18 @@ const Team = () => {
         { name: "Tanya Sharma", role: "Design Team Member", img: tanya },
     ];
     const PR = [
-        { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: female },
+        { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: Aanya },
         { name: "Prince", role: "Public Relations & Outreach Team Member", img: prince },
-        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: female },
+        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: ishika },
         { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: samaksh },
 
 
     ];
     const Research_Development = [
         { name: "Ish Pandey", role: "Research & Development Team", img: ish },
-        { name: "Daksh Gahlot", role: "Research & Development Team", img: male },
+        { name: "Daksh Gahlot", role: "Research & Development Team", img: daksh },
         { name: "Aradhya Gupta", role: "Research & Development Team", img: Aradhay },
-        { name: "Kritagya Verma", role: "Research & Development Team", img: male },
+        { name: "Kritagya Verma", role: "Research & Development Team", img: kritagya },
         
     ];
 

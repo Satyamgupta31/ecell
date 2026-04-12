@@ -361,7 +361,7 @@ const Events = () => {
           )}
         </AnimatePresence>
 
-        <section className="px-6 py-20 lg:px-20 bg-neutral-dark/30 text-white mt-12 border-y border-white/5">
+        {/* <section className="px-6 py-20 lg:px-20 bg-neutral-dark/30 text-white mt-12 border-y border-white/5">
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4 font-display">Our Legacy & Impact</h2>
@@ -397,7 +397,7 @@ const Events = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </div>
   );

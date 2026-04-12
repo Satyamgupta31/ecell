@@ -2,6 +2,8 @@
 import shashankImg from "../assets/TeamMember/shashank.jpeg";
 import arvindImg from "../assets/TeamMember/arvind.jpeg";
 import piyushImg from "../assets/TeamMember/piyush.jpg";
+import adityaImg from "../assets/TeamMember/Adityakumar.png";
+import himanshuImg from "../assets/TeamMember/himanshu.jpeg";
 
 import Beginning from "../assets/Journey/Beginning.png";
 import Growth from "../assets/Journey/Growth.png";
@@ -475,11 +477,11 @@ export const contactInfo = [
 export const builders = [
   {
     name: "Arvind Singh",
-    role: "Systems Engineer",
+    role: "Full stack software Engineer",
     count: "Technical Member",
     description: "Building scalable full stack applications.",
-    tech: ["Java Script", "Java", "React", "Node.js"],
-    mission: "Managing AI systems and containerization protocols for optimal performance.",
+    tech: ["Java Script", "Java", "React", "Node.js", "AIML"],
+    mission: "Building end-to-end scalable software systems and products that deliver real-world impact",
     socials: {
       github: "https://github.com/04arvind",
       linkedin: "https://www.linkedin.com/in/arvind2005/",
@@ -489,13 +491,13 @@ export const builders = [
   },
   {
     name: "Shashank Pandey",
-    role: "Systems Engineer",
+    role: "Full stack software developer",
     count: "Technical Member",
-    description: "Experienced systems engineer focused on scalable AI infra.",
+    description: "Experienced web development focused on scalable AI.",
     tech: ["Java Script", "Java", "React", "Node.js"],
     mission: "Managing AI systems and containerization protocols for optimal performance.",
     socials: {
-      github: "#",
+      github: "https://github.com/shashank80000",
       linkedin: "https://www.linkedin.com/in/shashank-pandey-2a3724291/",
     },
     status: "ACTIVE",
@@ -527,6 +529,7 @@ export const builders = [
       linkedin: "#",
     },
     status: "ACTIVE",
+    image: himanshuImg,
   },
   {
     name: "Aditya",
@@ -540,5 +543,6 @@ export const builders = [
       linkedin: "#",
     },
     status: "ACTIVE",
+    image: adityaImg,
   },
 ];
