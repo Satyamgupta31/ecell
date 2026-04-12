@@ -51,7 +51,7 @@ import male from '../../assets/TeamMember/male.png'
 import female from '../../assets/TeamMember/female.webp'
 import utkarsh from '../../assets/TeamMember/utkarsh.png'
 import sarita from '../../assets/TeamMember/sarita.jpg';
-// import PandaMam from '../../assets/TeamMember/panda.jpeg'
+import PandaMam from '../../assets/TeamMember/pandamam.PNG'
 
 const Team = () => {
     const FacultyCoordinator = [
@@ -66,7 +66,7 @@ const Team = () => {
         {
             name : "Dr. Padmaja Panda",
             role : "Coordinator",
-            img : female
+            img : PandaMam
         },
         {
             name : "Ms. Sarita",
@@ -87,12 +87,12 @@ const Team = () => {
 
     const heads = [
         { name: "Piyush Bhandari", role: "Technical Head", img: piyush },
-        { name: "Anish", role: "Content Head", img: Anish },
+        { name: "Anish", role: "Content Head", img: male },
         { name: "Purav", role: "Social Media Head", img: purav },
         { name: "Aditya Kr Choubey", role: "Operations Head", img: AdityaKrChoubey },
         { name: "Divyansh Sharma", role: "Design Head", img: divyansh },
         { name: "Shruti", role: "Public Relations & Outreach Team", img: shruti },
-        { name: "Aakriti", role: "Research & Development Team", img: Aakriti },
+        { name: "Aakriti", role: "Research & Development Team", img: female },
     ];
 
     const Technical = [
@@ -103,10 +103,10 @@ const Team = () => {
         { name: "Himanshu", role: "Technical Team Member", img: himanshu },
     ];
     const Content = [
-        { name: "Kirti Khatri", role: "Content Team Member", img: kirti },
+        { name: "Kirti Khatri", role: "Content Team Member", img: female },
         { name: "Charvi", role: "Content Team Member", img: charvi },
-        { name: "Sujal Bisht", role: "Content Team Member", img: sujal },
-        { name: "Krishna Jain", role: "Content Team Member", img: krishna },
+        { name: "Sujal Bisht", role: "Content Team Member", img: male },
+        { name: "Krishna Jain", role: "Content Team Member", img: male },
 
 
     ];
@@ -134,7 +134,7 @@ const Team = () => {
     const PR = [
         { name: "Aanya Luthra", role: "Public Relations & Outreach Team Member", img: female },
         { name: "Prince", role: "Public Relations & Outreach Team Member", img: prince },
-        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: ishika },
+        { name: "Ishika", role: "Public Relations & Outreach Team Member", img: female },
         { name: "Samaksh Gupta", role: "Public Relations & Outreach Team Member", img: samaksh },
 
 
