@@ -185,9 +185,9 @@ function MarqueeRow({ items, direction = "left", speed = 30 }) {
 
 // ─── Main Section ────────────────────────────────────────────────────────────
 export function Testimonials() {
-  const firstRow = testimonials;
-  const secondRow = [...testimonials.slice(1), testimonials[0]];
-  const thirdRow = [...testimonials.slice(2), ...testimonials.slice(0, 2)];
+  const firstRow = testimonials.slice(0, 3);
+  const secondRow = testimonials.slice(3, 6);
+  const thirdRow = testimonials.slice(6, 9);
 
   return (
     <section

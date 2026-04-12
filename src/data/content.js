@@ -198,6 +198,54 @@ export const teamMembers = [
   },
 ];
 
+// Shark Tank mentors (editable card content)
+export const sharkTankMentors = [
+  {
+    id: 1,
+    name: "Dr. Yukta Srivastava",
+    role: "Founder-Benzene | ABM & Demand Generation Specialist",
+    imageName: "mentor1",
+    highlights: [
+      "Deep expertise in B2B marketing, ABM",
+      "Founder experience in building data-driven growth systems",
+      "Her approach focuses on structured thinking, real-world applicability, and data-backed decision-making",
+    ],
+  },
+  {
+    id: 2,
+    name: "Mr. Aditya Bajaj",
+    role: "Product & Growth Marketing-Algebrik AI ",  
+    imageName: "mentor2",
+    highlights: [
+      "Expertise in product marketing and growth strategy",
+      "Experience across corporate, consulting, and startup environments",
+      "Strong foundation in data-driven marketing and analytics ",
+    ],
+  },
+  {
+    id: 3,
+    name: "Ms. Reetika Arora",
+    role: "Associate Director Compliance Hawks | Founder Dastur Bhaarat",
+    imageName: "mentor3",
+    highlights: [
+      "Expertise in HR, legal compliance, and business structuring",
+      "Experience in startup advisory and operational strategy",
+      "Founder experience in building a consumer brand from scratch",
+    ],
+  },
+  {
+    id: 4,
+    name: "Ms. Priti Srivastava",
+    role: "Mentor – Advocacy, Reliance Industries Ltd | Founder – DayaRani Wellness Advisory",
+    imageName: "mentor4",
+    highlights: [
+      "30+ years of corporate leadership experience in public affairs and strategy",
+      "Deep expertise in policy, advocacy, and business planning",
+      "Strong focus on mentorship, mindset development, and leadership growth",
+    ],
+  },
+];
+
 // Partners
 export const partners = [
   {
@@ -222,24 +270,57 @@ export const partners = [
 export const testimonials = [
   {
     id: 1,
-    name: "Sneha Reddy",
-    role: "Founder, TechVentures",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300",
-    quote: "E-Cell provided the perfect launchpad for my startup. The mentorship was invaluable.",
+    name: "Udhav ",
+    role: "CSE-CyberSecurity",
+    quote: " Being in E-Cell HMRITM has helped me grow both personally and professionally. All thanks to Ankush Sir and my team head—their dedication and guidance truly keep the team motivated and make everything run so smoothly.",
   },
   {
     id: 2,
-    name: "Vikram Joshi",
-    role: "CEO, InnoSys",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300",
-    quote: "The community and resources helped us raise our seed round within 6 months.",
+    name: "Garv Khatri  ",
+    role: "CSE Department",
+    quote: " I’ve learned a lot from their sessions. They promote startup culture very well.",
   },
   {
     id: 3,
-    name: "Anjali Verma",
-    role: "Co-Founder, GreenTech",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300",
-    quote: "From idea to MVP, E-Cell guided us at every step. Truly transformative experience.",
+    name: " Aditya Panwar ",
+    role: "CSE Department",
+    quote: " E-Cell inspires students to explore entrepreneurship. It’s a great platform for learning.",
+  },
+  {
+    id: 4,
+    name: "Yash Gupta ",  
+    role: "CSE-AIDS",
+    quote: " E-Cell HMRITM has definitely raised the standard of college events. Everything feels professional and well thought out.",
+  },
+  {
+    id: 5,
+    name: "Navya nayal",
+    role: "Cse IT",
+    quote: " I really appreciate the efforts of the E-Cell team in bringing industry exposure to students. And oraganizing awesome events like college shark tank which is very exciting and helpful idea for students business skills growth .",
+  },
+  {
+    id: 6,
+    name: "Manav",
+    role: "President of E-Cell HMRITM",
+    quote: " Being the President of E-Cell has been an incredibly fulfilling experience. It’s more than just a society—it’s a space where students grow, take initiative, and turn ideas into reality. I’m especially excited about the upcoming Campus Shark Tank event, as it will give students a great platform to present and refine their ideas.",
+  },
+  {
+    id: 7,
+    name: "Tushar Sharma",
+    role: "CSE Department",
+    quote: "E Cell truly stands out as one of the most impactful clubs on HMRITM. Their entrepreneurship focused events from startup pitches to ideation workshops gave me real world exposure that classrooms rarely offer. The team is incredibly organized, passionate, and driven. Attending their sessions genuinely shifted my mindset from student to problem solver. If you're serious about building something meaningful, E Cell is where you start.",
+  },
+  {
+    id: 8,
+    name: "Daksh Bhatia",
+    role: "Cse-cse",
+    quote: " The E-Cell has been doing a fantastic job organizing impactful events that truly build an entrepreneurial culture on campus. I want to give a special shoutout to the social media team for their phenomenal work recently. The content is highly engaging, visually professional, and keeps the student body perfectly informed about all our upcoming opportunities. ",
+  },
+  {
+    id: 9,
+    name: "Shree bhagwan ",
+    role: "CSE Department",
+    quote: " My experience with E-Cell has been really positive. I like how it promotes innovation and gives practical exposure beyond academics.",
   },
 ];
 
