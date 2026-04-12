@@ -41,7 +41,7 @@ import purav from '../../assets/TeamMember/purav.png'
 import samaksh from '../../assets/TeamMember/samaksh.jpg'
 
 import samvat from '../../assets/TeamMember/samvat.jpeg'
-import satyam from '../../assets/TeamMember/satyam.jpeg'
+import satyam from '../../assets/TeamMember/satyam.png'
 import shruti from '../../assets/TeamMember/Shruti_Chauhan.png'
 import sujal from '../../assets/TeamMember/sujal.jpg'
 import tanya from '../../assets/TeamMember/tanyasharma.jpg'
@@ -97,7 +97,7 @@ const Team = () => {
 
     const Technical = [
         { name: "Arvind Singh", role: "Technical Team Member", img: arvind, linkedin: "https://www.linkedin.com/in/arvind2005/", email: "arvind42005@gmail.com", X:""},
-        { name: "Shashank Pandey", role: "Technical Team Member", img: Shashank },
+        { name: "Shashank Pandey", role: "Technical Team Member", img: Shashank , linkedin: "https://www.linkedin.com/in/shashank-pandey-2a3724291/", email: "shashankp846@gmail.com", X:""},
         { name: "Aditya Kumar", role: "Technical Team Member", img: Adityakumar },
         { name: "Tushar Sharma", role: "Technical Team Member", img: male },
         { name: "Himanshu", role: "Technical Team Member", img: himanshu },
