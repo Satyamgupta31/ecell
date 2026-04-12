@@ -32,20 +32,12 @@ function TestimonialCard({ testimonial, index }) {
 
   return (
     <motion.div
-      className="relative group"
+      className="relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: index * 0.05 }}
-      whileHover={{ scale: 1.025, zIndex: 10 }}
+      whileHover={{ y: -4 }}
     >
-      {/* Glow border on hover */}
-      <div className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{
-          background: "linear-gradient(135deg, rgba(48,96,255,0.5), rgba(106,176,255,0.2), rgba(48,96,255,0.4))",
-          filter: "blur(0.5px)",
-        }}
-      />
-
       <div
         className="relative w-80 sm:w-96 shrink-0 rounded-2xl p-5 overflow-hidden transition-all duration-500"
         style={{
@@ -54,16 +46,9 @@ function TestimonialCard({ testimonial, index }) {
           backdropFilter: "blur(12px)",
         }}
       >
-        {/* Ambient inner glow */}
-        <div className="absolute top-0 right-0 w-32 h-32 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, rgba(48,96,255,0.12) 0%, transparent 70%)",
-          }}
-        />
-
         {/* Quote icon */}
         <motion.div
-          className="absolute top-4 right-4 opacity-10 group-hover:opacity-25 transition-opacity duration-500"
+          className="absolute top-4 right-4 opacity-10"
           whileHover={{ rotate: 10, scale: 1.2 }}
         >
           <Quote className="w-8 h-8 text-blue-400" />
@@ -100,25 +85,15 @@ function TestimonialCard({ testimonial, index }) {
         </div>
 
         {/* Quote text */}
-        <p className="text-slate-400 text-xs leading-relaxed mb-4 group-hover:text-slate-300 transition-colors duration-300">
+        <p className="text-slate-400 text-xs leading-relaxed mb-4">
           &ldquo;{testimonial.quote}&rdquo;
         </p>
 
         {/* Footer */}
         <div className="flex items-center justify-between">
           <StarRating rating={testimonial.rating} />
-          {/* Shimmer bar */}
-          <motion.div
-            className="h-px w-0 group-hover:w-12 transition-all duration-500 rounded-full"
-            style={{ background: "linear-gradient(90deg, transparent, #6ab0ff)" }}
-          />
+          <div className="h-px w-12 rounded-full" style={{ background: "linear-gradient(90deg, transparent, #6ab0ff)" }} />
         </div>
-
-        {/* Bottom edge glow line */}
-        <motion.div
-          className="absolute bottom-0 left-4 right-4 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{ background: "linear-gradient(90deg, transparent, rgba(48,96,255,0.6), transparent)" }}
-        />
       </div>
     </motion.div>
   );
@@ -188,7 +163,8 @@ export function Testimonials() {
   const firstRow = testimonials.slice(0, 3);
   const secondRow = testimonials.slice(3, 6);
   const thirdRow = testimonials.slice(6, 9);
-
+  
+  
   return (
     <section
       id="testimonials"

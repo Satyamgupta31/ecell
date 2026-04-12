@@ -16,7 +16,7 @@ function PartnerLogo({ partner }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="flex-shrink-0 w-40 h-24 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center px-6 hover:border-blue-500/30 hover:glow-blue transition-all duration-300 cursor-pointer group overflow-hidden"
+      className="shrink-0 w-40 h-24 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center px-6 hover:border-blue-500/30 hover:glow-blue transition-all duration-300 cursor-pointer group overflow-hidden"
     >
       {logo ? (
         <img
@@ -59,9 +59,9 @@ export function Partners() {
         </motion.div>
 
         {/* Marquee Row 1 */}
-        <div className="relative mb-6 overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
+        <div className="relative mb-8 overflow-hidden py-2">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-black to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-black to-transparent z-10" />
           <motion.div
             animate={{ x: [0, -50 * partners.length * 4] }}
             transition={{
@@ -69,7 +69,7 @@ export function Partners() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="flex gap-4"
+            className="flex w-max flex-nowrap gap-4"
           >
             {doubledPartners.map((partner, index) => (
               <PartnerLogo key={`${partner.name}-${index}`} partner={partner} />
@@ -78,9 +78,9 @@ export function Partners() {
         </div>
 
         {/* Marquee Row 2 - Reverse */}
-        <div className="relative mb-12 overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10" />
+        <div className="relative mb-16 overflow-hidden py-2">
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-black to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-black to-transparent z-10" />
           <motion.div
             animate={{ x: [-50 * partners.length * 4, 0] }}
             transition={{
@@ -88,7 +88,7 @@ export function Partners() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="flex gap-4"
+            className="flex w-max flex-nowrap gap-4"
           >
             {[...doubledPartners].reverse().map((partner, index) => (
               <PartnerLogo key={`${partner.name}-rev-${index}`} partner={partner} />

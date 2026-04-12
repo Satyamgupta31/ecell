@@ -108,7 +108,7 @@ const DEFAULT_EVENT = {
   title: "CAMPUS SHARK TANK",
   subtitle:
     "CAMPUS SHARK TANK is ECell's premier intra college stage for bold thinkers and future founders.",
-  type: "Pitch Competition",
+
   date: "April 17, 2025",
   venue: "HMRITM Campus, Hamidpur",
   prize: "Exciting prizes and rewards",
@@ -211,9 +211,6 @@ export function EventPopup({ event = {} }) {
               Upcoming Event
             </span>
           </div>
-          <span style={{ ...styles.typeBadge, ...(isMobile ? styles.typeBadgeMobile : null) }}>
-            🏆 {ev.type}
-          </span>
         </div>
 
         {/* Card body */}
@@ -355,7 +352,7 @@ const styles = {
   cardHeader: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     padding: "12px 16px",
     borderBottom: "1px solid rgba(255,255,255,0.06)",
     background:

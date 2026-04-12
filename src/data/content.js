@@ -316,17 +316,24 @@ export const testimonials = [
     role: "CSE Department",
     quote: "E Cell truly stands out as one of the most impactful clubs on HMRITM. Their entrepreneurship focused events from startup pitches to ideation workshops gave me real world exposure that classrooms rarely offer. The team is incredibly organized, passionate, and driven. Attending their sessions genuinely shifted my mindset from student to problem solver. If you're serious about building something meaningful, E Cell is where you start.",
   },
-  {
+   {
     id: 8,
-    name: "Daksh Bhatia",
-    role: "Cse-cse",
-    quote: " The E-Cell has been doing a fantastic job organizing impactful events that truly build an entrepreneurial culture on campus. I want to give a special shoutout to the social media team for their phenomenal work recently. The content is highly engaging, visually professional, and keeps the student body perfectly informed about all our upcoming opportunities. ",
-  },
-  {
-    id: 9,
     name: "Shree bhagwan ",
     role: "CSE Department",
     quote: " My experience with E-Cell has been really positive. I like how it promotes innovation and gives practical exposure beyond academics.",
+  },
+  {
+    id: 9,
+    name: "PURAV",
+    role: "Social Media Head Ecell",
+    quote: "Being a part of E-Cell HMRITM has been an incredible journey of growth and learning. A big credit goes to Ankush Sir—his guidance and support are the reason E-Cell is running so well and successfully",
+  },
+ 
+ {
+    id: 10,
+    name: "Daksh Bhatia",
+    role: "Cse-cse",
+    quote: " The E-Cell has been doing a fantastic job organizing impactful events that truly build an entrepreneurial culture on campus. I want to give a special shoutout to the social media team for their phenomenal work recently. The content is highly engaging, visually professional, and keeps the student body perfectly informed about all our upcoming opportunities. ",
   },
 ];
 
@@ -353,6 +360,7 @@ export const contestWinners = [
     prize: "₹50,000",
     image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400",
   },
+  
 ];
 
 // Events gallery
