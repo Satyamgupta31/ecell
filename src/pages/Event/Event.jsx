@@ -63,6 +63,7 @@ const Events = () => {
       status: 'Upcoming',
       ctaLabel: 'Register Now',
       ctaHref: 'https://docs.google.com/forms/d/e/1FAIpQLSc2f2M2D3eHWGR3mSULx0gZLQdmuLHs36Sthi5JrebbCHRntA/viewform',
+      downloadHref: 'https://drive.google.com/file/d/1hIEkxG9n6MmTyLDOeGwCKuzrTkDLmVup/view?usp=sharing',
     },
     {
       id: 2,
@@ -216,15 +217,26 @@ const Events = () => {
                   </div>
 
                   {event.status === 'Upcoming' ? (
-                    <a
-                      href={event.ctaHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <button className="w-full bg-white/5 hover:bg-primary hover:text-neutral-dark font-bold py-3 rounded-xl transition-all border border-white/10 hover:border-primary">
-                        {event.ctaLabel}
-                      </button>
-                    </a>
+                    <div className="grid grid-cols-2 gap-3">
+                      <a
+                        href={event.ctaHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button className="w-full bg-white/5 hover:bg-primary hover:text-neutral-dark font-bold py-3 rounded-xl transition-all border border-white/10 hover:border-primary">
+                          {event.ctaLabel}
+                        </button>
+                      </a>
+                      <a
+                        href={event.downloadHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button className="w-full bg-blue-950 hover:bg-blue-900 text-white font-bold py-3 rounded-xl transition-all border border-blue-700/60 shadow-lg shadow-blue-950/30">
+                          Download
+                        </button>
+                      </a>
+                    </div>
                   ) : (
                     <button
                       type="button"
