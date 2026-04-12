@@ -66,7 +66,7 @@ export function Builders() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-emerald-400 mb-4">
+          <h2 className="section-premium-heading text-3xl sm:text-4xl md:text-5xl mb-4">
             Meet the Builders
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-2">

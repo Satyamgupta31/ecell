@@ -216,41 +216,13 @@ export function Testimonials() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          {/* Label */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
-            style={{
-              background: "rgba(48,96,255,0.1)",
-              border: "1px solid rgba(80,140,255,0.25)",
-            }}
-          >
-            <motion.span
-              className="w-1.5 h-1.5 rounded-full bg-blue-400"
-              animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <span className="text-blue-400 text-xs tracking-widest uppercase font-mono">
-              Community Voice
-            </span>
-          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl sm:text-5xl font-bold mb-4"
-            style={{
-              fontFamily: "'Syne', sans-serif",
-              background: "linear-gradient(110deg, #ffffff 0%, #6ab0ff 50%, #3060ff 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
+            className="section-premium-heading text-4xl sm:text-5xl mb-4"
           >
             What People Say
           </motion.h2>

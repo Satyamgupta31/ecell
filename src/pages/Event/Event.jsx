@@ -398,19 +398,6 @@ const Events = () => {
             </div>
           </div>
         </section>
-
-        <section className="px-6 py-20 lg:px-20 max-w-7xl mx-auto">
-          <div className="bg-primary/5 rounded-3xl p-8 lg:p-12 text-center border-2 border-dashed border-primary/20">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-neutral-dark mb-6">
-              <Search className="size-8" />
-            </div>
-            <h2 className="text-3xl font-bold mb-4 font-display text-white">Have an Idea for an Event?</h2>
-            <p className="text-neutral-muted mb-8 text-lg">We're always looking for new ways to inspire the community. Propose your event today!</p>
-            <button className="bg-blue-950 hover:bg-blue-900 text-white border border-blue-700/60 px-10 py-4 rounded-xl font-bold transition-all shadow-xl shadow-blue-950/30">
-              Propose an Event
-            </button>
-          </div>
-        </section>
       </div>
     </div>
   );

@@ -9,9 +9,9 @@ const googleMapsAddressUrl =
 export const Contact = () => {
     return (
         <Layout>
-            <main className="max-w-7xl mx-auto px-6 py-20 lg:px-20">
+            <main className="max-w-7xl mx-auto px-6 pt-32 pb-20 lg:px-20">
                 {/* Hero Section */}
-                <section className="mb-16 text-center md:text-left">
+                <section className="mb-16 text-center max-w-3xl mx-auto">
                     <motion.h1
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -23,7 +23,7 @@ export const Contact = () => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-lg text-neutral-muted max-w-2xl"
+                        className="text-lg text-neutral-muted max-w-2xl mx-auto"
                     >
                         Fostering the entrepreneurial spirit at HMRITM. Whether you have a question, an idea, or want to lead, we’re here to help you grow.
                     </motion.p>
