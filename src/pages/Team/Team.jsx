@@ -207,7 +207,7 @@ const Team = () => {
                         decoding="async"
                         fetchPriority={priority ? 'high' : 'low'}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                        className={`w-full h-full object-cover object-center grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110 transition-all duration-700 ease-out ${isClicked ? 'grayscale-0' : ''}`}
+                        className="w-full h-full object-cover object-center scale-100 group-hover:scale-110 transition-all duration-700 ease-out"
                     />
 
                     {/* Social Overlay */}
