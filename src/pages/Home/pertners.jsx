@@ -3,25 +3,37 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { partners } from '@/data/content';
 
-// Partner logo components (simplified text-based logos)
-function PartnerLogo({ name }) {
-  const logoStyles = {
-    Google: 'text-2xl font-medium tracking-tight',
-    Microsoft: 'text-xl font-semibold',
-    Amazon: 'text-2xl font-bold italic',
-    Meta: 'text-2xl font-bold',
-    IBM: 'text-2xl font-bold tracking-widest',
-    Netflix: 'text-2xl font-bold tracking-tight',
-  };
+function isImageSource(source) {
+  return (
+    typeof source === 'string' &&
+    (source.startsWith('http://') ||
+      source.startsWith('https://') ||
+      source.startsWith('/') ||
+      /\.(png|jpe?g|gif|webp|svg|avif|bmp|ico)$/i.test(source))
+  );
+}
+
+function PartnerLogo({ partner }) {
+  const { name, image, logo } = partner;
+  const sponsorLogo = image || logo;
+  const displayLabel = typeof logo === 'string' && !isImageSource(logo) ? logo : name;
 
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="shrink-0 w-40 h-24 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center px-6 hover:border-blue-500/30 hover:glow-blue transition-all duration-300 cursor-pointer group"
+      className="shrink-0 w-44 h-28 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center px-6 hover:border-blue-500/30 hover:glow-blue transition-all duration-300 cursor-pointer group overflow-hidden"
     >
-      <span className={`text-slate-400 group-hover:text-white transition-colors ${logoStyles[name] || 'text-xl font-semibold'}`}>
-        {name}
-      </span>
+      {isImageSource(sponsorLogo) ? (
+        <img
+          src={sponsorLogo}
+          alt={name}
+          className="max-w-full max-h-16 object-contain"
+        />
+      ) : (
+        <span className="text-slate-400 group-hover:text-white text-xl font-semibold transition-colors">
+          {displayLabel}
+        </span>
+      )}
     </motion.div>
   );
 }
@@ -66,7 +78,7 @@ export default function Partners() {
             className="flex gap-4"
           >
             {doubledPartners.map((partner, index) => (
-              <PartnerLogo key={`${partner}-${index}`} name={partner} />
+              <PartnerLogo key={`${partner.name}-${index}`} partner={partner} />
             ))}
           </motion.div>
         </div>
@@ -85,7 +97,7 @@ export default function Partners() {
             className="flex gap-4"
           >
             {[...doubledPartners].reverse().map((partner, index) => (
-              <PartnerLogo key={`${partner}-rev-${index}`} name={partner} />
+              <PartnerLogo key={`${partner.name}-rev-${index}`} partner={partner} />
             ))}
           </motion.div>
         </div>
