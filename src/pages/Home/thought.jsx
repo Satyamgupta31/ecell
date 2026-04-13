@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Sparkles } from "lucide-react";
-import DirectorImage from "../../assets/About/Director.jpeg";
+import DirectorImage from "../../assets/TeamMember/Vivek_pandey_director.jpeg"
 import FemaleImage from "../../assets/TeamMember/female.webp";
 
 import shalini from "../../assets/TeamMember/shalini_dd.jpeg";
@@ -9,11 +9,11 @@ import shalini from "../../assets/TeamMember/shalini_dd.jpeg";
 const testimonials = [
   {
     id: 1,
-    name: "Dr. Vivek Pandey",
+    name: "Dr. V C Pandey",
     role: "Director of HMRITM",
     image: DirectorImage,
     quote:
-      "The power to think differently and ahead of the times for the betterment of mankind is what sets entrepreneurs apart. India's young generation today has that power. History has witnessed that countries which have encouraged entrepreneurs have grown at a faster pace. Entrepreneurs create opportunities, create jobs, create value and create wonders out of nothing. E-Cell provides exposure to entrepreneurship at an early age, helping many students realize their potential as individuals and world citizens.",
+      "It gives me immense pleasure to witness the vibrant efforts of the E-Cell Society at HMR Institute of Technology & Management in fostering a culture of innovation and entrepreneurship among our students. In today’s dynamic and competitive world, nurturing an entrepreneurial mindset is not just desirable but essential.\nInitiatives like Campus Shark Tank reflect our commitment to experiential learning, critical thinking, and real-world problem-solving. Such platforms empower students to transform ideas into impactful solutions while building confidence and leadership skills. \n I commend the dedication and vision of the E-Cell team for creating opportunities that inspire creativity and collaboration. These efforts significantly contribute to shaping future-ready professionals and responsible innovators. \n I encourage all students to actively participate, explore their potential, and embrace the spirit of innovation. Wishing the E-Cell continued success in all its endeavours.",
   },
   {
     id: 2,
