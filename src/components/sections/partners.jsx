@@ -5,6 +5,7 @@ import { partners } from "../../data/content";
 function PartnerLogo({ partner }) {
   const { name, image, logo } = partner;
   const partnerLogo = image || logo;
+  const isGifttSalon = name?.toLowerCase() === "gifttsalon";
   const logoStyles = {
     //Google: "text-2xl font-medium tracking-tight",
     //Microsoft: "text-xl font-semibold",
@@ -23,7 +24,7 @@ function PartnerLogo({ partner }) {
         <img
           src={partnerLogo}
           alt={name}
-          className="max-w-full max-h-24 object-contain"
+          className={`max-w-full object-contain ${isGifttSalon ? "max-h-28" : "max-h-24"}`}
         />
       ) : (
         <span

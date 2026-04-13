@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Sparkles } from "lucide-react";
-import DirectorImage from "../../assets/About/Director.jpeg";
+import DirectorImage from "../../assets/TeamMember/Vivek_pandey_director.jpeg"
 import FemaleImage from "../../assets/TeamMember/female.webp";
 
 import shalini from "../../assets/TeamMember/shalini_dd.jpeg";
@@ -9,11 +9,11 @@ import shalini from "../../assets/TeamMember/shalini_dd.jpeg";
 const testimonials = [
   {
     id: 1,
-    name: "Dr. Vivek Pandey",
+    name: "Dr. V C Pandey",
     role: "Director of HMRITM",
     image: DirectorImage,
     quote:
-      "The power to think differently and ahead of the times for the betterment of mankind is what sets entrepreneurs apart. India's young generation today has that power. History has witnessed that countries which have encouraged entrepreneurs have grown at a faster pace. Entrepreneurs create opportunities, create jobs, create value and create wonders out of nothing. E-Cell provides exposure to entrepreneurship at an early age, helping many students realize their potential as individuals and world citizens.",
+      "It gives me immense pleasure to witness the vibrant efforts of the E-Cell Society at HMR Institute of Technology & Management in fostering a culture of innovation and entrepreneurship among our students. In today’s dynamic and competitive world, nurturing an entrepreneurial mindset is not just desirable but essential.\nInitiatives like Campus Shark Tank reflect our commitment to experiential learning, critical thinking, and real-world problem-solving. Such platforms empower students to transform ideas into impactful solutions while building confidence and leadership skills. \n I commend the dedication and vision of the E-Cell team for creating opportunities that inspire creativity and collaboration. These efforts significantly contribute to shaping future-ready professionals and responsible innovators. \n I encourage all students to actively participate, explore their potential, and embrace the spirit of innovation. Wishing the E-Cell continued success in all its endeavours.",
   },
   {
     id: 2,
@@ -173,7 +173,7 @@ export function Thought() {
                    <Quote size={140} className="rotate-12" />
                 </div>
 
-                <div className="relative z-10 w-full min-h-75 flex items-center justify-center">
+                <div className="relative z-10 w-full min-h-64 flex items-center justify-center">
                   <AnimatePresence mode="wait" custom={direction}>
                     <motion.div
                       key={activeIndex}
@@ -187,7 +187,7 @@ export function Thought() {
                       {/* Image */}
                       <div className="relative mb-10 h-28 w-28 sm:h-32 sm:w-32">
                         <motion.div 
-                           className="absolute inset-0 rounded-full bg-linear-to-br from-[#caa45c]/80 to-blue-600/80 blur-lg opacity-40"
+                           className="absolute inset-0 rounded-full bg-gradient-to-br from-[#caa45c]/80 to-blue-600/80 blur-lg opacity-40"
                            animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
                            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                         />
@@ -244,7 +244,7 @@ export function Thought() {
                       aria-label={`Go to testimonial ${index + 1}`}
                     >
                       <span 
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 h-0.75 rounded-full transition-all duration-500 ease-out ${
+                        className={`absolute left-0 top-1/2 -translate-y-1/2 h-1 rounded-full transition-all duration-500 ease-out ${
                           index === activeIndex ? "w-10 bg-[#caa45c] shadow-[0_0_10px_rgba(202,164,92,0.8)]" : "w-4 bg-white/20 group-hover:bg-white/40 group-hover:w-6"
                         }`} 
                       />
