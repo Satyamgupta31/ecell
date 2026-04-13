@@ -13,7 +13,7 @@ import Scaling from "../assets/Journey/Scaling.png";
 import Demiwal from "../assets/sponsers/demiwal.jpeg";
 import BakeryWithReena from "../assets/sponsers/bakery_with_reena.jpeg";
 import TecnoSys from "../assets/sponsers/tecnosys.jpeg";
-
+import gifttsalon from "../assets/sponsers/giftt_salon.png";
 
 // export const heroFeatures = [
 //   {
@@ -272,6 +272,10 @@ export const partners = [
   {
     name: "TecnoSys",
     image: TecnoSys,
+  },
+   {
+    name: "gifttsalon",
+    image: gifttsalon,
   },
 ];
 
