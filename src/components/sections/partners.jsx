@@ -59,7 +59,7 @@ export function Partners() {
         </motion.div>
 
         {/* Marquee Row 1 */}
-        <div className="relative mb-8 overflow-hidden py-2">
+        <div className="relative mb-6 overflow-hidden">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-black to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-black to-transparent z-10" />
           <motion.div
@@ -78,7 +78,7 @@ export function Partners() {
         </div>
 
         {/* Marquee Row 2 - Reverse */}
-        <div className="relative mb-16 overflow-hidden py-2">
+        <div className="relative mb-12 overflow-hidden">
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-linear-to-r from-black to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-black to-transparent z-10" />
           <motion.div
