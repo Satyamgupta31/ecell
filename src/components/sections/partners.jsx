@@ -3,7 +3,8 @@ import { Button } from "../ui/button";
 import { partners } from "../../data/content";
 
 function PartnerLogo({ partner }) {
-  const { name, logo } = partner;
+  const { name, image, logo } = partner;
+  const partnerLogo = image || logo;
   const logoStyles = {
     //Google: "text-2xl font-medium tracking-tight",
     //Microsoft: "text-xl font-semibold",
@@ -16,13 +17,13 @@ function PartnerLogo({ partner }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="shrink-0 w-40 h-24 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center px-6 hover:border-blue-500/30 hover:glow-blue transition-all duration-300 cursor-pointer group overflow-hidden"
+      className="shrink-0 w-52 h-32 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center px-4 hover:border-blue-500/30 hover:glow-blue transition-all duration-300 cursor-pointer overflow-hidden"
     >
-      {logo ? (
+      {partnerLogo ? (
         <img
-          src={logo}
+          src={partnerLogo}
           alt={name}
-          className="max-w-full max-h-12 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+          className="max-w-full max-h-24 object-contain"
         />
       ) : (
         <span
