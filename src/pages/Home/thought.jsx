@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useMotionValue, useMotionTemplate } from "fram
 import { ChevronLeft, ChevronRight, Quote, Sparkles } from "lucide-react";
 import DirectorImage from "../../assets/About/Director.jpeg";
 import FemaleImage from "../../assets/TeamMember/female.webp";
+import shalini_gupta from "../../assets/TeamMember/shalini_gupta.jpeg";
 
 const testimonials = [
   {
@@ -17,7 +18,7 @@ const testimonials = [
     id: 2,
     name: "Dr. Shalini Gupta",
     role: "Deputy Director of HMRITM",
-    image: FemaleImage,
+    image: shalini_gupta,
     quote:
       "E-Cell should always feel like a launchpad for curiosity. When students get a space to experiment, collaborate, and present ideas without fear, they build the confidence to turn a thought into an actual venture. That is the environment we want to keep strengthening here.",
   },

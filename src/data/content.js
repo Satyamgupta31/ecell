@@ -8,6 +8,14 @@ import Growth from "../assets/Journey/Growth.png";
 import Innovation from "../assets/Journey/Innovation.png";
 import Scaling from "../assets/Journey/Scaling.png";
 
+
+//sponsers 
+import Demiwal from "../assets/sponsers/Demiwal.png";
+import BakeryWithReena from "../assets/sponsers/bakery_with_reena.png";
+import GiftSalon from "../assets/sponsers/gift_salon.png";
+import TecnoSys from "../assets/sponsers/tecnoSys.png";
+
+
 // export const heroFeatures = [
 //   {
 //     icon: "Code2",
@@ -255,20 +263,20 @@ export const sharkTankMentors = [
 // Partners
 export const partners = [
   {
-    //name: "Google for Startups",
-    //logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    name: "Demiwal",
+    image: Demiwal,
   },
   {
-  //  name: "Microsoft",
-  //  logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
+    name: "Bakery With Reena",
+    image: BakeryWithReena,
   },
   {
-    //name: "AWS",
-    //logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    name: "Gift Salon",
+    image: GiftSalon,
   },
   {
-    //name: "Startup India",
-    //logo: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Startup_India_Logo.svg",
+    name: "TecnoSys",
+    image: TecnoSys,
   },
 ];
 
@@ -284,7 +292,7 @@ export const testimonials = [
     id: 2,
     name: "Garv Khatri  ",
     role: "CSE Department",
-    quote: " I’ve learned a lot from their sessions. They promote startup culture very well.",
+    quote: " I have learned a lot from their sessions. They promote startup culture very well.",
   },
   {
     id: 3,
@@ -292,38 +300,45 @@ export const testimonials = [
     role: "CSE Department",
     quote: " E-Cell inspires students to explore entrepreneurship. It’s a great platform for learning.",
   },
-  {
+    {
     id: 4,
+    name: "Satyam Gupta ",  
+    role: "President of E-Cell HMRITM",
+    quote: "my journey with E-Cell has been truly enriching. It’s inspiring to see students step out of their comfort zones, take initiative, and work on innovative ideas. I’m really looking forward to the Campus Shark Tank event, as it will provide a strong platform for creativity, confidence, and entrepreneurial thinking. The industrial visit was a great learning experience, giving practical insights and strengthening team bonding. What stands out the most is the positive and growth-focused environment we’re creating. I’m excited to see how E-Cell continues to evolve and impact more students in the future.",
+  },
+   {
+    id: 6,
+    name: "Manav",
+    role: "President of E-Cell HMRITM",
+    quote: "Being the President of E-Cell has been an incredibly fulfilling experience. It’s more than just a society—it’s a space where students grow, take initiative, and turn ideas into reality. I’m especially excited about the upcoming Campus Shark Tank event, as it will give students a great platform to present and refine their ideas.",
+  },
+  {
+    id: 6,
     name: "Yash Gupta ",  
     role: "CSE-AIDS",
     quote: " E-Cell HMRITM has definitely raised the standard of college events. Everything feels professional and well thought out.",
   },
   {
-    id: 5,
+    id: 7,
     name: "Navya nayal",
     role: "Cse IT",
     quote: " I really appreciate the efforts of the E-Cell team in bringing industry exposure to students. And oraganizing awesome events like college shark tank which is very exciting and helpful idea for students business skills growth .",
   },
+ 
   {
-    id: 6,
-    name: "Manav",
-    role: "President of E-Cell HMRITM",
-    quote: " Being the President of E-Cell has been an incredibly fulfilling experience. It’s more than just a society—it’s a space where students grow, take initiative, and turn ideas into reality. I’m especially excited about the upcoming Campus Shark Tank event, as it will give students a great platform to present and refine their ideas.",
-  },
-  {
-    id: 7,
+    id: 8,
     name: "Tushar Sharma",
     role: "CSE Department",
     quote: "E Cell truly stands out as one of the most impactful clubs on HMRITM. Their entrepreneurship focused events from startup pitches to ideation workshops gave me real world exposure that classrooms rarely offer. The team is incredibly organized, passionate, and driven. Attending their sessions genuinely shifted my mindset from student to problem solver. If you're serious about building something meaningful, E Cell is where you start.",
   },
    {
-    id: 8,
+    id: 9,
     name: "Shree bhagwan ",
     role: "CSE Department",
     quote: " My experience with E-Cell has been really positive. I like how it promotes innovation and gives practical exposure beyond academics.",
   },
   {
-    id: 9,
+    id: 10,
     name: "PURAV",
     role: "Social Media Head Ecell",
     quote: "Being a part of E-Cell HMRITM has been an incredible journey of growth and learning. A big credit goes to Ankush Sir—his guidance and support are the reason E-Cell is running so well and successfully",
