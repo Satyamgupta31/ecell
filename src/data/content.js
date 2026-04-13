@@ -2,6 +2,14 @@
 import shashankImg from "../assets/TeamMember/shashank.jpeg";
 import arvindImg from "../assets/TeamMember/arvind.jpeg";
 import piyushImg from "../assets/TeamMember/piyush.jpg";
+import adityaImg from "../assets/TeamMember/Adityakumar.png";
+import himanshuImg from "../assets/TeamMember/himanshu.jpeg";
+
+import Beginning from "../assets/Journey/Beginning.png";
+import Growth from "../assets/Journey/Growth.png";
+import Innovation from "../assets/Journey/Innovation.png";
+import Scaling from "../assets/Journey/Scaling.png";
+
 // export const heroFeatures = [
 //   {
 //     icon: "Code2",
@@ -119,7 +127,7 @@ export const journeyTimeline = [
     label: "The Beginning",
     description: "The initial phase of the society was centered around building awareness and establishing a strong foundation. Through a series of workshops, introductory sessions, and small-scale competitions, the society encouraged students to explore entrepreneurial thinking and develop problem-solving skills. As it progressed, the focus expanded towards creating a more structured environment for learning. Interactive sessions, speaker engagements, and skill-based activities helped students gain exposure to real-world business concepts. During this period, the society also emphasized socially relevant initiatives such as Cyber Jagrookta Diwas, promoting digital awareness and responsible online practices. Despite challenges like the shift to virtual platforms, the society adapted effectively by organizing webinars and online events, ensuring continuity in engagement and even expanding its reach to a wider audience.",
     icon: "Rocket",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=600",
+    image: Beginning,
   },
   {
     year: "2022–2023",
@@ -128,7 +136,7 @@ export const journeyTimeline = [
     description: "Focus on innovation, competition, and global problem-solving.",
     fullDescription: "This phase marked a significant step forward, with the society introducing more competitive and intellectually engaging events. The G20-themed Case Study Competition provided a platform for students to analyze global economic scenarios and propose strategic solutions, enhancing their analytical and decision-making abilities.At the same time, Hacknovate 4.0 emerged as a flagship innovation-driven event, encouraging participants to collaborate, build, and present creative technological solutions. These initiatives not only increased participation but also strengthened the society’s identity as a hub for innovation and experiential learning.",
     icon: "Users",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600",
+    image: Innovation,
   },
   {
     year: "2023–2025",
@@ -137,7 +145,7 @@ export const journeyTimeline = [
     description: "Expansion with larger events, stronger collaborations, and a focus on mentorship, innovation, and real-world impact.",
     fullDescription: "With growing recognition and participation, the society entered a phase of expansion and consolidation. Events became larger in scale, more structured, and more impactful. E-Summit established itself as a flagship event, bringing together students, aspiring entrepreneurs, and industry experts, fostering networking, learning, and inspiration.During this period, the society focused on enhancing the quality of its initiatives, building collaborations, and creating opportunities for real-world exposure. With a clear vision for the future, it continues to emphasize mentorship, innovation, and the transformation of ideas into actionable ventures, aiming to build a sustainable and inclusive entrepreneurial ecosystem.",
     icon: "TrendingUp",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600",
+    image: Growth,
   },
   {
     year: "2026",
@@ -146,7 +154,7 @@ export const journeyTimeline = [
     description: "Scaling up with a focus on global impact, sustainability, and fostering a culture of continuous innovation.",
     fullDescription: "As the society looks towards the future, the focus will be on scaling up its initiatives and impact. This includes expanding its reach to a global audience, fostering international collaborations, and creating opportunities for students to engage with global challenges. Sustainability will be a key focus, with initiatives aimed at promoting responsible entrepreneurship and social impact. The society will continue to foster a culture of continuous innovation, encouraging students to think creatively and develop solutions that can make a meaningful difference in the world.",
     icon: "Globe",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600",
+    image: Scaling,
   },
 ];
 
@@ -198,23 +206,71 @@ export const teamMembers = [
   },
 ];
 
+// Shark Tank mentors (editable card content)
+export const sharkTankMentors = [
+  {
+    id: 1,
+    name: "Dr. Yukta Srivastava",
+    role: "Founder-Benzene | ABM & Demand Generation Specialist",
+    imageName: "mentor1",
+    highlights: [
+      "Deep expertise in B2B marketing, ABM",
+      "Founder experience in building data-driven growth systems",
+      "Her approach focuses on structured thinking, real-world applicability, and data-backed decision-making",
+    ],
+  },
+  {
+    id: 2,
+    name: "Mr. Aditya Bajaj",
+    role: "Product & Growth Marketing-Algebrik AI ",  
+    imageName: "mentor2",
+    highlights: [
+      "Expertise in product marketing and growth strategy",
+      "Experience across corporate, consulting, and startup environments",
+      "Strong foundation in data-driven marketing and analytics ",
+    ],
+  },
+  {
+    id: 3,
+    name: "Ms. Reetika Arora",
+    role: "Associate Director Compliance Hawks | Founder Dastur Bhaarat",
+    imageName: "mentor3",
+    highlights: [
+      "Expertise in HR, legal compliance, and business structuring",
+      "Experience in startup advisory and operational strategy",
+      "Founder experience in building a consumer brand from scratch",
+    ],
+  },
+  {
+    id: 4,
+    name: "Ms. Priti Srivastava",
+    role: "Mentor – Advocacy, Reliance Industries Ltd | Founder – DayaRani Wellness Advisory",
+    imageName: "mentor4",
+    highlights: [
+      "30+ years of corporate leadership experience in public affairs and strategy",
+      "Deep expertise in policy, advocacy, and business planning",
+      "Strong focus on mentorship, mindset development, and leadership growth",
+    ],
+  },
+];
+
 // Partners
 export const partners = [
   {
-    name: "Google for Startups",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    //name: "Google for Startups",
+    //logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
   },
   {
-    name: "Microsoft",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
+  //  name: "Microsoft",
+  //  logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
   },
   {
-    name: "AWS",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    //name: "AWS",
+    //logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
   },
   {
-    name: "Startup India",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Startup_India_Logo.svg",
+    //name: "Startup India",
+    //logo: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Startup_India_Logo.svg",
   },
 ];
 
@@ -222,24 +278,64 @@ export const partners = [
 export const testimonials = [
   {
     id: 1,
-    name: "Sneha Reddy",
-    role: "Founder, TechVentures",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300",
-    quote: "E-Cell provided the perfect launchpad for my startup. The mentorship was invaluable.",
+    name: "Udhav ",
+    role: "CSE-CyberSecurity",
+    quote: " Being in E-Cell HMRITM has helped me grow both personally and professionally. All thanks to Ankush Sir and my team head—their dedication and guidance truly keep the team motivated and make everything run so smoothly.",
   },
   {
     id: 2,
-    name: "Vikram Joshi",
-    role: "CEO, InnoSys",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300",
-    quote: "The community and resources helped us raise our seed round within 6 months.",
+    name: "Garv Khatri  ",
+    role: "CSE Department",
+    quote: " I’ve learned a lot from their sessions. They promote startup culture very well.",
   },
   {
     id: 3,
-    name: "Anjali Verma",
-    role: "Co-Founder, GreenTech",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300",
-    quote: "From idea to MVP, E-Cell guided us at every step. Truly transformative experience.",
+    name: " Aditya Panwar ",
+    role: "CSE Department",
+    quote: " E-Cell inspires students to explore entrepreneurship. It’s a great platform for learning.",
+  },
+  {
+    id: 4,
+    name: "Yash Gupta ",  
+    role: "CSE-AIDS",
+    quote: " E-Cell HMRITM has definitely raised the standard of college events. Everything feels professional and well thought out.",
+  },
+  {
+    id: 5,
+    name: "Navya nayal",
+    role: "Cse IT",
+    quote: " I really appreciate the efforts of the E-Cell team in bringing industry exposure to students. And oraganizing awesome events like college shark tank which is very exciting and helpful idea for students business skills growth .",
+  },
+  {
+    id: 6,
+    name: "Manav",
+    role: "President of E-Cell HMRITM",
+    quote: " Being the President of E-Cell has been an incredibly fulfilling experience. It’s more than just a society—it’s a space where students grow, take initiative, and turn ideas into reality. I’m especially excited about the upcoming Campus Shark Tank event, as it will give students a great platform to present and refine their ideas.",
+  },
+  {
+    id: 7,
+    name: "Tushar Sharma",
+    role: "CSE Department",
+    quote: "E Cell truly stands out as one of the most impactful clubs on HMRITM. Their entrepreneurship focused events from startup pitches to ideation workshops gave me real world exposure that classrooms rarely offer. The team is incredibly organized, passionate, and driven. Attending their sessions genuinely shifted my mindset from student to problem solver. If you're serious about building something meaningful, E Cell is where you start.",
+  },
+   {
+    id: 8,
+    name: "Shree bhagwan ",
+    role: "CSE Department",
+    quote: " My experience with E-Cell has been really positive. I like how it promotes innovation and gives practical exposure beyond academics.",
+  },
+  {
+    id: 9,
+    name: "PURAV",
+    role: "Social Media Head Ecell",
+    quote: "Being a part of E-Cell HMRITM has been an incredible journey of growth and learning. A big credit goes to Ankush Sir—his guidance and support are the reason E-Cell is running so well and successfully",
+  },
+ 
+ {
+    id: 10,
+    name: "Daksh Bhatia",
+    role: "Cse-cse",
+    quote: " The E-Cell has been doing a fantastic job organizing impactful events that truly build an entrepreneurial culture on campus. I want to give a special shoutout to the social media team for their phenomenal work recently. The content is highly engaging, visually professional, and keeps the student body perfectly informed about all our upcoming opportunities. ",
   },
 ];
 
@@ -266,6 +362,7 @@ export const contestWinners = [
     prize: "₹50,000",
     image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400",
   },
+  
 ];
 
 // Events gallery
@@ -278,36 +375,42 @@ export const eventsGallery = [
   },
   {
     id: 2,
-    title: "Hacknovate 4.0",
+    title: "FSM Lab Industrial Visit",
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
     category: "Tech",
   },
   {
     id: 3,
+    title: "Hacknovate 4.0",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
+    category: "Tech",
+  },
+  {
+    id: 4,
     title: "Cyber Jagrookta Diwas",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400",
     category: "Seminar",
   },
   {
-    id: 4,
+    id: 5,
     title: "IPL Auction",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
     category: "Event",
   },
   {
-    id: 5,
+    id: 6,
     title: "Appreciation",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
     category: "Event",
   },
   {
-    id: 6,
+    id: 7,
     title: "Interaction",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
     category: "Event",
   },
   {
-    id: 7,
+    id: 8,
     title: "Event",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
     category: "Event",
@@ -348,7 +451,7 @@ export const eventsArchive = [
     type: "Networking",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
   },
- 
+
 ];
 
 // Contact info
@@ -372,49 +475,74 @@ export const contactInfo = [
 
 // Builders section
 export const builders = [
-    {
+  {
+    name: "Arvind Singh",
+    role: "Full stack software Engineer",
+    count: "Technical Member",
+    description: "Building scalable full stack applications.",
+    tech: ["Java Script", "Java", "React", "Node.js", "AIML"],
+    mission: "Building end-to-end scalable software systems and products that deliver real-world impact",
+    socials: {
+      github: "https://github.com/04arvind",
+      linkedin: "https://www.linkedin.com/in/arvind2005/",
+    },
+    status: "ACTIVE",
+    image: arvindImg,
+  },
+  {
     name: "Shashank Pandey",
-    role: "Systems Engineer",
-    //image: shashankImg,
-   count: "Technical Member",
-    holo: "0002",
-    tech: ["Java Script", "Java ", "React", "Node.js"],
+    role: "Full stack software developer",
+    count: "Technical Member",
+    description: "Experienced web development focused on scalable AI.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
     mission: "Managing AI systems and containerization protocols for optimal performance.",
     socials: {
-      github: "#",
+      github: "https://github.com/shashank80000",
       linkedin: "https://www.linkedin.com/in/shashank-pandey-2a3724291/",
     },
     status: "ACTIVE",
-    description: "Experienced systems engineer focused on scalable AI infra.",
-  },
-  {
-    name: "Arvind Singh",
-    title: "Arvind Singh",
-    description: "Students with bold ideas ready to change the world",
-    count: "Technical Member",
-      //image: arvindImg
-
-   
+    image: shashankImg,
   },
   {
     name: "Piyush Bhandari",
-    title: "Piyush Bhandari",
-    description: "Technical experts guiding the next generation",
-    count: "Technical Head",
-    // image: piyushImg
-
+    role: "Systems Engineer",
+    count: "Technical Member",
+    description: "Technical expert guiding the next generation.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
+    mission: "Managing AI systems and containerization protocols for optimal performance.",
+    socials: {
+      github: "#",
+      linkedin: "#",
+    },
+    status: "ACTIVE",
+    image: piyushImg,
   },
   {
-    icon: "Lightbulb",
-    title: "Innovators",
-    description: "Problem solvers creating cutting-edge solutions",
-    count: "50+",
+    name: "Himanshu",
+    role: "Systems Engineer",
+    count: "Technical Member",
+    description: "Passionate developer crafting robust architectures.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
+    mission: "Managing AI systems and containerization protocols for optimal performance.",
+    socials: {
+      github: "#",
+      linkedin: "#",
+    },
+    status: "ACTIVE",
+    image: himanshuImg,
   },
   {
-    icon: "Rocket",
-    title: "Startups",
-    description: "Successful ventures launched through E-Cell",
-    count: "30+",
+    name: "Aditya",
+    role: "Systems Engineer",
+    count: "Technical Member",
+    description: "Creative problem solver with a knack for optimization.",
+    tech: ["Java Script", "Java", "React", "Node.js"],
+    mission: "Managing AI systems and containerization protocols for optimal performance.",
+    socials: {
+      github: "#",
+      linkedin: "#",
+    },
+    status: "ACTIVE",
+    image: adityaImg,
   },
-
 ];

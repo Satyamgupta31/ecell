@@ -5,12 +5,12 @@ import { partners } from "../../data/content";
 function PartnerLogo({ partner }) {
   const { name, logo } = partner;
   const logoStyles = {
-    Google: "text-2xl font-medium tracking-tight",
-    Microsoft: "text-xl font-semibold",
-    Amazon: "text-2xl font-bold italic",
-    Meta: "text-2xl font-bold",
-    IBM: "text-2xl font-bold tracking-widest",
-    Netflix: "text-2xl font-bold tracking-tight",
+    //Google: "text-2xl font-medium tracking-tight",
+    //Microsoft: "text-xl font-semibold",
+    //Amazon: "text-2xl font-bold italic",
+    //Meta: "text-2xl font-bold",
+    //IBM: "text-2xl font-bold tracking-widest",
+    //Netflix: "text-2xl font-bold tracking-tight",
   };
 
   return (
@@ -50,7 +50,7 @@ export function Partners() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient mb-4">
+          <h2 className="section-premium-heading text-3xl sm:text-4xl md:text-5xl mb-4">
             Our Partners
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
@@ -69,7 +69,7 @@ export function Partners() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="flex gap-4"
+            className="flex w-max flex-nowrap gap-4"
           >
             {doubledPartners.map((partner, index) => (
               <PartnerLogo key={`${partner.name}-${index}`} partner={partner} />
@@ -88,7 +88,7 @@ export function Partners() {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="flex gap-4"
+            className="flex w-max flex-nowrap gap-4"
           >
             {[...doubledPartners].reverse().map((partner, index) => (
               <PartnerLogo key={`${partner.name}-rev-${index}`} partner={partner} />

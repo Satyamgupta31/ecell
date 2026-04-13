@@ -6,15 +6,19 @@ import { eventsArchive, eventsGallery } from "../../data/event_archive";
 
 const compassAngles = {
   east: 0,
-  south: 90,
-  west: 180,
-  north: 270,
+  south: 72,
+  west: 144,
+  north: 216,
+  northEast: 288,
 };
 
 
 
 export function EventsArchive() {
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const selectedEventGallery = selectedEvent
+    ? eventsGallery.filter((imgItem) => imgItem.category === selectedEvent.title)
+    : [];
 
   // Close gallery properly using Escape key
   useEffect(() => {
@@ -199,7 +203,7 @@ export function EventsArchive() {
               {/* Gallery Grid */}
               <div className="p-4 sm:p-6 overflow-y-auto custom-scrollbar">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                  {eventsGallery.map((imgItem, idx) => (
+                  {selectedEventGallery.map((imgItem, idx) => (
                     <motion.div
                       key={imgItem.id}
                       initial={{ opacity: 0, y: 10 }}
@@ -223,7 +227,7 @@ export function EventsArchive() {
                     </motion.div>
                   ))}
                   {/* Duplicate to fill space playfully to demonstrate a full gallery */}
-                  {eventsGallery.map((imgItem, idx) => (
+                  {selectedEventGallery.map((imgItem, idx) => (
                     <motion.div
                       key={`dup-${imgItem.id}`}
                       initial={{ opacity: 0, y: 10 }}

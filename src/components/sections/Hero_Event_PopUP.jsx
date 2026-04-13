@@ -108,13 +108,13 @@ const DEFAULT_EVENT = {
   title: "CAMPUS SHARK TANK",
   subtitle:
     "CAMPUS SHARK TANK is ECell's premier intra college stage for bold thinkers and future founders.",
-  type: "Pitch Competition",
+
   date: "April 17, 2025",
   venue: "HMRITM Campus, Hamidpur",
   prize: "Exciting prizes and rewards",
   targetDate: "2025-04-17T09:00:00",
-  spotsTotal: 200,
-  spotsFilled: 80,
+  //spotsTotal: 60,
+  //spotsFilled: 45,
   registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc2f2M2D3eHWGR3mSULx0gZLQdmuLHs36Sthi5JrebbCHRntA/viewform",
 };
 
@@ -124,14 +124,23 @@ const DEFAULT_EVENT = {
 
 export function EventPopup({ event = {} }) {
   const ev = { ...DEFAULT_EVENT, ...event };
-  const cardRadius = 24;
 
   const [countdown, setCountdown] = useState({ d: 0, h: 0, m: 0, s: 0 });
   const [hovered, setHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   /* Inject keyframes on mount */
   useEffect(() => {
     injectKeyframes();
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const updateSize = () => setIsMobile(mediaQuery.matches);
+
+    updateSize();
+    mediaQuery.addEventListener("change", updateSize);
+    return () => mediaQuery.removeEventListener("change", updateSize);
   }, []);
 
   /* Live countdown */
@@ -195,26 +204,27 @@ export function EventPopup({ event = {} }) {
         />
 
         {/* Card header */}
-        <div style={styles.cardHeader}>
-          <div style={styles.liveBadge}>
+        <div style={{ ...styles.cardHeader, ...(isMobile ? styles.cardHeaderMobile : null) }}>
+          <div style={{ ...styles.liveBadge, ...(isMobile ? styles.liveBadgeMobile : null) }}>
             <LiveDot />
-            <span style={styles.liveBadgeText}>Upcoming Event</span>
+            <span style={{ ...styles.liveBadgeText, ...(isMobile ? styles.liveBadgeTextMobile : null) }}>
+              Upcoming Event
+            </span>
           </div>
-          <span style={styles.typeBadge}>🏆 {ev.type}</span>
         </div>
 
         {/* Card body */}
-        <div style={styles.cardBody}>
-          <h3 style={styles.eventTitle}>{ev.title}</h3>
-          <p style={styles.eventSubtitle}>{ev.subtitle}</p>
+        <div style={{ ...styles.cardBody, ...(isMobile ? styles.cardBodyMobile : null) }}>
+          <h3 style={{ ...styles.eventTitle, ...(isMobile ? styles.eventTitleMobile : null) }}>{ev.title}</h3>
+          <p style={{ ...styles.eventSubtitle, ...(isMobile ? styles.eventSubtitleMobile : null) }}>{ev.subtitle}</p>
 
           {/* Countdown */}
           <p style={styles.countdownLabel}>Starts in</p>
-          <div style={styles.countdownRow}>
-            <CountBox value={countdown.d} label="Days" />
-            <CountBox value={countdown.h} label="Hours" />
-            <CountBox value={countdown.m} label="Mins" />
-            <CountBox value={countdown.s} label="Secs" />
+          <div style={{ ...styles.countdownRow, ...(isMobile ? styles.countdownRowMobile : null) }}>
+            <div style={isMobile ? styles.countBoxMobile : undefined}><CountBox value={countdown.d} label="Days" /></div>
+            <div style={isMobile ? styles.countBoxMobile : undefined}><CountBox value={countdown.h} label="Hours" /></div>
+            <div style={isMobile ? styles.countBoxMobile : undefined}><CountBox value={countdown.m} label="Mins" /></div>
+            <div style={isMobile ? styles.countBoxMobile : undefined}><CountBox value={countdown.s} label="Secs" /></div>
           </div>
 
           {/* Details */}
@@ -225,7 +235,7 @@ export function EventPopup({ event = {} }) {
           </div>
 
           {/* Spots progress */}
-          <SpotsBar filled={ev.spotsFilled} total={ev.spotsTotal} />
+          {/*<SpotsBar filled={ev.spotsFilled} total={ev.spotsTotal} />*/}
 
           {/* CTA */}
           <a
@@ -234,6 +244,7 @@ export function EventPopup({ event = {} }) {
             rel="noreferrer"
             style={{
               ...styles.cta,
+              ...(isMobile ? styles.ctaMobile : null),
               opacity: hovered ? 0.92 : 1,
               transform: hovered ? "translateY(-2px)" : "translateY(0)",
               transition: "opacity 0.2s ease, transform 0.2s ease",
@@ -258,7 +269,8 @@ const styles = {
   wrapper: {
     position: "relative",
     width: "100%",
-    maxWidth: 336,
+    maxWidth: 360,
+    minWidth: 0,
     padding: 0,
     borderRadius: 24,
     fontFamily: "'Space Grotesk', sans-serif",
@@ -340,7 +352,7 @@ const styles = {
   cardHeader: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     padding: "12px 16px",
     borderBottom: "1px solid rgba(255,255,255,0.06)",
     background:
@@ -350,6 +362,7 @@ const styles = {
   liveBadge: {
     display: "flex",
     alignItems: "center",
+    maxWidth: "100%",
     gap: 7,
     background: "rgba(17, 31, 45, 0.42)",
     border: "1px solid rgba(255,255,255,0.08)",
@@ -375,6 +388,7 @@ const styles = {
     textTransform: "uppercase",
     padding: "4px 10px",
     borderRadius: 50,
+    whiteSpace: "nowrap",
   },
 
   /* Body */
@@ -414,6 +428,11 @@ const styles = {
     display: "flex",
     gap: 8,
     marginBottom: 16,
+  },
+
+  countBoxMobile: {
+    flex: "1 1 calc(50% - 4px)",
+    minWidth: "calc(50% - 4px)",
   },
 
   countBox: {
@@ -544,5 +563,51 @@ const styles = {
     textDecoration: "none",
     boxSizing: "border-box",
     boxShadow: "0 12px 24px rgba(7, 72, 163, 0.32), 0 0 0 1px rgba(113, 223, 255, 0.18) inset",
+  },
+
+  cardHeaderMobile: {
+    padding: "10px 12px",
+    gap: 8,
+    alignItems: "flex-start",
+    flexDirection: "column",
+  },
+
+  liveBadgeMobile: {
+    padding: "4px 10px",
+  },
+
+  liveBadgeTextMobile: {
+    fontSize: 10,
+    letterSpacing: "0.08em",
+  },
+
+  typeBadgeMobile: {
+    fontSize: 9,
+    padding: "4px 8px",
+  },
+
+  cardBodyMobile: {
+    padding: "14px 12px 12px",
+  },
+
+  eventTitleMobile: {
+    fontSize: 18,
+    lineHeight: 1.25,
+  },
+
+  eventSubtitleMobile: {
+    fontSize: 11,
+    lineHeight: 1.5,
+  },
+
+  countdownRowMobile: {
+    gap: 6,
+    flexWrap: "wrap",
+    marginBottom: 14,
+  },
+
+  ctaMobile: {
+    padding: "10px 0",
+    fontSize: 13,
   },
 };

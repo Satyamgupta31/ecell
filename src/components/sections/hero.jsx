@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { heroFeatures } from "../../data/content";
 import EventPopup from "./Hero_Event_PopUP";
+import MentorCard from "./Mentor_card";
 import {
   staggerContainer,
   fadeUpVariants,
@@ -471,22 +472,28 @@ Inspiring students to think bigger and {" "}
           </div>
 
           <motion.div variants={fadeUpVariants} className="flex justify-center lg:justify-end">
-            <div className="w-full max-w-105 lg:max-w-95">
-              <EventPopup
-                event={{
-                  title: "CAMPUS SHARK TANK",
-                  subtitle: "CAMPUS SHARK TANK is ECell's premier intra college stage for bold thinkers and future founders.",
-                  type: "Pitching Competition",
-                  date: "April 17th, 2026",
-                  venue: "HMRITM Campus, Hamidpur",
-                  prize: "Exciting prizes and rewards",
-                  targetDate: "2026-04-17T09:00:00",
-                  spotsTotal: 200,
-                  spotsFilled: 80,
-                  registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc2f2M2D3eHWGR3mSULx0gZLQdmuLHs36Sthi5JrebbCHRntA/viewform",
+            <div className="w-full flex flex-col xl:flex-row items-center xl:items-start xl:justify-end gap-4">
+              <div className="w-full" style={{ maxWidth: "17rem" }}>
+                <EventPopup
+                  event={{
+                    title: "CAMPUS SHARK TANK",
+                    subtitle: "CAMPUS SHARK TANK is ECell's premier intra college stage for bold thinkers and future founders.",
+                    type: "Pitching Competition",
+                    date: "April 17th, 2026",
+                    venue: "HMRITM Campus, Hamidpur",
+                    prize: "Exciting prizes and rewards",
+                    targetDate: "2026-04-17T09:00:00",
+                    spotsTotal: 200,
+                    spotsFilled: 80,
+                    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSc2f2M2D3eHWGR3mSULx0gZLQdmuLHs36Sthi5JrebbCHRntA/viewform",
 
-                }}
-              />
+                  }}
+                />
+              </div>
+
+              <div className="w-full" style={{ maxWidth: "17rem" }}>
+                <MentorCard />
+              </div>
             </div>
           </motion.div>
         </div>

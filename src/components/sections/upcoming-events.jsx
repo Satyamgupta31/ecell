@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Badge } from "../ui/badge";
 import { upcomingEvents } from "../../data/content";
 import { staggerContainer, fadeUpVariants } from "../../lib/animations";
+import { UpcomingEventsVideoBackground } from "../../pages/Home/animation/animation.jsx";
 
 // Calculate date-based animation progress from 1st of month to event date
 function getDateProgress(dateString, now) {
@@ -63,6 +64,7 @@ export function UpcomingEvents() {
 
   return (
     <section id="events" className="relative py-24 bg-black overflow-hidden">
+      <UpcomingEventsVideoBackground />
       <div className="absolute inset-0 bg-radial-gradient opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,7 +75,7 @@ export function UpcomingEvents() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gradient mb-4">
+          <h2 className="section-premium-heading text-3xl sm:text-4xl md:text-5xl mb-4">
             Upcoming Events
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
@@ -165,7 +167,7 @@ export function UpcomingEvents() {
 
               {/* Boarding Pass Footer */}
               <div className="p-6 pt-4">
-                <div className="flex justify-between items-start mb-4">
+                <div>
                   <div>
                     <div className="flex items-center gap-1.5 text-slate-500 text-xs mb-1">
                       <Clock className="w-3 h-3" />
@@ -173,28 +175,6 @@ export function UpcomingEvents() {
                     </div>
                     <p className="text-white font-semibold">{event.time}</p>
                   </div>
-                  <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center">
-                    <div className="w-8 h-8 bg-slate-700 rounded flex items-center justify-center">
-                      <span className="text-slate-500 text-xs">QR</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Passengers Bar */}
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-500 text-xs">Passengers</span>
-                  <span className="text-blue-400 text-xs font-medium">
-                    {event.seats} seats available
-                  </span>
-                </div>
-                <div className="flex gap-1 mt-2">
-                  {Array.from({ length: 8 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className={`h-6 w-3 rounded-sm ${i < 5 ? "bg-blue-600" : "bg-slate-800"
-                        }`}
-                    />
-                  ))}
                 </div>
               </div>
             </motion.div>
