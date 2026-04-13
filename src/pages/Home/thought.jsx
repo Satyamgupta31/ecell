@@ -171,7 +171,7 @@ export function Thought() {
                    <Quote size={140} className="rotate-12" />
                 </div>
 
-                <div className="relative z-10 w-full min-h-[300px] flex items-center justify-center">
+                <div className="relative z-10 w-full min-h-75 flex items-center justify-center">
                   <AnimatePresence mode="wait" custom={direction}>
                     <motion.div
                       key={activeIndex}
@@ -185,7 +185,7 @@ export function Thought() {
                       {/* Image */}
                       <div className="relative mb-10 h-28 w-28 sm:h-32 sm:w-32">
                         <motion.div 
-                           className="absolute inset-0 rounded-full bg-gradient-to-br from-[#caa45c]/80 to-blue-600/80 blur-lg opacity-40"
+                           className="absolute inset-0 rounded-full bg-linear-to-br from-[#caa45c]/80 to-blue-600/80 blur-lg opacity-40"
                            animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
                            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                         />
@@ -242,7 +242,7 @@ export function Thought() {
                       aria-label={`Go to testimonial ${index + 1}`}
                     >
                       <span 
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 h-[3px] rounded-full transition-all duration-500 ease-out ${
+                        className={`absolute left-0 top-1/2 -translate-y-1/2 h-0.75 rounded-full transition-all duration-500 ease-out ${
                           index === activeIndex ? "w-10 bg-[#caa45c] shadow-[0_0_10px_rgba(202,164,92,0.8)]" : "w-4 bg-white/20 group-hover:bg-white/40 group-hover:w-6"
                         }`} 
                       />
